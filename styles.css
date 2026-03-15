@@ -33,11 +33,17 @@ body{
     }
     
     nav a{
-    color:white;
-    margin-left:20px;
-    text-decoration:none;
-    font-weight:600;
-    }
+        color:white;
+        margin-left:20px;
+        text-decoration:none;
+        font-weight:600;
+        font-family:Inter;
+        font-size:16px;
+        }
+        
+        nav a:hover{
+        color:#d5d49b;
+        }
     
     .register-nav{
     background:#d5d49b;
@@ -146,10 +152,10 @@ body{
     /* PROGRAMS */
     
     .programs{
-    background:#f4f4f4;
-    padding:60px 20px;
-    text-align:center;
-    }
+        background:#d5d49b;
+        padding:60px 20px;
+        text-align:center;
+        }
     
     .program-grid{
     display:grid;
@@ -159,10 +165,24 @@ body{
     }
     
     .program-card{
-    background:white;
-    padding:25px;
-    border-top:4px solid #d5d49b;
-    }
+        background:white;
+        padding:25px;
+        border-top:4px solid #002a43;
+        box-shadow:0 4px 10px rgba(0,0,0,.1);
+        border-radius:6px;
+        }
+
+        .program-card h3{
+            color:#002a43;
+            font-family:Oswald;
+            }
+
+            .programs h2{
+                color:#002a43;
+                font-family:Oswald;
+                font-size:36px;
+                margin-bottom:20px;
+                }
     
     /* SCHEDULE */
     
@@ -234,11 +254,13 @@ body{
         }
         
         .footer-bottom{
-        text-align:center;
-        padding:15px;
-        border-top:1px solid rgba(255,255,255,.2);
-        font-size:14px;
-        }
+            text-align:center;
+            padding:15px;
+            background:#d5d49b;
+            color:#002a43;
+            font-size:14px;
+            font-weight:600;
+            }
     
     /* MOBILE */
     
@@ -323,3 +345,11 @@ body{
                 text-decoration:none;
                 border-radius:4px;
                 }
+
+                .page-hero{
+                    background:#002a43;
+                    color:white;
+                    text-align:center;
+                    padding:50px 20px;
+                    font-family:Oswald;
+                    }
