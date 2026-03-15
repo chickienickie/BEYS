@@ -1,134 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bald Eagle Youth Soccer</title>
 
 <link rel="stylesheet" href="styles.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
+<!-- ALERT BAR -->
+
+<div class="alert-bar">
+⚠ Game updates and weather cancellations will be posted here
+</div>
+
+<!-- NAVBAR -->
+
 <header>
+
 <div class="nav-container">
 
 <div class="logo">
-<img src="beyslogo.png" alt="Bald Eagle Youth Soccer">
+<img src="beyslogo.png">
 </div>
 
-<nav id="navMenu">
-<a href="#">Home</a>
-<a href="#">Programs</a>
-<a href="#">Schedule</a>
-<a href="#">Registration</a>
-<a href="#">Contact</a>
-</nav>
+<nav id="nav">
 
-<div class="hamburger" onclick="toggleMenu()">
-☰
+    <a href="index.html">Home</a>
+    <a href="#programs">Programs</a>
+    <a href="#schedule">Schedule</a>
+    <a href="fields.html">Fields</a>
+    <a href="events.html">Events</a>
+    <a href="board.html">Board</a>
+    <a href="fundraisers.html">Fundraisers</a>
+    
+    <a class="register-nav">Register</a>
+    
+    </nav>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
 </div>
 
-</div>
 </header>
 
+<!-- HERO -->
 
 <section class="hero">
 
-<div class="hero-content">
+<div class="hero-overlay">
+
+<img src="beyslogo.png" class="hero-logo">
 
 <h1>Bald Eagle Youth Soccer</h1>
 
 <p>Building Skills. Building Confidence. Building Community.</p>
 
-<a class="cta-button" href="#">Register Now</a>
+<div class="hero-buttons">
+
+<a class="register-btn">Register Now</a>
+<a class="field-btn">Field Directions</a>
+
+</div>
 
 </div>
 
 </section>
 
+<!-- UPCOMING GAMES -->
+
+<section class="upcoming">
+
+<h2>Upcoming Games</h2>
+
+<div class="scoreboard">
+
+<div class="game">
+<span>U9</span>
+Eagles vs Falcons
+<strong>9:30 AM</strong>
+</div>
+
+<div class="game">
+<span>U11</span>
+Eagles vs Sharks
+<strong>11:00 AM</strong>
+</div>
+
+<div class="game">
+<span>U13</span>
+Eagles vs Bears
+<strong>12:30 PM</strong>
+</div>
+
+</div>
+
+</section>
+
+<!-- ANNOUNCEMENTS -->
 
 <section class="announcements">
 
-<h2>League Announcements</h2>
+<h2>Important Announcements</h2>
 
 <div class="announcement-grid">
 
 <div class="card">
 <h3>Fall Registration Open</h3>
-<p>Register now for the upcoming fall season. Spots fill quickly!</p>
+<p>Register now for the upcoming season.</p>
 </div>
 
 <div class="card">
 <h3>Coaches Needed</h3>
-<p>We are always looking for volunteers to help coach our teams.</p>
+<p>Volunteer coaches help make the league possible.</p>
 </div>
 
 <div class="card">
 <h3>Picture Day</h3>
-<p>Team photos will take place on September 12th at the main field.</p>
+<p>Team photos will be scheduled soon.</p>
 </div>
 
 </div>
 
 </section>
 
+<!-- PROGRAMS -->
 
-<section class="programs">
+<section id="programs" class="programs">
 
 <h2>Our Programs</h2>
 
 <div class="program-grid">
 
-<div class="program">
-<h3>U6</h3>
-<p>Introduction to soccer focusing on fun and fundamentals.</p>
+<div class="program-card">
+<h3>U7</h3>
+<p>Practice Tues & Thurs</p>
+<p>6:00–7:00 PM</p>
+<p>In-house games Thursday nights</p>
 </div>
 
-<div class="program">
-<h3>U8</h3>
-<p>Skill development with small-sided games.</p>
+<div class="program-card">
+<h3>U9</h3>
+<p>Practice Tues & Thurs</p>
+<p>6:00–7:30 PM</p>
+<p>Games Saturdays 9:30 AM</p>
 </div>
 
-<div class="program">
-<h3>U10</h3>
-<p>Building teamwork and improving technical skills.</p>
+<div class="program-card">
+<h3>U11</h3>
+<p>Practice Tues & Thurs</p>
+<p>6:00–7:30 PM</p>
+<p>Games Saturdays 11:00 AM</p>
 </div>
 
-<div class="program">
-<h3>U12+</h3>
-<p>Competitive play with advanced development.</p>
+<div class="program-card">
+<h3>U13</h3>
+<p>Practice Tues & Thurs</p>
+<p>6:00–7:30 PM</p>
+<p>Games Saturdays 12:30 PM</p>
 </div>
 
 </div>
 
 </section>
 
+<!-- SCHEDULE -->
 
-<section class="schedule">
+<section id="schedule" class="schedule">
 
 <h2>Game Schedule</h2>
 
-<p>Schedules will be posted before the start of the season.</p>
+<div class="schedule-controls">
 
-<a class="schedule-button" href="#">View Schedule</a>
+<select id="ageFilter">
+<option value="U9">U9</option>
+<option value="U11">U11</option>
+<option value="U13">U13</option>
+</select>
+
+<select id="teamFilter">
+<option value="all">All Teams</option>
+<option value="BEYS1">BEYS1</option>
+<option value="BEYS2">BEYS2</option>
+<option value="BEYS3">BEYS3</option>
+</select>
+
+</div>
+
+<table>
+
+<thead>
+<tr>
+<th>Date</th>
+<th>Home</th>
+<th>Away</th>
+<th>Field</th>
+</tr>
+</thead>
+
+<tbody id="scheduleTable"></tbody>
+
+</table>
 
 </section>
 
+<!-- FOOTER -->
 
-<footer>
+<footer class="footer">
 
-<p>© 2026 Bald Eagle Youth Soccer</p>
+    <div class="footer-container">
+    
+    <!-- QUICK LINKS -->
+    
+    <div class="footer-column">
+    
+    <h3>Quick Links</h3>
+    
+    <a href="#schedule">Game Schedule</a>
+    <a href="fields.html">Field Directions</a>
+    <a href="events.html">League Events</a>
+    <a href="board.html">Board Members</a>
+    
+    </div>
+    
+    <!-- DOWNLOADS -->
+    
+    <div class="footer-column">
+    
+    <h3>Downloads</h3>
+    
+    <a href="downloads/fundraiser-form.pdf" download>
+    Fundraiser Form
+    </a>
+    
+    <a href="#">Player Medical Form</a>
+    <a href="#">Code of Conduct</a>
+    
+    </div>
+    
+    <!-- CONTACT -->
+    
+    <div class="footer-column">
+    
+    <h3>Contact Us</h3>
+    
+    <p>
+    Bald Eagle Youth Soccer
+    </p>
+    
+    <p>
+    Unionville Soccer Fields<br>
+    P.O. Box 704<br>
+    Milesburg, Pennsylvania 16853
+    </p>
+    
+    <p>
+    Email:
+    </p>
+    
+    <a href="mailto:baldeagleyouthsoccer@gmail.com">
+    baldeagleyouthsoccer@gmail.com
+    </a>
+    
+    </div>
+    
+    </div>
+    
+    <div class="footer-bottom">
+    
+    © 2026 Bald Eagle Youth Soccer
+    
+    </div>
+    
+    </footer>
 
-<p>Follow us on Facebook for updates</p>
-
-</footer>
-
-
+<script src="schedule.js"></script>
 <script src="script.js"></script>
 
 </body>
