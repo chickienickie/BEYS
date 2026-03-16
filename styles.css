@@ -110,56 +110,11 @@ body{
         border-radius:6px;
         text-decoration: none;
     }
-
-    
-    /* UPCOMING GAMES */
-    
-    .upcoming{
-    background:#002a43;
-    color:white;
-    text-align:center;
-    padding:50px 20px;
-    }
-    
-    .scoreboard{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    margin-top:20px;
-    flex-wrap:wrap;
-    }
-    
-    .game{
-    background:#001f33;
-    padding:20px;
-    border-radius:6px;
-    min-width:200px;
-    }
-    
-    /* ANNOUNCEMENTS */
-    
-    .announcements{
-    padding:60px 20px;
-    text-align:center;
-    }
-    
-    .announcement-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    margin-top:30px;
-    }
-    
-    .card{
-    background:white;
-    padding:25px;
-    box-shadow:0 4px 10px rgba(0,0,0,.1);
-    }
     
     /* PROGRAMS */
     
     .programs{
-        background:#d5d49b;
+        background: #002a43;;
         padding:60px 20px;
         text-align:center;
         }
@@ -185,7 +140,7 @@ body{
             }
 
             .programs h2{
-                color:#002a43;
+                color: white;
                 font-family:Oswald;
                 font-size:36px;
                 margin-bottom:20px;
@@ -442,15 +397,16 @@ transition:.3s;
             }
 
             .announcements{
-                background:#0b2a4a;
-                color:white;
+                background: #d5d49b;;
+                color: #002a43;
                 padding:60px 20px;
                 text-align:center;
                 }
                 
                 .announcements h2{
-                font-size:32px;
-                margin-bottom:40px;
+                    font-family:Oswald;
+                    font-size:36px;
+                    margin-bottom:20px;
                 }
                 
                 .announcement-cards{
