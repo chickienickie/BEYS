@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -18,8 +19,21 @@
 <!-- ALERT BAR -->
 
 <div class="alert-bar">
-⚠ Game updates and weather cancellations will be posted here
-</div>
+
+    <div class="ticker">
+    
+    <div class="ticker-text">
+    
+    ⚽ Fall Registration Now Open • 
+    ⚠ Weather cancellations will be posted here • 
+    📢 Coaches still needed for U7 & U9 • 
+    📅 Clash of the Cleats Tournament coming this fall •
+    
+    </div>
+    
+    </div>
+    
+    </div>
 
 <!-- NAVBAR -->
 
@@ -28,20 +42,24 @@
 <div class="nav-container">
 
 <div class="logo">
-<img src="beyslogo.png">
+<img src="beyslogo.png" alt="Bald Eagle Youth Soccer Logo">
 </div>
 
 <nav id="nav">
 
     <a href="index.html">Home</a>
-    <a href="#programs">Programs</a>
-    <a href="#schedule">Schedule</a>
+    <a href="index.html#programs">Programs</a>
+    <a href="schedule.html">Schedule</a>
     <a href="fields.html">Fields</a>
     <a href="events.html">Events</a>
     <a href="board.html">Board</a>
     <a href="fundraisers.html">Fundraisers</a>
     
-    <a class="register-nav">Register</a>
+    <a class="register-nav"
+    href="https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports"
+    target="_blank">
+    Register
+    </a>
     
     </nav>
 
@@ -57,7 +75,7 @@
 
 <div class="hero-overlay">
 
-<img src="beyslogo.png" class="hero-logo">
+<img src="beyslogo.png" class="hero-logo" alt="BEYS Logo">
 
 <h1>Bald Eagle Youth Soccer</h1>
 
@@ -65,8 +83,15 @@
 
 <div class="hero-buttons">
 
-<a class="register-btn">Register Now</a>
-<a class="field-btn">Field Directions</a>
+<a class="register-btn"
+href="https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports"
+target="_blank">
+Register Now
+</a>
+
+<a class="field-btn" href="fields.html">
+Field Directions
+</a>
 
 </div>
 
@@ -74,62 +99,32 @@
 
 </section>
 
-<!-- UPCOMING GAMES -->
-
-<section class="upcoming">
-
-<h2>Upcoming Games</h2>
-
-<div class="scoreboard">
-
-<div class="game">
-<span>U9</span>
-Eagles vs Falcons
-<strong>9:30 AM</strong>
-</div>
-
-<div class="game">
-<span>U11</span>
-Eagles vs Sharks
-<strong>11:00 AM</strong>
-</div>
-
-<div class="game">
-<span>U13</span>
-Eagles vs Bears
-<strong>12:30 PM</strong>
-</div>
-
-</div>
-
-</section>
 
 <!-- ANNOUNCEMENTS -->
 
 <section class="announcements">
 
-<h2>Important Announcements</h2>
-
-<div class="announcement-grid">
-
-<div class="card">
-<h3>Fall Registration Open</h3>
-<p>Register now for the upcoming season.</p>
-</div>
-
-<div class="card">
-<h3>Coaches Needed</h3>
-<p>Volunteer coaches help make the league possible.</p>
-</div>
-
-<div class="card">
-<h3>Picture Day</h3>
-<p>Team photos will be scheduled soon.</p>
-</div>
-
-</div>
-
-</section>
+    <h2>Important Announcements</h2>
+    
+    <div class="announcement-cards">
+    
+    <div class="announcement">
+    <h3>Spring Season Start Date</h3>
+    <p>The Spring season kicks off April 11th. Coaches will be reaching out soon with practice information.</p>
+    </div>
+    
+    <div class="announcement">
+    <h3>Fundraiser Forms</h3>
+    <p>Didn’t receive a fundraiser form? You can download it from the Events page.</p>
+    </div>
+    
+    <div class="announcement">
+    <h3>Field Clean Up Day</h3>
+    <p>We will be hosting a field clean up day before the season starts. More details coming soon!</p>
+    </div>
+    
+    </div>
+    </section>
 
 <!-- PROGRAMS -->
 
@@ -171,115 +166,94 @@ Eagles vs Bears
 
 </section>
 
-<!-- SCHEDULE -->
-
-<section id="schedule" class="schedule">
-
-<h2>Game Schedule</h2>
-
-<div class="schedule-controls">
-
-<select id="ageFilter">
-<option value="U9">U9</option>
-<option value="U11">U11</option>
-<option value="U13">U13</option>
-</select>
-
-<select id="teamFilter">
-<option value="all">All Teams</option>
-<option value="BEYS1">BEYS1</option>
-<option value="BEYS2">BEYS2</option>
-<option value="BEYS3">BEYS3</option>
-</select>
-
-</div>
-
-<table>
-
-<thead>
-<tr>
-<th>Date</th>
-<th>Home</th>
-<th>Away</th>
-<th>Field</th>
-</tr>
-</thead>
-
-<tbody id="scheduleTable"></tbody>
-
-</table>
-
-</section>
 
 <!-- FOOTER -->
 
 <footer class="footer">
 
-    <div class="footer-container">
-    
-    <!-- QUICK LINKS -->
-    
-    <div class="footer-column">
-    
-    <h3>Quick Links</h3>
-    
-    <a href="#schedule">Game Schedule</a>
-    <a href="fields.html">Field Directions</a>
-    <a href="events.html">League Events</a>
-    <a href="board.html">Board Members</a>
-    
-    </div>
-    
-    <!-- DOWNLOADS -->
-    
-    <div class="footer-column">
-    
-    <h3>Downloads</h3>
-    
-    <a href="downloads/fundraiser-form.pdf" download>
-    Fundraiser Form
-    </a>
-    
-    <a href="#">Player Medical Form</a>
-    <a href="#">Code of Conduct</a>
-    
-    </div>
-    
-    <!-- CONTACT -->
-    
-    <div class="footer-column">
-    
-    <h3>Contact Us</h3>
-    
-    <p>
-    Bald Eagle Youth Soccer
-    </p>
-    
-    <p>
-    Unionville Soccer Fields<br>
-    P.O. Box 704<br>
-    Milesburg, Pennsylvania 16853
-    </p>
-    
-    <p>
-    Email:
-    </p>
-    
-    <a href="mailto:baldeagleyouthsoccer@gmail.com">
-    baldeagleyouthsoccer@gmail.com
-    </a>
-    
-    </div>
-    
-    </div>
-    
-    <div class="footer-bottom">
-    
-    © 2026 Bald Eagle Youth Soccer
-    
-    </div>
-    
-    </footer>
+<div class="footer-container">
+
+<!-- QUICK LINKS -->
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<a href="#schedule">Game Schedule</a>
+<a href="fields.html">Field Directions</a>
+<a href="events.html">League Events</a>
+<a href="board.html">Board Members</a>
+
+</div>
+
+<!-- DOWNLOADS -->
+
+<div class="footer-column">
+
+<h3>Downloads</h3>
+
+<a href="downloads/fundraiser-form.pdf" download>
+Fundraiser Form
+</a>
+
+<a href="#">Player Medical Form</a>
+<a href="#">Code of Conduct</a>
+
+</div>
+
+<!-- CONNECT -->
+
+<div class="footer-column">
+
+<h3>Stay Connected</h3>
+
+<p>
+<a href="https://sportsyou.app" target="_blank">
+Download the SportsYou App
+</a>
+</p>
+
+<p><strong>Team Code:</strong> Q46K-3WJU</p>
+
+<p>
+<a href="https://www.facebook.com/BaldEagleYouthSoccer" target="_blank">
+Follow us on Facebook
+</a>
+</p>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="footer-column">
+
+<h3>Contact Us</h3>
+
+<p>Bald Eagle Youth Soccer</p>
+
+<p>
+Unionville Soccer Fields<br>
+P.O. Box 704<br>
+Milesburg, Pennsylvania 16853
+</p>
+
+<p>Email:</p>
+
+<a href="mailto:baldeagleyouthsoccer@gmail.com">
+baldeagleyouthsoccer@gmail.com
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 Bald Eagle Youth Soccer
+
+</div>
+
+</footer>
 
 <script src="schedule.js"></script>
 <script src="script.js"></script>
