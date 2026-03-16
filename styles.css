@@ -139,6 +139,7 @@ body{
         .program-card h3{
             color:#002a43;
             font-family:Oswald;
+            font-size: 30px;
             }
 
             .programs h2{
@@ -146,6 +147,10 @@ body{
                 font-family:Oswald;
                 font-size:36px;
                 margin-bottom:20px;
+                }
+                .games {
+                    font-weight: bold;
+                    color: #002a43;
                 }
     
     /* SCHEDULE */
