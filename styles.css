@@ -51,6 +51,10 @@ body{
     padding:8px 16px;
     border-radius:4px;
     }
+
+    .register-nav:hover {
+        color: white;
+    }
     
     .menu{
     display:none;
