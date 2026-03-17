@@ -1,6 +1,6 @@
 body{
     margin:0;
-    font-family:Inter;
+    font-family:Oswald;
     color:#333;
     }
     
@@ -190,6 +190,7 @@ body{
     .footer{
         background:#002a43;
         color:white;
+        font-family:Oswald;
         
         }
         
@@ -257,12 +258,17 @@ body{
     .hero h1{
     font-size:36px;
     }
+
+    .footer {
+        text-align: center;
+    }
     
     }
 
     .fields{
         padding:60px 20px;
         text-align:center;
+        font-family:Oswald;
         }
         
         .field-grid{
@@ -290,6 +296,7 @@ body{
         .board{
             padding:60px 20px;
             text-align:center;
+            font-family:Oswald;
             }
             
             .board-grid{
@@ -338,7 +345,7 @@ transition:.3s;
 .alert-bar{
     background:#d5d49b;
     color:#002a43;
-    font-family:Inter;
+    font-family:Oswald;
     font-weight:600;
     overflow:hidden;
     white-space:nowrap;
@@ -407,6 +414,7 @@ transition:.3s;
                 background: #d5d49b;;
                 color: #002a43;
                 padding:60px 20px;
+                font-family:Oswald;
                 text-align:center;
                 }
                 
@@ -441,6 +449,7 @@ transition:.3s;
                     text-align:center;
                     padding:60px 20px;
                     background:#f5f5f5;
+                    font-family:Oswald;
                     }
                     
                     .schedule-section{
@@ -451,6 +460,7 @@ transition:.3s;
                     
                     .schedule-controls{
                     display:flex;
+                    font-family:Oswald;
                     flex-wrap:wrap;
                     gap:15px;
                     justify-content:center;
@@ -466,6 +476,7 @@ transition:.3s;
                     .schedule-table table{
                     width:100%;
                     border-collapse:collapse;
+                    font-family:Oswald;
                     }
                     
                     .schedule-table th,
@@ -494,6 +505,7 @@ transition:.3s;
                     
                     .print-btn:hover{
                     background:#a88c00;
+                    font-family:Oswald;
                     }
 
                     /* SCHEDULE PAGE */
@@ -511,28 +523,33 @@ transition:.3s;
     justify-content:center;
     flex-wrap:wrap;
     gap:12px;
+    font-family:Oswald;
     }
     
     .schedule-controls select{
     padding:10px;
     font-size:16px;
+    font-family:Oswald;
     }
     
     .schedule-table{
     width:100%;
     border-collapse:collapse;
     margin-top:20px;
+    font-family:Oswald;
     }
     
     .schedule-table th{
     background:#0b2a4a;
     color:white;
     padding:12px;
+    font-family:Oswald;
     }
     
     .schedule-table td{
     padding:10px;
     border-bottom:1px solid #ddd;
+    font-family:Oswald;
     }
     
     .print-btn{
