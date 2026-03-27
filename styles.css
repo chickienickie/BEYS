@@ -116,6 +116,39 @@ body{
         text-decoration: none;
         font-family:Oswald;
     }
+
+    .field-map{
+        text-align:center;
+        padding:60px 20px;
+        background:#f8f8f8;
+        }
+        
+        .field-map h2{
+        font-family:'Oswald', sans-serif;
+        font-size:36px;
+        margin-bottom:10px;
+        }
+        
+        .map-subtext{
+        font-family:'Inter', sans-serif;
+        color:#555;
+        margin-bottom:30px;
+        }
+        
+        .map-container{
+        max-width:900px;
+        margin:auto;
+        background:white;
+        padding:15px;
+        border-radius:10px;
+        box-shadow:0 6px 20px rgba(0,0,0,0.08);
+        }
+        
+        .map-container img{
+        width:100%;
+        height:auto;
+        border-radius:8px;
+        }
     
     /* PROGRAMS */
     
