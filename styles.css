@@ -65,31 +65,42 @@ body{
     /* HERO */
     
     .hero{
-    background:url("images/soccerfield.png") center/cover no-repeat;
-    height:520px;
-    position:relative;
-    }
+        background:url("images/soccerfield.png") center/cover no-repeat;
+        min-height:75vh;
+        position:relative;
+        }
     
     .hero-overlay{
-    background:rgba(0,0,0,.5);
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    text-align:center;
+       
+            background:rgba(0,0,0,.5);
+            height:100%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            color:white;
+            text-align:center;
+            padding-top:120px;
+            padding-bottom:80px;
     }
     
     .hero-logo{
-    height:120px;
-    margin-bottom:20px;
+        height:110px;
+        margin-bottom:15px;
     }
     
     .hero h1{
-    font-family:Oswald;
-    font-size:50px;
-    }
+        font-family:Oswald;
+        font-size:50px;
+        margin-bottom:8px;
+        }
+        
+        .hero p{
+        margin-top:6px;
+        margin-bottom:22px;
+        font-size:16px;
+        letter-spacing:.5px;
+        }
     
     .hero-buttons{
     margin-top:20px;
@@ -149,13 +160,27 @@ body{
         height:auto;
         border-radius:8px;
         }
+
+        .announcement-icon{
+            width:50px;
+            display:block;
+            margin:0 auto 12px auto;
+            }
+            
+            .announcement{
+            background: white;
+            padding:50px 20px 70px 20px;
+            text-align:center;
+            margin-top:-6px;
+            }
     
     /* PROGRAMS */
     
     .programs{
-        background: #002a43;;
-        padding:60px 20px;
-        text-align:center;
+        background:#002a43;
+padding:50px 20px 70px 20px;
+text-align:center;
+margin-top:-6px;
         }
     
     .program-grid{
@@ -180,10 +205,10 @@ body{
             }
 
             .programs h2{
-                color: white;
+                color:white;
                 font-family:Oswald;
                 font-size:36px;
-                margin-bottom:20px;
+                margin:0 0 30px 0;
                 }
                 .games {
                     font-weight: bold;
@@ -192,37 +217,38 @@ body{
     
     /* SCHEDULE */
     
-    .schedule{
-    padding:60px 20px;
-    text-align:center;
-    }
-    
-    .schedule-controls{
-    margin-bottom:20px;
-    }
-    
-    select{
-    padding:8px;
-    margin:5px;
-    }
-    
-    table{
-    width:100%;
-    border-collapse:collapse;
-    max-width:900px;
-    margin:auto;
-    }
-    
-    th{
-    background:#002a43;
-    color:white;
-    padding:12px;
-    }
-    
-    td{
-    padding:10px;
-    border-bottom:1px solid #ddd;
-    }
+  /* Home / Away rows */
+.home-row {
+    border-left: 4px solid #d5d49b;
+    background: rgba(213, 212, 155, 0.15);
+  }
+  
+  .away-row {
+    border-left: 4px solid #002a43;
+    background: rgba(0, 42, 67, 0.05);
+  }
+  
+  /* Field link */
+  .field-link {
+    color: #002a43;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  /* Calendar button */
+  .calendar-btn-small {
+    display: inline-block;
+    padding: 6px 10px;
+    background: #002a43;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .calendar-btn-small:hover {
+    background: #001f32;
+  }
     
     .footer{
         background:#002a43;
@@ -268,6 +294,155 @@ body{
             font-size:14px;
             font-weight:600;
             }
+
+            /* SPONSOR PAGE */
+
+
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:0 20px;
+    }
+    
+    
+    /* SPONSOR INTRO */
+    
+    .sponsor-intro{
+    padding:70px 20px;
+    text-align:center;
+    background:white;
+    }
+    
+    .sponsor-intro h2{
+    font-family:'Oswald', sans-serif;
+    font-size:34px;
+    color:#002a43;
+    margin-bottom:20px;
+    }
+    
+    .sponsor-intro p{
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    color:#444;
+    margin-bottom:16px;
+    max-width:750px;
+    margin-left:auto;
+    margin-right:auto;
+    }
+    
+    .sponsor-email{
+    display:inline-block;
+    margin-top:10px;
+    font-weight:600;
+    font-family:'Inter', sans-serif;
+    color:#002a43;
+    text-decoration:none;
+    border-bottom:2px solid #d5d49b;
+    padding-bottom:3px;
+    transition:all .25s ease;
+    }
+    
+    .sponsor-email:hover{
+    color:#000;
+    border-color:#002a43;
+    }
+    
+    
+    /* SPONSOR NEWS */
+    
+    .sponsor-news{
+    background:#f5f7fa;
+    padding:70px 20px;
+    text-align:center;
+    }
+    
+    .sponsor-news h2{
+    font-family:'Oswald', sans-serif;
+    font-size:32px;
+    color:#002a43;
+    margin-bottom:20px;
+    position:relative;
+    }
+    
+    .sponsor-news h2::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:3px;
+    background:#d5d49b;
+    margin:12px auto 0 auto;
+    }
+    
+    .sponsor-news p{
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    color:#444;
+    max-width:750px;
+    margin:15px auto;
+    }
+    
+    
+    /* SPONSOR GRID */
+    
+    .sponsor-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:22px;
+    margin-top:40px;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+    }
+    
+    
+    /* SPONSOR CARD */
+    
+    .sponsor-card{
+    background:white;
+    padding:18px;
+    border-radius:8px;
+    border-top:4px solid #d5d49b;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    font-family:'Inter', sans-serif;
+    font-size:15px;
+    font-weight:500;
+    color:#333;
+    transition:all .25s ease;
+    }
+    
+    .sponsor-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    }
+    
+    
+    /* VOLUNTEER THANK YOU */
+    
+    .volunteer-thanks{
+    margin-top:40px;
+    font-family:'Inter', sans-serif;
+    font-style:italic;
+    color:#666;
+    font-size:15px;
+    }
+    
+    
+    /* RESPONSIVE */
+    
+    @media (max-width:700px){
+    
+    .sponsor-intro h2{
+    font-size:28px;
+    }
+    
+    .sponsor-news h2{
+    font-size:26px;
+    }
+    
+    }
     
     /* MOBILE */
     
@@ -302,79 +477,179 @@ body{
     
     }
 
-    .fields{
-        padding:60px 20px;
-        text-align:center;
-        font-family:Oswald;
-        }
-        
-        .field-grid{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-        gap:25px;
-        margin-top:30px;
-        }
-        
-        .field-card{
-        background:white;
-        padding:25px;
-        box-shadow:0 4px 10px rgba(0,0,0,.1);
-        }
-        
-        .field-card a{
-        display:inline-block;
-        margin-top:10px;
-        background:#002a43;
-        color:white;
-        padding:8px 14px;
-        text-decoration:none;
-        }
+    /* ======================== */
+/* FIELDS PAGE */
+/* ======================== */
 
-        .board{
-            padding:60px 20px;
-            text-align:center;
-            font-family:Oswald;
-            }
-            
-            .board-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-            gap:25px;
-            margin-top:30px;
-            }
-            
-            .board-card{
-            background:white;
-            padding:25px;
-            box-shadow:0 4px 10px rgba(0,0,0,.1);
-            }
+.field-map-section,
+.fields-section {
+    padding: 60px 20px;
+    background: #f5f7fa;
+}
 
-            .download-btn{
-                display:inline-block;
-                margin-top:10px;
-                background:#002a43;
-                color:white;
-                padding:10px 16px;
-                text-decoration:none;
-                border-radius:4px;
-                }
+.field-map-section h2,
+.fields-section h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #002a43;
+    font-size: 32px;
+    margin-bottom: 20px;
+    position: relative;
+}
 
-                .page-hero{
-                    background:#002a43;
-                    color:white;
-                    text-align:center;
-                    padding:50px 20px;
-                    font-family:Oswald;
-                    }
+.field-map-section h2::after,
+.fields-section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #d5d49b;
+    margin: 10px 0 0 0;
+}
 
-                    .card:hover,
-.board-card:hover,
-.field-card:hover{
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
 
-transform:translateY(-6px);
-box-shadow:0 10px 20px rgba(0,0,0,.15);
-transition:.3s;
+.map-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
+.map-subtext {
+    font-family: 'Inter', sans-serif;
+    color: #444;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.field-card {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.field-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.field-card h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #002a43;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.field-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.field-card a {
+    color: #002a43;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.field-card a:hover {
+    color: #d5d49b;
+}
+
+        /* ======================== */
+/* BOARD PAGE */
+/* ======================== */
+
+.board-section,
+.contact-section {
+    padding: 60px 20px;
+    background: #f5f7fa;
+}
+
+.board-section h2,
+.contact-section h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #002a43;
+    font-size: 32px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.board-section h2::after,
+.contact-section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #d5d49b;
+    margin: 10px 0 0 0;
+}
+
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.board-card {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.board-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.board-card h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #002a43;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.board-card p {
+    font-family: 'Inter', sans-serif;
+    color: #444;
+    font-size: 16px;
+}
+
+.contact-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.contact-section a {
+    color: #002a43;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-section a:hover {
+    color: #d5d49b;
 }
 
 /* ALERT BAR */
@@ -450,15 +725,18 @@ transition:.3s;
             .announcements{
                 background: #d5d49b;;
                 color: #002a43;
-                padding:60px 20px;
-                font-family:Oswald;
-                text-align:center;
+                padding:40px 20px 60px 20px;
+        text-align:center;
+        margin-top:-5px;
                 }
                 
                 .announcements h2{
                     font-family:Oswald;
                     font-size:36px;
-                    margin-bottom:20px;
+                    padding:50px 20px 70px 20px;
+text-align:center;
+margin-top:-6px;
+        
                 }
                 
                 .announcement-cards{
@@ -601,3 +879,161 @@ transition:.3s;
     .print-btn:hover{
     background:#a78c00;
     }
+
+    /* ======================== */
+/* COACH RESOURCES PAGE */
+/* ======================== */
+
+.coach-section{
+    padding:60px 20px;
+    background:white;
+    text-align:left;
+    }
+    
+    .coach-section:nth-of-type(even){
+    background:#f5f7fa;
+    }
+    
+    .coach-section h2{
+    font-family:'Oswald', sans-serif;
+    color:#002a43;
+    font-size:32px;
+    margin-bottom:20px;
+    position:relative;
+    }
+    
+    .coach-section h2::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:3px;
+    background:#d5d49b;
+    margin:10px 0 0 0;
+    }
+    
+    .coach-section h3{
+    font-family:'Oswald', sans-serif;
+    color:#002a43;
+    font-size:22px;
+    margin-top:25px;
+    margin-bottom:10px;
+    }
+    
+    .coach-section p{
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    color:#444;
+    margin-bottom:15px;
+    max-width:800px;
+    }
+    
+    .coach-list{
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    color:#444;
+    list-style-type:disc;
+    padding-left:20px;
+    margin-bottom:20px;
+    }
+    
+    .resource-link{
+    display:inline-block;
+    margin:10px 10px 0 0;
+    padding:8px 15px;
+    background:#002a43;
+    color:white;
+    border-radius:6px;
+    text-decoration:none;
+    font-family:'Inter', sans-serif;
+    font-weight:500;
+    transition:all .25s ease;
+    }
+    
+    .resource-link:hover{
+    background:#d5d49b;
+    color:#002a43;
+    }
+
+    /* ======================== */
+/* FUNDRAISERS PAGE */
+/* ======================== */
+
+.fundraisers-section{
+    padding:60px 20px;
+    background:#f5f7fa;
+}
+
+.fundraisers-section h2{
+    font-family:'Oswald', sans-serif;
+    color:#002a43;
+    font-size:32px;
+    margin-bottom:20px;
+    position:relative;
+}
+
+.fundraisers-section h2::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:3px;
+    background:#d5d49b;
+    margin:10px 0 0 0;
+}
+
+.fundraiser-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:30px;
+}
+
+.fundraiser-card{
+    background:white;
+    border-radius:8px;
+    padding:25px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    transition:all 0.3s ease;
+}
+
+.fundraiser-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+.fundraiser-card h3{
+    font-family:'Oswald', sans-serif;
+    color:#002a43;
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.fundraiser-card p{
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    color:#444;
+    margin-bottom:10px;
+}
+
+.fundraiser-img{
+    width:100px;
+    display:block;
+    margin:10px 0;
+}
+
+.download-btn{
+    display:inline-block;
+    padding:8px 15px;
+    background:#002a43;
+    color:white;
+    border-radius:6px;
+    text-decoration:none;
+    font-family:'Inter', sans-serif;
+    font-weight:500;
+    transition:all .25s ease;
+}
+
+.download-btn:hover{
+    background:#d5d49b;
+    color:#002a43;
+}
