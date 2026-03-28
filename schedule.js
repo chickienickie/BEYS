@@ -134,24 +134,45 @@ const scheduleBody = document.getElementById("scheduleBody");
 
 // ⏰ GET GAME TIME
 function getGameTime(game, group) {
+  // Check if field has an explicit time like "AT 6PM" or "AT 12:30PM"
   const match = game.field.match(/AT (\d+)(?::(\d+))?\s?(AM|PM)/i);
-
   if (match) {
     let hour = parseInt(match[1]);
     const min = match[2] || "00";
     const period = match[3].toUpperCase();
-
     if (period === "PM" && hour !== 12) hour += 12;
     if (period === "AM" && hour === 12) hour = 0;
-
     return `${hour.toString().padStart(2, "0")}:${min}`;
   }
 
-  if (group === "U9") return "09:30";
-  if (group === "U11") return "11:00";
-  if (group === "U13") return "12:30";
+  // Exceptions for U7: two Saturday games at 12:30pm
+  if (group === "U7" && (game.date === "Apr 25" || game.date === "May 16")) {
+    return "12:30";
+  }
 
-  return "10:00";
+  // Exceptions for U11: Thursday night games at 6:00pm
+  if (group === "U11" && game.field.toUpperCase().includes("AT 6PM")) {
+    return "18:00";
+  }
+
+  // Exceptions for U13: 6pm games
+  if (group === "U13" && game.field.toUpperCase().includes("AT 6PM")) {
+    return "18:00";
+  }
+
+  // Default times per age group
+  switch (group) {
+    case "U7":
+      return "18:00"; // 6:00pm
+    case "U9":
+      return "09:30"; // 9:30am
+    case "U11":
+      return "11:00"; // 11:00am
+    case "U13":
+      return "12:30"; // 12:30pm
+    default:
+      return "10:00";
+  }
 }
 
 // 📅 CALENDAR LINK
@@ -162,52 +183,52 @@ function createCalendarLink(game, team, opponent, isHome, group) {
   const date = `${year}${months[m]}${d.padStart(2, "0")}`;
 
   const startTime = getGameTime(game, group);
-
-  // ⏱️ Duration (customizable)
-  const duration = group === "U7" ? 45 : 60;
-
+  const duration = group === "U7" ? 60 : 60; // U7 games 1hr, adjust if needed
   const [startHour, startMin] = startTime.split(":").map(Number);
 
-  const startDate = new Date(
-    parseInt(year),
-    parseInt(months[m]) - 1, // month is 0-based
-    parseInt(d),
-    startHour,
-    startMin
-  );
-
+  // Local start and end times
+  const startDate = new Date(year, parseInt(months[m]) - 1, parseInt(d), startHour, startMin);
   const endDate = new Date(startDate.getTime() + duration * 60 * 1000);
 
-  const format = (dt) =>
-    dt.toISOString().replace(/[-:]/g, "").split(".")[0];
+  const formatForCalendar = (dt) => {
+    const pad = (n) => n.toString().padStart(2, "0");
+    return (
+      dt.getFullYear() +
+      pad(dt.getMonth() + 1) +
+      pad(dt.getDate()) +
+      "T" +
+      pad(dt.getHours()) +
+      pad(dt.getMinutes()) +
+      "00" // seconds
+    );
+  };
 
-  const start = format(startDate);
-  const end = format(endDate);
+  const start = formatForCalendar(startDate);
+  const end = formatForCalendar(endDate);
 
-  // 📍 Clean field + address
   const cleanField = game.field.split(" AT ")[0];
   const address = fieldAddresses[cleanField] || game.field;
 
-  // 👨‍🏫 Coaches
   const teamCoach = coaches[group][team] || "";
   const opponentCoach = opponent.startsWith("BEYS")
     ? coaches[group][opponent] || ""
     : "";
 
-  // 📝 Title + description
   const title = `${team} vs ${opponent} (${isHome ? "HOME" : "AWAY"})`;
 
   const details = `
-  ${team} - ${teamCoach}
-  ${opponent}${opponentCoach ? " - " + opponentCoach : ""}
-  
-  Field: ${cleanField}
-  Address: ${address}
-    `.trim();
+${team} - ${teamCoach}
+${opponent}${opponentCoach ? " - " + opponentCoach : ""}
 
+Field: ${cleanField}
+Address: ${address}
+  `.trim();
+
+  // Add TZID for Eastern Time
   return `https://www.google.com/calendar/render?action=TEMPLATE` +
     `&text=${encodeURIComponent(title)}` +
     `&dates=${start}/${end}` +
+    `&ctz=America/New_York` +
     `&location=${encodeURIComponent(address)}` +
     `&details=${encodeURIComponent(details)}`;
 }
