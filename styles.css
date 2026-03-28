@@ -873,43 +873,143 @@ margin-top:-6px;
             
             }
 
-            .announcements{
-                background: #d5d49b;;
-                color: #002a43;
-                padding:40px 20px 60px 20px;
-        text-align:center;
-        margin-top:-5px;
-                }
-                
-                .announcements h2{
-                    font-family:Oswald;
-                    font-size:36px;
-                    padding:50px 20px 70px 20px;
-text-align:center;
-margin-top:-6px;
-        
-                }
-                
-                .announcement-cards{
-                display:grid;
-                grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-                gap:25px;
-                max-width:1100px;
-                margin:auto;
-                }
-                
-                .announcement{
-                background:white;
-                color:#222;
-                padding:25px;
-                border-radius:8px;
-                box-shadow:0 4px 10px rgba(0,0,0,.1);
-                }
-                
-                .announcement h3{
-                color:#0b2a4a;
-                margin-bottom:10px;
-                }
+        /* =========================
+   ANNOUNCEMENTS SECTION
+========================= */
+
+.announcements {
+    padding: 60px 20px;
+    background: #f8f9fb;
+    text-align: center;
+  }
+  
+  .announcements h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  /* GRID LAYOUT */
+  .announcement-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 in a row */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+  }
+  
+  /* CARD STYLE (MATCH PROGRAMS) */
+  .announcement {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    text-align: left;
+    transition: all 0.25s ease;
+    border-top: 4px solid transparent;
+    position: relative;
+  }
+  
+  /* HOVER EFFECT */
+  .announcement:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    border-top: 4px solid #caa64b; /* subtle gold */
+  }
+  
+  /* ICON */
+  .announcement-icon {
+    width: 40px;
+    margin-bottom: 10px;
+    opacity: 0.85;
+  }
+  
+  /* TAG LABEL */
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #caa64b;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  /* HEADINGS */
+  .announcement h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #111;
+  }
+  
+  /* TEXT */
+  .announcement p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  /* LINKS */
+  .announcement a {
+    color: #caa64b;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .announcement a:hover {
+    text-decoration: underline;
+  }
+  
+  /* BUTTON (MATCH CLEAN STYLE) */
+  .primary-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: #111;
+    color: #fff !important;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  /* BUTTON HOVER */
+  .primary-btn:hover {
+    background: #caa64b;
+    color: #111 !important;
+  }
+  /* Tablet */
+@media (max-width: 1000px) {
+    .announcement-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    .announcement-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* MOBILE TWEAKS */
+  @media (max-width: 600px) {
+    .announcements {
+      padding: 40px 15px;
+    }
+  
+    .announcement {
+      padding: 20px;
+    }
+  
+    .announcements h2 {
+      font-size: 1.6rem;
+    }
+  }
 
                 .page-header{
                     text-align:center;
