@@ -1183,3 +1183,20 @@ margin-top:-6px;
   .schedule-table a:hover {
     text-decoration: underline;
   }
+
+  .primary-btn {
+    display: inline-block;
+    background-color: #002a43; /* your blue */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+  }
+  
+  .primary-btn:hover {
+    background-color: #d5d49b; /* your gold */
+    color: #002a43;
+  }
