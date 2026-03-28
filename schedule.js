@@ -78,7 +78,7 @@ const schedules = {
   
   {date:"May 14",home:"CSA",away:"BEYS1",field:"CSA AT 6PM"},
   
-  {date:"May 16",home:"BEYS1",away:"BEYS2",field:"Under the lights at Alumni Stadium AT 6PM"},
+  {date:"May 16",home:"BEYS1",away:"BEYS2",field:"Under the lights at BEA HS Alumni Stadium AT 6PM"},
   
   {date:"May 30",home:"BEYS2",away:"pvys1",field:"BEYS1"},
   {date:"May 30",home:"BSA2",away:"BEYS2",field:"BSA1"},
@@ -197,8 +197,9 @@ const schedules = {
   
   if (game.home === team || game.away === team) {
   
-  const isHome = game.home === team;
-  const opponent = isHome ? game.away : game.home;
+    const cleanField = game.field.toUpperCase();
+    const isHome = cleanField.includes("BEYS");
+    const opponent = game.home === team ? game.away : game.home;
   
   const teamCoach = coaches[group][team] || "";
   const opponentCoach = opponent.startsWith("BEYS") ? coaches[group][opponent] || "" : "";
@@ -210,12 +211,32 @@ const schedules = {
   row.className = isHome ? "home-row" : "away-row";
   
   row.innerHTML = `
-  <td>${game.date}</td>
-  <td><strong>${team}</strong><br><small>${teamCoach}</small></td>
-  <td>${opponent}${opponentCoach ? `<br><small>${opponentCoach}</small>` : ""}</td>
-  <td><a href="${mapsLink}" target="_blank" class="field-link">${game.field}</a></td>
-  <td><a href="${calendarLink}" target="_blank" class="calendar-btn-small">📅</a></td>
-  `;
+<td>${game.date}</td>
+
+<td>
+<strong>${team}</strong><br>
+<small>${teamCoach}</small>
+</td>
+
+<td>
+${opponent}
+${opponentCoach ? `<br><small>${opponentCoach}</small>` : ""}
+</td>
+
+<td class="${isHome ? "home-text" : "away-text"}">
+${isHome ? "HOME" : "AWAY"}
+</td>
+
+<td>
+<a href="${mapsLink}" target="_blank" class="field-link">
+${game.field}
+</a>
+</td>
+
+<td>
+<a href="${calendarLink}" target="_blank" class="calendar-btn-small">📅</a>
+</td>
+`;
   
   scheduleBody.appendChild(row);
   

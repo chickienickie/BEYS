@@ -218,16 +218,27 @@ margin-top:-6px;
     /* SCHEDULE */
     
   /* Home / Away rows */
+/* HOME = GOLD (subtle highlight) */
 .home-row {
-    border-left: 4px solid #d5d49b;
-    background: rgba(213, 212, 155, 0.15);
+    background-color: rgba(213, 212, 155, 0.2); /* light gold */
+    border-left: 5px solid #d5d49b;
   }
   
+  /* AWAY = BLUE (very light tint) */
   .away-row {
-    border-left: 4px solid #002a43;
-    background: rgba(0, 42, 67, 0.05);
+    background-color: rgba(0, 42, 67, 0.06); /* very light blue */
+    border-left: 5px solid #002a43;
   }
   
+  .home-text {
+    color: #d5d49b;
+    font-weight: bold;
+  }
+  
+  .away-text {
+    color: #002a43;
+    font-weight: bold;
+  }
   /* Field link */
   .field-link {
     color: #002a43;
