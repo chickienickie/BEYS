@@ -348,6 +348,8 @@ margin-top:-6px;
         ul {
             list-style: none;
           }
+
+            /* FOOTER CSS */
     .footer{
         background:#002a43;
         color:white;
@@ -392,7 +394,20 @@ margin-top:-6px;
             font-size:14px;
             font-weight:600;
             }
-
+            .footer a i {
+                margin-right:8px;
+                width:18px;
+                }
+                
+                .footer a {
+                display:block;
+                margin:6px 0;
+                text-decoration:none;
+                }
+                
+                .footer a:hover {
+                opacity:0.8;
+                }
             /* SPONSOR PAGE */
 
 
