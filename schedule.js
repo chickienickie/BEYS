@@ -235,7 +235,7 @@ U7: [
   if(g.away.startsWith("BEYS")) teams.add(g.away);
   });
   
-  teams.forEach(team=>{
+  [...teams].sort().forEach(team=>{
   const option = document.createElement("option");
   option.value = team;
   option.textContent = `${team} - ${coaches[group][team] || ""}`;
