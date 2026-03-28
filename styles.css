@@ -32,12 +32,28 @@ a {
     }
 
     nav a {
-        color: white;
+        color: white, 
         }
         
         nav a:visited {
-        color: white;
+            color: white;
         }
+
+        nav a.register-nav {
+            background: #d5d49b;
+            color: #002a43;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        nav a.register-nav:hover {
+            color: white;
+        }
+        
+        nav a.register-nav:visited {
+            color: #002a43;
+        }
+
 
         /* Buttons should keep their original color */
 .hero-buttons a,
