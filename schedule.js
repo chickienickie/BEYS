@@ -104,7 +104,7 @@ const schedules = {
 // COACHES
 const coaches = {
   U7: { BEYS1: "Coach Witherite", BEYS2: "Coach Day" },
-  U9: { BEYS1: "Coach Wible", BEYS2: "Coach Lowe", BEYS3: "Coach TBD" },
+  U9: { BEYS1: "Coach Wible", BEYS2: "Coach Lowe", BEYS3: "Coach DeChow" },
   U11: { BEYS1: "Coach Potter", BEYS2: "Coach Hackett/Quick", BEYS3: "Coach Romine/Lopes" },
   U13: { BEYS1: "Coach Gassner", BEYS2: "Coach Tice/Harter" }
 };
@@ -299,8 +299,10 @@ teamSelect.addEventListener("change", () => {
       </td>
     
       <td>
-      <a href="${calendarLink}" target="_blank" class="calendar-btn-small">📅</a>
-      </td>
+      <a href="${calendarLink}" target="_blank" class="calendar-btn-small">
+        <img src="calendaricon.png" alt="Add to Calendar">
+      </a>
+    </td>
       `;
 
       scheduleBody.appendChild(row);
