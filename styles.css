@@ -105,6 +105,10 @@ body{
     .hero-buttons{
     margin-top:20px;
     }
+
+    .page-hero {
+        text-align: center;
+    }
     
     .register-btn{
     background:#d5d49b;
@@ -215,52 +219,135 @@ margin-top:-6px;
                     color: #002a43;
                 }
     
-    /* SCHEDULE */
+   /* ======================== */
+/* SCHEDULE PAGE */
+/* ======================== */
+
+.schedule-section {
+    padding: 60px 20px;
+    background: #f5f7fa;
+    }
     
-  /* Home / Away rows */
-/* HOME = GOLD (subtle highlight) */
-.home-row {
-    background-color: rgba(213, 212, 155, 0.2); /* light gold */
-    border-left: 5px solid #d5d49b;
-  }
-  
-  /* AWAY = BLUE (very light tint) */
-  .away-row {
-    background-color: rgba(0, 42, 67, 0.06); /* very light blue */
-    border-left: 5px solid #002a43;
-  }
-  
-  .home-text {
-    color: #d5d49b;
-    font-weight: bold;
-  }
-  
-  .away-text {
+    .container {
+    max-width: 1100px;
+    margin: auto;
+    }
+    
+    .schedule-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
     color: #002a43;
-    font-weight: bold;
-  }
-  /* Field link */
-  .field-link {
-    color: #002a43;
-    text-decoration: underline;
-    font-weight: 500;
-  }
-  
-  /* Calendar button */
-  .calendar-btn-small {
-    display: inline-block;
-    padding: 6px 10px;
+    margin-bottom: 25px;
+    position: relative;
+    }
+    
+    .schedule-section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #d5d49b;
+    margin-top: 10px;
+    }
+    
+    /* Controls */
+    
+    .schedule-controls {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    }
+    
+    .schedule-controls select {
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+    
+    .print-btn {
     background: #002a43;
     color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .calendar-btn-small:hover {
-    background: #001f32;
-  }
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: 0.3s;
+    }
     
+    .print-btn:hover {
+    background: #d5d49b;
+    color: #002a43;
+    }
+    
+    /* Table */
+    
+    .schedule-table-container {
+    overflow-x: auto;
+    }
+    
+    .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    }
+    
+    .schedule-table th {
+    background: #002a43;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-family: 'Oswald', sans-serif;
+    }
+    
+    .schedule-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-family: 'Inter', sans-serif;
+    }
+    
+    .schedule-table tr:hover {
+    background: #f1f4f7;
+    }
+
+    .schedule-info{
+        background:white;
+        padding:20px;
+        border-radius:8px;
+        box-shadow:0 3px 8px rgba(0,0,0,0.1);
+        margin-bottom:25px;
+        text-align: center;
+        }
+        
+        .schedule-info h3{
+        font-family:'Oswald', sans-serif;
+        color:#002a43;
+        margin-bottom:10px;
+        }
+        
+        .schedule-info ul{
+        padding-left:18px;
+        font-family:'Inter', sans-serif;
+        }
+        
+        .schedule-note{
+        font-size:14px;
+        color:#666;
+        margin-top:8px;
+        }
+
+        ul {
+            list-style: none;
+          }
     .footer{
         background:#002a43;
         color:white;

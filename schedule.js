@@ -83,7 +83,7 @@ const schedules = {
   {date:"May 16",home:"BEYS1",away:"BEYS2",field:"Under the lights at BEA HS Alumni Stadium AT 6PM"},
   
   {date:"May 30",home:"BEYS2",away:"pvys1",field:"BEYS1"},
-  {date:"May 30",home:"BSA2",away:"BEYS2",field:"BSA1"},
+  {date:"May 30",home:"BSA2",away:"BEYS1",field:"BSA1"},
   ]
   };
   
@@ -216,6 +216,7 @@ const schedules = {
       row.className = isHome ? "home-row" : "away-row";
     
       row.innerHTML = `
+      <td><span class="age-badge ${group.toLowerCase()}">${group}</span></td>
       <td>${game.date}</td>
     
       <td>
