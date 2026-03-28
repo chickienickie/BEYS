@@ -1,224 +1,231 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Field Directions | Bald Eagle Youth Soccer</title>
+    <title>Field Directions | Bald Eagle Youth Soccer</title>
 
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
 <body>
-<!-- ALERT BAR -->
-<div class="alert-bar">
-    <div class="ticker">
-        <div class="ticker-text">
-            ⚠ Weather cancellations and field updates will appear here.
+    <!-- ALERT BAR -->
+    <div class="alert-bar">
+        <div class="ticker">
+            <div class="ticker-text">
+                ⚠ Weather cancellations and field updates will appear here.
+            </div>
         </div>
     </div>
-</div>
 
-<header>
-<div class="nav-container">
-    <div class="logo">
-        <img src="beyslogo.png" alt="BEYS Logo">
-    </div>
-
-    <nav id="nav">
-        <a href="index.html">Home</a>
-        <a href="index.html#programs">Programs</a>
-        <a href="schedule.html">Schedule</a>
-        <a href="fields.html">Fields</a>
-        <a href="foodtrucks.html">Food Truck Schedule</a>
-        <a href="board.html">Board</a>
-        <a href="fundraisers.html">Fundraisers</a>
-        <a href="sponsors.html">Sponsors</a>
-        <a href="coach-resources.html">Coach Resources</a>
-
-        <a class="register-nav"
-           href="https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports"
-           target="_blank">
-            Register
-        </a>
-    </nav>
-
-    <div class="menu" onclick="toggleMenu()">☰</div>
-</div>
-</header>
-
-<!-- HERO -->
-<section class="page-hero">
-    <h1>Field Locations</h1>
-</section>
-
-<!-- FIELD MAP -->
-<section class="field-map-section">
-    <div class="container">
-        <h2>BEYS Field Map</h2>
-        <p class="map-subtext">Use this map to find your field on game day.</p>
-        <div class="map-container">
-            <img src="BEYS Field Map.png" alt="Bald Eagle Youth Soccer Field Map">
-        </div>
-    </div>
-</section>
-
-<!-- FIELD DIRECTIONS -->
-<section class="fields-section">
-    <div class="container">
-        <h2>Field Directions</h2>
-
-        <div class="field-grid">
-
-            <div class="field-card">
-                <h3>Bellefonte: Walker Township</h3>
-                <p>1000 Sand Trap Dr<br>Bellefonte, PA 16823</p>
-                <a href="https://maps.google.com/?q=1000+Sand+Trap+Dr+Bellefonte+PA" target="_blank">Open in Google Maps</a>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="beyslogo.png" alt="BEYS Logo">
             </div>
 
-            <div class="field-card">
-                <h3>Bellefonte: Governor's Park</h3>
-                <p>Governors Park Rd<br>Bellefonte, PA 16823</p>
-                <a href="https://maps.google.com/?q=Governors+Park+Rd+Bellefonte+PA" target="_blank">Open in Google Maps</a>
-            </div>
+            <nav id="nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="schedule.html">Schedule</a>
+                <a href="fields.html">Fields</a>
+                <a href="foodtrucks.html">Food Truck Schedule</a>
+                <a href="board.html">Board</a>
+                <a href="fundraisers.html">Fundraisers</a>
+                <a href="sponsors.html">Sponsors</a>
+                <a href="coach-resources.html">Coach Resources</a>
 
-            <div class="field-card">
-                <h3>Bald Eagle Fields</h3>
-                <p>309 Apple Street<br>Julian, PA 16844</p>
-                <a href="https://maps.google.com/?q=309+Apple+St+Julian+PA" target="_blank">Open in Google Maps</a>
-            </div>
-
-            <div class="field-card">
-                <h3>PV Fields: Potter Elementary</h3>
-                <p>211 N Hoffer Ave<br>Centre Hall, PA 16828</p>
-                <a href="https://maps.google.com/?q=211+N+Hoffer+Ave+Centre+Hall+PA" target="_blank">Open in Google Maps</a>
-            </div>
-
-            <div class="field-card">
-                <h3>West Branch Fields</h3>
-                <p>173 Havenview Dr<br>Lock Haven, PA 17745</p>
-                <a href="https://maps.google.com/?q=173+Havenview+Dr+Lock+Haven+PA" target="_blank">Open in Google Maps</a>
-            </div>
-
-            <div class="field-card">
-                <h3>CSA -Homestead Park</h3>
-                <p>145 Farmstead Lane<br>State College, PA 16803</p>
-                <a href="https://maps.app.goo.gl/HQxw1AdVsgz9uinNA" target="_blank">Open in Google Maps</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<script src="script.js"></script>
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-    <div class="footer-container">
-    
-    <!-- LEAGUE INFO -->
-    
-    <div class="footer-column">
-    
-        <h3>League Info</h3>
-        
-        <a href="schedule.html">
-        <i class="fa-solid fa-calendar"></i> Game Schedule
-        </a>
-        
-        <a href="fields.html">
-        <i class="fa-solid fa-map-location-dot"></i> Field Directions
-        </a>
-        
-        <a href="fundraisers.html">
-            <i class="fa-solid fa-hand-holding-dollar"></i> Fundraisers
-            </a>
-            
-            <a href="board.html">
-                <i class="fa-solid fa-users"></i> Board Members
+                <a class="register-nav"
+                    href="https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports"
+                    target="_blank">
+                    Register
                 </a>
-    
+            </nav>
+
+            <div class="menu" onclick="toggleMenu()">☰</div>
         </div>
-    
-    <!-- DOWNLOADS -->
+    </header>
 
-<div class="footer-column">
+    <!-- HERO -->
+    <section class="page-hero">
+        <h1>Field Locations</h1>
+    </section>
 
-    <h3>Downloads</h3>
-    
-    <a href="downloads/Marianna_s_Order_Form.pdf" download>
-    <i class="fa-solid fa-file-arrow-down"></i> Fundraiser Form
-    </a>
-    
-    <a href="downloads/BEYS Parent Welcome Packet.pdf" download>
-    <i class="fa-solid fa-file-lines"></i> Parent Welcome Packet
-    </a>
-    
-    </div>
-    
-    <!-- STAY CONNECTED -->
-    
-    <div class="footer-column">
-    
-    <h3>Stay Connected</h3>
-    
-    <p>
-    <a href="https://www.facebook.com/BaldEagleYouthSoccer" target="_blank">
-    <i class="fa-brands fa-facebook"></i> Follow us on Facebook
-    </a>
-    </p>
-    
-    <p>
-    <a href="https://sportsyou.app" target="_blank">
-    <i class="fa-solid fa-mobile-screen"></i> Download the SportsYou App
-    </a>
-    </p>
-    
-    <p>
-    <i class="fa-solid fa-hashtag"></i> <strong>Team Code:</strong> Q46K-3WJU
-    </p>
-    
-    </div>
-    
-    <!-- CONTACT -->
-    
-    <div class="footer-column">
-    
-    <h3>Contact</h3>
-    
-    <p>
-    <i class="fa-solid fa-location-dot"></i> Bald Eagle Youth Soccer
-    </p>
-    
-    <p>
-    Unionville Soccer Fields<br>
-    P.O. Box 704<br>
-    Milesburg, PA 16853
-    </p>
-    
-    <p>
-    <i class="fa-solid fa-envelope"></i> Email:
-    </p>
-    
-    <a href="mailto:baldeagleyouthsoccer@gmail.com">
-    baldeagleyouthsoccer@gmail.com
-    </a>
-    
-    </div>
-    
-    </div>
-    
-    <div class="footer-bottom">
-    
-    © 2026 Bald Eagle Youth Soccer
-    
-    </div>
-    
+    <!-- FIELD MAP -->
+    <section class="field-map-section">
+        <div class="container">
+            <h2>BEYS Field Map</h2>
+            <p class="map-subtext">Use this map to find your field on game day.</p>
+            <div class="map-container">
+                <img src="BEYS Field Map.png" alt="Bald Eagle Youth Soccer Field Map">
+            </div>
+        </div>
+    </section>
+
+    <!-- FIELD DIRECTIONS -->
+    <section class="fields-section">
+        <div class="container">
+            <h2>Field Directions</h2>
+
+            <div class="field-grid">
+
+                <div class="field-card">
+                    <h3>Bellefonte: Walker Township</h3>
+                    <p>1000 Sand Trap Dr<br>Bellefonte, PA 16823</p>
+                    <a href="https://maps.google.com/?q=1000+Sand+Trap+Dr+Bellefonte+PA" target="_blank">Open in Google
+                        Maps</a>
+                </div>
+
+                <div class="field-card">
+                    <h3>Bellefonte: Governor's Park</h3>
+                    <p>Governors Park Rd<br>Bellefonte, PA 16823</p>
+                    <a href="https://maps.google.com/?q=Governors+Park+Rd+Bellefonte+PA" target="_blank">Open in Google
+                        Maps</a>
+                </div>
+
+                <div class="field-card">
+                    <h3>Bald Eagle Fields</h3>
+                    <p>309 Apple Street<br>Julian, PA 16844</p>
+                    <a href="https://maps.google.com/?q=309+Apple+St+Julian+PA" target="_blank">Open in Google Maps</a>
+                </div>
+
+                <div class="field-card">
+                    <h3>PV Fields: Potter Elementary</h3>
+                    <p>211 N Hoffer Ave<br>Centre Hall, PA 16828</p>
+                    <a href="https://maps.google.com/?q=211+N+Hoffer+Ave+Centre+Hall+PA" target="_blank">Open in Google
+                        Maps</a>
+                </div>
+
+                <div class="field-card">
+                    <h3>West Branch Fields</h3>
+                    <p>173 Havenview Dr<br>Lock Haven, PA 17745</p>
+                    <a href="https://maps.google.com/?q=173+Havenview+Dr+Lock+Haven+PA" target="_blank">Open in Google
+                        Maps</a>
+                </div>
+
+                <div class="field-card">
+                    <h3>CSA -Homestead Park</h3>
+                    <p>145 Farmstead Lane<br>State College, PA 16803</p>
+                    <a href="https://maps.app.goo.gl/HQxw1AdVsgz9uinNA" target="_blank">Open in Google Maps</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- LEAGUE INFO -->
+
+            <div class="footer-column">
+
+                <h3>League Info</h3>
+
+                <a href="schedule.html">
+                    <i class="fa-solid fa-calendar"></i> Game Schedule
+                </a>
+
+                <a href="fields.html">
+                    <i class="fa-solid fa-map-location-dot"></i> Field Directions
+                </a>
+
+                <a href="fundraisers.html">
+                    <i class="fa-solid fa-hand-holding-dollar"></i> Fundraisers
+                </a>
+
+                <a href="board.html">
+                    <i class="fa-solid fa-users"></i> Board Members
+                </a>
+
+            </div>
+
+            <!-- DOWNLOADS -->
+
+            <div class="footer-column">
+
+                <h3>Downloads</h3>
+
+                <a href="downloads/Marianna_s_Order_Form.pdf" download>
+                    <i class="fa-solid fa-file-arrow-down"></i> Fundraiser Form
+                </a>
+
+                <a href="downloads/BEYS Parent Welcome Packet.pdf" download>
+                    <i class="fa-solid fa-file-lines"></i> Parent Welcome Packet
+                </a>
+
+            </div>
+
+            <!-- STAY CONNECTED -->
+
+            <div class="footer-column">
+
+                <h3>Stay Connected</h3>
+
+                <p>
+                    <a href="https://www.facebook.com/BaldEagleYouthSoccer" target="_blank">
+                        <i class="fa-brands fa-facebook"></i> Follow us on Facebook
+                    </a>
+                </p>
+
+                <p>
+                    <a href="https://sportsyou.app" target="_blank">
+                        <i class="fa-solid fa-mobile-screen"></i> Download the SportsYou App
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-hashtag"></i> <strong>Team Code:</strong> Q46K-3WJU
+                </p>
+
+            </div>
+
+            <!-- CONTACT -->
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i> Bald Eagle Youth Soccer
+                </p>
+
+                <p>
+                    Unionville Soccer Fields<br>
+                    P.O. Box 704<br>
+                    Milesburg, PA 16853
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i> Email:
+                </p>
+
+                <a href="mailto:baldeagleyouthsoccer@gmail.com">
+                    baldeagleyouthsoccer@gmail.com
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            © 2026 Bald Eagle Youth Soccer
+
+        </div>
+
     </footer>
 
 
 </body>
+
 </html>

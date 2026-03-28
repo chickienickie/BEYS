@@ -3,273 +3,275 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Game Schedule | Bald Eagle Youth Soccer</title>
+    <title>Game Schedule | Bald Eagle Youth Soccer</title>
 
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- ALERT BAR -->
+    <!-- ALERT BAR -->
 
-<div class="alert-bar">
-<div class="ticker">
-<div class="ticker-text">
-⚠ Weather cancellations and league updates will appear here.
-</div>
-</div>
-</div>
-
-<!-- NAVBAR -->
-
-<header>
-
-<div class="nav-container">
-
-<div class="logo">
-<img src="beyslogo.png" alt="Bald Eagle Youth Soccer Logo">
-</div>
-
-<nav id="nav">
-
-    <a href="index.html">Home</a>
-    <a href="index.html#programs">Programs</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="fields.html">Fields</a>
-    <a href="foodtrucks.html">Food Truck Schedule</a>
-    <a href="board.html">Board</a>
-    <a href="fundraisers.html">Fundraisers</a>
-    <a href="sponsors.html">Sponsors</a>
-    <a href="coach-resources.html">Coach Resources</a>
-
-<a class="register-nav"
-href="https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports"
-target="_blank">
-Register
-</a>
-
-</nav>
-
-<div class="menu" onclick="toggleMenu()">☰</div>
-
-</div>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="page-hero">
-
-<h1>Game Schedules</h1>
-
-<p>Select your age group and team to view the schedule.</p>
-
-</section>
-
-
-<!-- SCHEDULE -->
-
-<section class="schedule-section">
-
-<div class="container">
-
-<h2>Find Your Team Schedule</h2>
-
-<div class="schedule-info">
-    
-    <h3>Standard Game Start Times</h3>
-    
-    <ul>
-        <li><strong>U7:</strong> 6:00 PM</li>
-    <li><strong>U9:</strong> 9:30 AM</li>
-    <li><strong>U11:</strong> 11:00 AM</li>
-    <li><strong>U13:</strong> 12:30 PM</li>
-    </ul>
-    
-    <p class="schedule-note">
-    *Unless otherwise noted on the schedule.
-    </p>
-    
-    </div>
-
-<div class="schedule-controls">
-
-<select id="ageGroup">
-
-<option value="">Select Age Group</option>
-<option value="U7">U7</option>
-<option value="U9">U9</option>
-<option value="U11">U11</option>
-<option value="U13">U13</option>
-
-</select>
-
-<select id="teamSelect">
-
-<option value="">Select Team</option>
-
-</select>
-
-<button class="print-btn" onclick="printSchedule()">
-
-Print My Team Schedule
-
-</button>
-
-<div class="schedule-table-container">
-
-    <table class="schedule-table">
-        
-
-</div>
-
-
-<thead>
-
-    
-        <tr>
-        <th>Age</th>
-        <th>Date</th>
-        <th>Your Team</th>
-        <th>Opponent</th>
-        <th>Game</th>
-        <th>Field</th>
-        <th>Add to Calendar</th>
-        </tr>
-       
-
-</thead>
-
-<tbody id="scheduleBody"></tbody>
-
-</table>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-    <div class="footer-container">
-    
-    <!-- LEAGUE INFO -->
-    
-    <div class="footer-column">
-    
-        <h3>League Info</h3>
-        
-        <a href="schedule.html">
-        <i class="fa-solid fa-calendar"></i> Game Schedule
-        </a>
-        
-        <a href="fields.html">
-        <i class="fa-solid fa-map-location-dot"></i> Field Directions
-        </a>
-        
-        <a href="fundraisers.html">
-            <i class="fa-solid fa-hand-holding-dollar"></i> Fundraisers
-            </a>
-            
-            <a href="board.html">
-                <i class="fa-solid fa-users"></i> Board Members
-                </a>
-    
+    <div class="alert-bar">
+        <div class="ticker">
+            <div class="ticker-text">
+                ⚠ Weather cancellations and league updates will appear here.
+            </div>
         </div>
-    
-    <!-- DOWNLOADS -->
+    </div>
 
-<div class="footer-column">
+    <!-- NAVBAR -->
 
-    <h3>Downloads</h3>
-    
-    <a href="downloads/Marianna_s_Order_Form.pdf" download>
-    <i class="fa-solid fa-file-arrow-down"></i> Fundraiser Form
-    </a>
-    
-    <a href="downloads/BEYS Parent Welcome Packet.pdf" download>
-    <i class="fa-solid fa-file-lines"></i> Parent Welcome Packet
-    </a>
-    
-    </div>
-    
-    <!-- STAY CONNECTED -->
-    
-    <div class="footer-column">
-    
-    <h3>Stay Connected</h3>
-    
-    <p>
-    <a href="https://www.facebook.com/BaldEagleYouthSoccer" target="_blank">
-    <i class="fa-brands fa-facebook"></i> Follow us on Facebook
-    </a>
-    </p>
-    
-    <p>
-    <a href="https://sportsyou.app" target="_blank">
-    <i class="fa-solid fa-mobile-screen"></i> Download the SportsYou App
-    </a>
-    </p>
-    
-    <p>
-    <i class="fa-solid fa-hashtag"></i> <strong>Team Code:</strong> Q46K-3WJU
-    </p>
-    
-    </div>
-    
-    <!-- CONTACT -->
-    
-    <div class="footer-column">
-    
-    <h3>Contact</h3>
-    
-    <p>
-    <i class="fa-solid fa-location-dot"></i> Bald Eagle Youth Soccer
-    </p>
-    
-    <p>
-    Unionville Soccer Fields<br>
-    P.O. Box 704<br>
-    Milesburg, PA 16853
-    </p>
-    
-    <p>
-    <i class="fa-solid fa-envelope"></i> Email:
-    </p>
-    
-    <a href="mailto:baldeagleyouthsoccer@gmail.com">
-    baldeagleyouthsoccer@gmail.com
-    </a>
-    
-    </div>
-    
-    </div>
-    
-    <div class="footer-bottom">
-    
-    © 2026 Bald Eagle Youth Soccer
-    
-    </div>
-    
+    <header>
+
+        <div class="nav-container">
+
+            <div class="logo">
+                <img src="beyslogo.png" alt="Bald Eagle Youth Soccer Logo">
+            </div>
+
+            <nav id="nav">
+
+                <a href="index.html">Home</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="schedule.html">Schedule</a>
+                <a href="fields.html">Fields</a>
+                <a href="foodtrucks.html">Food Truck Schedule</a>
+                <a href="board.html">Board</a>
+                <a href="fundraisers.html">Fundraisers</a>
+                <a href="sponsors.html">Sponsors</a>
+                <a href="coach-resources.html">Coach Resources</a>
+
+                <a class="register-nav"
+                    href="https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports"
+                    target="_blank">
+                    Register
+                </a>
+
+            </nav>
+
+            <div class="menu" onclick="toggleMenu()">☰</div>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="page-hero">
+
+        <h1>Game Schedules</h1>
+
+        <p>Select your age group and team to view the schedule.</p>
+
+    </section>
+
+
+    <!-- SCHEDULE -->
+
+    <section class="schedule-section">
+
+        <div class="container">
+
+            <h2>Find Your Team Schedule</h2>
+
+            <div class="schedule-info">
+
+                <h3>Standard Game Start Times</h3>
+
+                <ul>
+                    <li><strong>U7:</strong> 6:00 PM</li>
+                    <li><strong>U9:</strong> 9:30 AM</li>
+                    <li><strong>U11:</strong> 11:00 AM</li>
+                    <li><strong>U13:</strong> 12:30 PM</li>
+                </ul>
+
+                <p class="schedule-note">
+                    *Unless otherwise noted on the schedule.
+                </p>
+
+            </div>
+
+            <div class="schedule-controls">
+
+                <select id="ageGroup">
+
+                    <option value="">Select Age Group</option>
+                    <option value="U7">U7</option>
+                    <option value="U9">U9</option>
+                    <option value="U11">U11</option>
+                    <option value="U13">U13</option>
+
+                </select>
+
+                <select id="teamSelect">
+
+                    <option value="">Select Team</option>
+
+                </select>
+
+                <button class="print-btn" onclick="printSchedule()">
+
+                    Print My Team Schedule
+
+                </button>
+
+                <div class="schedule-table-container">
+
+                    <table class="schedule-table">
+
+
+                </div>
+
+
+                <thead>
+
+
+                    <tr>
+                        <th>Age</th>
+                        <th>Date</th>
+                        <th>Your Team</th>
+                        <th>Opponent</th>
+                        <th>Game</th>
+                        <th>Field</th>
+                        <th>Add to Calendar</th>
+                    </tr>
+
+
+                </thead>
+
+                <tbody id="scheduleBody"></tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- LEAGUE INFO -->
+
+            <div class="footer-column">
+
+                <h3>League Info</h3>
+
+                <a href="schedule.html">
+                    <i class="fa-solid fa-calendar"></i> Game Schedule
+                </a>
+
+                <a href="fields.html">
+                    <i class="fa-solid fa-map-location-dot"></i> Field Directions
+                </a>
+
+                <a href="fundraisers.html">
+                    <i class="fa-solid fa-hand-holding-dollar"></i> Fundraisers
+                </a>
+
+                <a href="board.html">
+                    <i class="fa-solid fa-users"></i> Board Members
+                </a>
+
+            </div>
+
+            <!-- DOWNLOADS -->
+
+            <div class="footer-column">
+
+                <h3>Downloads</h3>
+
+                <a href="downloads/Marianna_s_Order_Form.pdf" download>
+                    <i class="fa-solid fa-file-arrow-down"></i> Fundraiser Form
+                </a>
+
+                <a href="downloads/BEYS Parent Welcome Packet.pdf" download>
+                    <i class="fa-solid fa-file-lines"></i> Parent Welcome Packet
+                </a>
+
+            </div>
+
+            <!-- STAY CONNECTED -->
+
+            <div class="footer-column">
+
+                <h3>Stay Connected</h3>
+
+                <p>
+                    <a href="https://www.facebook.com/BaldEagleYouthSoccer" target="_blank">
+                        <i class="fa-brands fa-facebook"></i> Follow us on Facebook
+                    </a>
+                </p>
+
+                <p>
+                    <a href="https://sportsyou.app" target="_blank">
+                        <i class="fa-solid fa-mobile-screen"></i> Download the SportsYou App
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-hashtag"></i> <strong>Team Code:</strong> Q46K-3WJU
+                </p>
+
+            </div>
+
+            <!-- CONTACT -->
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i> Bald Eagle Youth Soccer
+                </p>
+
+                <p>
+                    Unionville Soccer Fields<br>
+                    P.O. Box 704<br>
+                    Milesburg, PA 16853
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i> Email:
+                </p>
+
+                <a href="mailto:baldeagleyouthsoccer@gmail.com">
+                    baldeagleyouthsoccer@gmail.com
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            © 2026 Bald Eagle Youth Soccer
+
+        </div>
+
     </footer>
 
 
 
-<script src="schedule.js"></script>
-<script src="script.js"></script>
+    <script src="schedule.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
