@@ -1172,3 +1172,14 @@ margin-top:-6px;
     background:#d5d49b;
     color:#002a43;
 }
+
+/* FOOD TRUCK PAGE */
+
+.schedule-table a {
+    color: #002a43;
+    font-weight: 500;
+  }
+  
+  .schedule-table a:hover {
+    text-decoration: underline;
+  }
