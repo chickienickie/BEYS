@@ -1047,7 +1047,7 @@ ul {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-    text-align: left;
+    text-align: left; /* keep text left-aligned */
     transition: all 0.25s ease;
     border-top: 4px solid transparent;
     position: relative;
@@ -1116,6 +1116,14 @@ ul {
 
 .announcement a:hover {
     text-decoration: underline;
+}
+
+
+
+/* Center the buttons inside announcements */
+.announcement .primary-btn {
+    display: block;       /* make it block for margin auto to work */
+    margin: 20px auto 0 auto;  /* top spacing + horizontally centered */
 }
 
 /* BUTTON (MATCH CLEAN STYLE) */
