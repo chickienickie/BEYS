@@ -1,5 +1,6 @@
-function toggleMenu(){
-    document.getElementById("nav").classList.toggle("active");
+function toggleMenu() {
+    const nav = document.getElementById("nav");
+    nav.classList.toggle("active");
   }
   
   const ageFilter = document.getElementById("ageFilter");
