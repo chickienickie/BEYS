@@ -65,8 +65,10 @@ const schedules = {
   {date:"Apr 11",home:"WBS2",away:"BEYS2",field:"WB1"},
   
   {date:"Apr 18",home:"BEYS1",away:"WBS2",field:"BEYS1"},
+
   
   {date:"Apr 25",home:"PVYS2",away:"BEYS2",field:"PV1"},
+ 
   
   {date:"Apr 30",home:"CSA",away:"BEYS2",field:"CSA AT 6PM"},
   
@@ -185,67 +187,69 @@ const schedules = {
   
   // TEAM CHANGE
   teamSelect.addEventListener("change", () => {
-  
-  const group = ageGroup.value;
-  const team = teamSelect.value;
-  
-  scheduleBody.innerHTML = "";
-  
-  if (!schedules[group]) return;
-  
-  schedules[group].forEach(game => {
-  
-  if (game.home === team || game.away === team) {
-  
-    const cleanField = game.field.toUpperCase();
-    const isHome = cleanField.includes("BEYS");
-    const opponent = game.home === team ? game.away : game.home;
-  
-  const teamCoach = coaches[group][team] || "";
-  const opponentCoach = opponent.startsWith("BEYS") ? coaches[group][opponent] || "" : "";
-  
-  const calendarLink = createCalendarLink(game, team, opponent, isHome, group);
-  const mapsLink = createMapsLink(game.field);
-  
-  const row = document.createElement("tr");
-  row.className = isHome ? "home-row" : "away-row";
-  
-  row.innerHTML = `
-<td>${game.date}</td>
 
-<td>
-<strong>${team}</strong><br>
-<small>${teamCoach}</small>
-</td>
-
-<td>
-${opponent}
-${opponentCoach ? `<br><small>${opponentCoach}</small>` : ""}
-</td>
-
-<td class="${isHome ? "home-text" : "away-text"}">
-${isHome ? "HOME" : "AWAY"}
-</td>
-
-<td>
-<a href="${mapsLink}" target="_blank" class="field-link">
-${game.field}
-</a>
-</td>
-
-<td>
-<a href="${calendarLink}" target="_blank" class="calendar-btn-small">📅</a>
-</td>
-`;
-  
-  scheduleBody.appendChild(row);
-  
-  }
-  
-  });
-  
-  });
-  
+    const group = ageGroup.value;
+    const team = teamSelect.value;
+    
+    scheduleBody.innerHTML = "";
+    
+    if (!schedules[group]) return;
+    
+    schedules[group].forEach(game => {
+    
+    if (game.home === team || game.away === team) {
+    
+      const cleanField = game.field.toUpperCase();
+      const isHome = cleanField.includes("BEYS");
+    
+      const opponent = game.home === team ? game.away : game.home;
+    
+      const teamCoach = coaches[group][team] || "";
+      const opponentCoach = opponent.startsWith("BEYS") 
+        ? coaches[group][opponent] || "" 
+        : "";
+    
+      const calendarLink = createCalendarLink(game, team, opponent, isHome, group);
+      const mapsLink = createMapsLink(game.field);
+    
+      const row = document.createElement("tr");
+      row.className = isHome ? "home-row" : "away-row";
+    
+      row.innerHTML = `
+      <td>${game.date}</td>
+    
+      <td>
+      <strong>${team}</strong><br>
+      <small>${teamCoach}</small>
+      </td>
+    
+      <td>
+      ${opponent}
+      ${opponentCoach ? `<br><small>${opponentCoach}</small>` : ""}
+      </td>
+    
+      <td class="${isHome ? "home-text" : "away-text"}">
+      ${isHome ? "HOME" : "AWAY"}
+      </td>
+    
+      <td>
+      <a href="${mapsLink}" target="_blank" class="field-link">
+      ${game.field}
+      </a>
+      </td>
+    
+      <td>
+      <a href="${calendarLink}" target="_blank" class="calendar-btn-small">📅</a>
+      </td>
+      `;
+    
+      scheduleBody.appendChild(row);
+    
+    }
+    
+    });
+    
+    });
   // PRINT
   function printSchedule() {
   if (!teamSelect.value) {
