@@ -1,5 +1,19 @@
 const schedules = {
 
+U7: [
+  {date:"Apr 2",home:"BEYS1",away:"BEYS2",field:"BEYS1"},
+  {date:"Apr 9",home:"BEYS1",away:"BEYS2",field:"BEYS1"},
+  {date:"Apr 16",home:"BEYS1",away:"BEYS2",field:"BEYS1"},
+  {date:"Apr 23",home:"BEYS1",away:"BEYS2",field:"BEYS1"},
+  {date:"Apr 25",home:"BEYS1",away:"BEYS2",field:"BEYS1 at 12:30pm"},
+  {date:"Apr 30",home:"BEYS1",away:"BEYS2",field:"BEYS1"},
+  {date:"May 7",home:"BEYS1",away:"BEYS2",field:"BEYS1"},
+  {date:"May 14",home:"BEYS1",away:"BEYS2",field:"BEYS1"},
+  {date:"May 16",home:"BEYS1",away:"BEYS2",field:"BEYS1 at 12:30pm"},
+  {date:"May 21",home:"BEYS1",away:"BEYS2",field:"BEYS1"},
+  {date:"May 28",home:"BEYS1",away:"BEYS2",field:"BEYS1"},
+],
+
   U9:[
   {date:"Apr 11",home:"PVYS5",away:"BEYS3",field:"PV3"},
   {date:"Apr 11",home:"BEYS1",away:"BEYS2",field:"BEYS1"},
@@ -89,6 +103,7 @@ const schedules = {
   
   // COACHES
   const coaches = {
+    U7: { BEYS1:"Coach Witherite", BEYS2:"Coach Day" },
   U9: { BEYS1:"Coach Wible", BEYS2:"Coach Lowe", BEYS3:"Coach TBD" },
   U11: { BEYS1:"Coach Potter", BEYS2:"Coach Hackett/Quick", BEYS3:"Coach Romine/Lopes" },
   U13: { BEYS1:"Coach Gassner", BEYS2:"Coach Tice/Harter" }
@@ -147,12 +162,54 @@ const schedules = {
     const date = `${year}${months[m]}${d.padStart(2,"0")}`;
   
     const startTime = getGameTime(game, group);
-    const endHour = (parseInt(startTime.split(":")[0]) + 1).toString().padStart(2,"0");
   
-    const start = `${date}T${startTime.replace(":","")}00`;
-    const end = `${date}T${endHour}0000`;
+    // ⏱️ Duration (customizable)
+    const duration = group === "U7" ? 45 : 60;
   
-    return `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(team+" vs "+opponent)}&dates=${start}/${end}&location=${encodeURIComponent(game.field)}`;
+    const [startHour, startMin] = startTime.split(":").map(Number);
+
+    const startDate = new Date(
+      parseInt(year),
+      parseInt(months[m]) - 1, // month is 0-based
+      parseInt(d),
+      startHour,
+      startMin
+    );
+    
+    const endDate = new Date(startDate.getTime() + duration * 60 * 1000);
+  
+    const format = (dt) =>
+      dt.toISOString().replace(/[-:]/g, "").split(".")[0];
+  
+    const start = format(startDate);
+    const end = format(endDate);
+  
+    // 📍 Clean field + address
+    const cleanField = game.field.split(" AT ")[0];
+    const address = fieldAddresses[cleanField] || game.field;
+  
+    // 👨‍🏫 Coaches
+    const teamCoach = coaches[group][team] || "";
+    const opponentCoach = opponent.startsWith("BEYS")
+      ? coaches[group][opponent] || ""
+      : "";
+  
+    // 📝 Title + description
+    const title = `${team} vs ${opponent} (${isHome ? "HOME" : "AWAY"})`;
+  
+    const details = `
+  ${team} - ${teamCoach}
+  ${opponent}${opponentCoach ? " - " + opponentCoach : ""}
+  
+  Field: ${cleanField}
+  Address: ${address}
+    `.trim();
+  
+    return `https://www.google.com/calendar/render?action=TEMPLATE` +
+      `&text=${encodeURIComponent(title)}` +
+      `&dates=${start}/${end}` +
+      `&location=${encodeURIComponent(address)}` +
+      `&details=${encodeURIComponent(details)}`;
   }
   
   // 📍 MAP LINK (FIXED)
