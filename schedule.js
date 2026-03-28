@@ -80,9 +80,9 @@ const schedules = {
   
   {date:"May 14",home:"CSA",away:"BEYS1",field:"CSA AT 6PM"},
   
-  {date:"May 16",home:"BEYS1",away:"BEYS2",field:"Under the lights at BEA HS Alumni Stadium AT 6PM"},
+  {date:"May 16",home:"BEYS1",away:"BEYS2",field:"BEA HS Alumni Stadium AT 6PM"},
   
-  {date:"May 30",home:"BEYS2",away:"pvys1",field:"BEYS1"},
+  {date:"May 30",home:"BEYS2",away:"PVYS1",field:"BEYS1"},
   {date:"May 30",home:"BSA2",away:"BEYS1",field:"BSA1"},
   ]
   };
@@ -108,7 +108,9 @@ const schedules = {
   
     "WB1": "173 Havenview Dr, Lock Haven, PA 17745",
   
-    "CSA": "145 Farmstead Lane, State College, PA 16803"
+    "CSA": "145 Farmstead Lane, State College, PA 16803",
+
+    "BEA HS Alumni Stadium": "751 S Eagle Valley Rd, Wingate, PA 16823"
   };
   
   const ageGroup = document.getElementById("ageGroup");

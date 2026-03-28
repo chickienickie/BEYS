@@ -14,6 +14,46 @@ body{
     font-weight:600;
     }
     
+/* Global Link Styles */
+
+a {
+    color: #002a43; /* navy */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    }
+    
+    a:hover {
+    color: #d5d49b; /* gold on hover */
+    }
+    
+    a:visited {
+    color: #d5d49b; /* visited links turn gold */
+    }
+
+    nav a {
+        color: white;
+        }
+        
+        nav a:visited {
+        color: white;
+        }
+
+        /* Buttons should keep their original color */
+.hero-buttons a,
+.register-btn,
+.print-btn,
+.calendar-btn-small {
+color: #002a43;
+}
+
+.hero-buttons a:visited,
+.register-btn:visited,
+.print-btn:visited,
+.calendar-btn-small:visited {
+color: #002a43;
+}
+
     /* NAV */
     
     header{
