@@ -58,7 +58,7 @@ nav a.register-nav:visited {
 }
 
 
-/* Buttons should keep their original color */
+
 .hero-buttons a,
 .register-btn,
 .print-btn,
@@ -697,79 +697,7 @@ ul {
     }
 
 }
-@media (max-width: 768px) {
 
-    .schedule-table thead {
-      display: none;
-    }
-  
-    .schedule-table,
-    .schedule-table tbody,
-    .schedule-table tr,
-    .schedule-table td {
-      display: block;
-      width: 100%;
-    }
-  
-    .schedule-table tr {
-      background: #f9f9f9;
-      margin-bottom: 15px;
-      padding: 12px;
-      border-left: 5px solid #d5d49b; /* gold accent */
-      border-radius: 8px;
-    }
-  
-    .schedule-table td {
-      padding: 6px 8px;
-    }
-  
-    .schedule-table td::before {
-      content: attr(data-label);
-      font-weight: 600;
-      color: #002a43;
-      display: block;
-      margin-bottom: 3px;
-    }
-  
-  }
-
-  .home-text {
-    color: #002a43;
-    font-weight: 700;
-  }
-  
-  .away-text {
-    color: #666;
-    font-weight: 600;
-  }
-  
-  .home-row {
-    border-left: 5px solid #002a43;
-  }
-  
-  .away-row {
-    border-left: 5px solid #d5d49b;
-  }
-
-  .field-link {
-    color: #002a43;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  
-  .field-link:hover {
-    text-decoration: underline;
-  }
-
-  .calendar-btn img {
-    width: 22px;
-    height: 22px;
-    transition: transform 0.2s ease;
-  }
-  
-  .calendar-btn img:hover {
-    transform: scale(1.2);
-  }
 /* ======================== */
 /* FIELDS PAGE */
 /* ======================== */
@@ -1427,3 +1355,68 @@ ul {
     /* your gold */
     color: #002a43;
 }
+
+/* --- Optimized Mobile Schedule Section --- */
+@media (max-width: 600px) {
+  
+    /* 1. Hide the redundant 'Age' and 'Game' (Home/Away) columns */
+    .schedule-table th:nth-child(1), .schedule-table td:nth-child(1),
+    .schedule-table th:nth-child(5), .schedule-table td:nth-child(5) {
+      display: none !important;
+    }
+  
+    /* 2. Brand-colored side stripes for Home/Away (No more scrolling needed) */
+    .schedule-table tr.home-row {
+      border-left: 6px solid #002a43 !important; /* Brand Dark Blue */
+    }
+    .schedule-table tr.away-row {
+      border-left: 6px solid #d5d49b !important; /* Brand Gold */
+    }
+  
+    /* 3. Replace 'Add to Calendar' text with an icon to save width */
+    .schedule-table th:last-child {
+      font-size: 0;
+    }
+    .schedule-table th:last-child::after {
+      content: '📅'; 
+      font-size: 16px;
+    }
+  
+    /* 4. Force the table to fit exactly 100% of the screen */
+    .schedule-table {
+      width: 100%;
+      min-width: 0; 
+      table-layout: fixed; 
+      font-size: 12px;
+      border-collapse: collapse;
+    }
+    
+    .schedule-table th, .schedule-table td {
+      padding: 8px 2px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+  
+    /* Column management: ensures all content fits on one screen */
+    .schedule-table th:nth-child(2) { width: 15%; } /* Date */
+    .schedule-table th:nth-child(3) { width: 30%; } /* Your Team */
+    .schedule-table th:nth-child(4) { width: 30%; } /* Opponent */
+    .schedule-table th:nth-child(6) { width: 15%; } /* Field */
+    .schedule-table th:nth-child(7) { width: 10%; } /* Calendar icon */
+  
+    .schedule-table-container {
+      overflow-x: hidden; 
+      padding: 0;
+      margin: 0;
+    }
+    
+    /* 5. Make filters and print button easy to tap on mobile */
+    #ageGroup, #teamSelect, .print-btn {
+      width: 100% !important;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+      display: block;
+    }
+  }
