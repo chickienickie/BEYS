@@ -1577,40 +1577,7 @@ ul {
     text-decoration: underline;
 }
 
-/* 5. Mobile Responsive Adjustments (Max 600px) */
-@media (max-width: 600px) {
-    .schedule-table {
-        table-layout: auto !important;
-        font-size: 14px !important;
-    }
 
-    /* Override column hiding from soccer schedule */
-    .schedule-table th:nth-child(1), 
-    .schedule-table td:nth-child(1),
-    .schedule-table th:nth-child(5), 
-    .schedule-table td:nth-child(5) {
-        display: table-cell !important;
-    }
-
-    /* Remove the Date Emoji from mobile header */
-    .schedule-table th:last-child {
-        font-size: inherit !important;
-    }
-    .schedule-table th:last-child::after {
-        content: none !important;
-    }
-
-    /* Padding & Width for mobile */
-    .schedule-table th, 
-    .schedule-table td {
-        padding: 8px 10px !important;
-    }
-
-    .schedule-table th:first-child,
-    .schedule-table td:first-child {
-        white-space: nowrap;
-        width: 1%;
-    }
 
     /* Mobile Navigation Menu - Ensuring it fits the viewport and doesn't cut off content */
 nav.active {
@@ -1633,4 +1600,3 @@ nav.active {
     text-align: center !important;
   }
   
-}
