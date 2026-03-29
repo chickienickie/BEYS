@@ -1413,7 +1413,7 @@ ul {
     .schedule-table th:nth-child(6) { width: 35px !important; } /* Field */
     .schedule-table th:nth-child(7) { width: 25px !important; } /* Calendar */
   
-    /* 5. Align everything at the top and normalize team names */
+    /* 5. Align everything at the top and normalize cell behavior */
     .schedule-table td {
       vertical-align: top !important;
       padding: 8px 1px !important;
@@ -1421,17 +1421,26 @@ ul {
       word-break: break-word !important;
     }
   
-    /* 6. Ensure team and coach names look level */
-    .schedule-table td strong {
+    /* 6. CRITICAL: Hide <br> tags and force team/coach to stack perfectly level */
+    .schedule-table td br {
+      display: none !important;
+    }
+  
+    .schedule-table td strong,
+    .schedule-table td small {
       display: block !important;
-      margin-bottom: 2px !important;
+      text-align: center !important;
+      margin: 0 !important;
+      line-height: 1.1 !important;
+    }
+  
+    .schedule-table td strong {
       font-size: 10px !important;
+      margin-bottom: 2px !important;
     }
   
     .schedule-table td small {
-      display: block !important;
       font-size: 9px !important;
-      line-height: 1 !important;
       color: #666;
     }
   
@@ -1445,7 +1454,8 @@ ul {
     .field-link {
       font-size: 8px !important;
       word-break: break-all !important;
-      display: block;
+      display: block !important;
+      line-height: 0.9 !important;
     }
   }
 
