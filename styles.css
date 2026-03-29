@@ -136,8 +136,7 @@ nav a:hover {
     width: 100%;
     overflow: hidden;
     background-size: cover;
-    background-position: center;
-
+    background-position: 50% 60%;
 }
 
 .hero-overlay {
@@ -165,8 +164,8 @@ nav a:hover {
 }
 
 .hero-logo {
-    height: 110px;
-    margin-bottom: 15px;
+    height: 145px;
+    margin-bottom: 10px;
 }
 
 .hero h1 {
