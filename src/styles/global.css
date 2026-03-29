@@ -1515,3 +1515,101 @@ ul {
         white-space: nowrap !important;
     }
 }
+
+/* --- Food Truck Table Responsive & Brand Styles --- */
+
+/* 1. Container & Table Layout */
+.schedule-table-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.schedule-table {
+    width: 100% !important;
+    border-collapse: collapse;
+    background: white;
+    color: #002a43 !important; /* Brand Blue */
+}
+
+/* 2. Global Text & Alignment */
+.schedule-table th, 
+.schedule-table td {
+    text-align: left !important;
+    padding: 12px 15px !important;
+    border-bottom: 1px solid #eee;
+    color: #002a43 !important;
+}
+
+/* 3. Header Styling */
+.schedule-table th {
+    background-color: #002a43 !important;
+    color: #ffffff !important;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* 4. Link Styling */
+.schedule-table a {
+    color: #002a43 !important;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+/* 5. Mobile Responsive Adjustments (Max 600px) */
+@media (max-width: 600px) {
+    .schedule-table {
+        table-layout: auto !important;
+        font-size: 14px !important;
+    }
+
+    /* Override column hiding from soccer schedule */
+    .schedule-table th:nth-child(1), 
+    .schedule-table td:nth-child(1),
+    .schedule-table th:nth-child(5), 
+    .schedule-table td:nth-child(5) {
+        display: table-cell !important;
+    }
+
+    /* Remove the Date Emoji from mobile header */
+    .schedule-table th:last-child {
+        font-size: inherit !important;
+    }
+    .schedule-table th:last-child::after {
+        content: none !important;
+    }
+
+    /* Padding & Width for mobile */
+    .schedule-table th, 
+    .schedule-table td {
+        padding: 8px 10px !important;
+    }
+
+    .schedule-table th:first-child,
+    .schedule-table td:first-child {
+        white-space: nowrap;
+        width: 1%;
+    }
+
+    /* Mobile Navigation Menu - Ensuring it fits the viewport and doesn't cut off content */
+nav.active {
+    height: auto !important; /* Allow menu to expand to fit its contents */
+    max-height: calc(100vh - 110px); /* Limit height to viewport and header height */
+    overflow-y: auto; /* Allow scrolling if content is too long */
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 30px; /* Buffer at the bottom for the Register button */
+  }
+  
+  /* Register Button - Fixing sizing and preventing horizontal overflow */
+  .register-nav {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    display: block !important;
+    margin: 15px 0 !important;
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+    text-align: center !important;
+  }
+  
+}
