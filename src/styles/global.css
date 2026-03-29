@@ -1381,12 +1381,11 @@ ul {
 }
 
 @media (max-width: 768px) {
-    /* 1. Expand the content to the screen edges */
+    /* --- 1. GLOBAL CONTAINER FIX --- */
     section.schedule-section {
       padding-left: 0 !important;
       padding-right: 0 !important;
     }
-  
     section.schedule-section .container {
       padding-left: 5px !important;
       padding-right: 5px !important;
@@ -1394,69 +1393,78 @@ ul {
       width: 100% !important;
     }
   
-    /* 2. Force the table to fit the screen and use tiny text */
-    .schedule-section table.schedule-table {
+    /* --- 2. GAME SCHEDULE SPECIFIC (Mobile Optimized) --- */
+    /* Using a double-class selector for maximum specificity */
+    table.schedule-table.game-schedule {
       display: table !important;
       table-layout: fixed !important;
       width: 100% !important;
       font-size: 10px !important;
     }
   
-    /* 3. Hide 'Age' (1) and 'Game' (5) columns */
-    .schedule-table th:nth-child(1), .schedule-table td:nth-child(1),
-    .schedule-table th:nth-child(5), .schedule-table td:nth-child(5) {
+    /* Hide Age (1) and Home/Away (5) columns on Games */
+    .game-schedule th:nth-child(1), .game-schedule td:nth-child(1),
+    .game-schedule th:nth-child(5), .game-schedule td:nth-child(5) {
       display: none !important;
     }
   
-    /* 4. Tightly control column widths (leaving 3 and 4 as 'auto') */
-    .schedule-table th:nth-child(2) { width: 42px !important; } /* Date */
-    .schedule-table th:nth-child(6) { width: 35px !important; } /* Field */
-    .schedule-table th:nth-child(7) { width: 25px !important; } /* Calendar */
+    /* Game-Specific Column Widths */
+    .game-schedule th:nth-child(2) { width: 42px !important; } /* Date */
+    .game-schedule th:nth-child(6) { width: 35px !important; } /* Field */
+    .game-schedule th:nth-child(7) { width: 25px !important; } /* Calendar */
   
-    /* 5. Align everything at the top and normalize cell behavior */
-    .schedule-table td {
-      vertical-align: top !important;
-      padding: 8px 1px !important;
-      line-height: 1.1 !important;
-      word-break: break-word !important;
-    }
-  
-    /* 6. CRITICAL: Hide <br> tags and force team/coach to stack perfectly level */
-    .schedule-table td br {
-      display: none !important;
-    }
-  
-    .schedule-table td strong,
-    .schedule-table td small {
-      display: block !important;
+    /* Center the Opponent Column (4) */
+    .game-schedule th:nth-child(4), 
+    .game-schedule td:nth-child(4) {
       text-align: center !important;
-      margin: 0 !important;
+    }
+  
+    /* Force Team/Coach names to stack perfectly and level at top */
+    .game-schedule td { vertical-align: top !important; padding: 8px 1px !important; }
+    .game-schedule td br { display: none !important; } /* Kills the extra vertical gaps */
+    
+    .game-schedule td strong, 
+    .game-schedule td small {
+      display: block !important;
+      text-align: center !important; /* Centered for mobile balance */
+      margin: 0 auto !important;
       line-height: 1.1 !important;
     }
   
-    .schedule-table td strong {
-      font-size: 10px !important;
-      margin-bottom: 2px !important;
+    .game-schedule td strong { font-size: 10px !important; margin-bottom: 2px !important; }
+    .game-schedule td small { font-size: 9px !important; color: #666; }
+  
+    /* --- 3. FOOD TRUCK SCHEDULE SPECIFIC (Readable Layout) --- */
+    /* Targets any .schedule-table that IS NOT the game-schedule */
+    .schedule-table:not(.game-schedule) {
+      table-layout: auto !important;
+      border-collapse: separate !important;
+      border-spacing: 0 12px !important;
+      width: 100% !important;
+      font-size: 14px !important;
     }
   
-    .schedule-table td small {
-      font-size: 9px !important;
-      color: #666;
-    }
+    /* Fix Date and Food Truck alignment */
+    .schedule-table:not(.game-schedule) td:first-child { min-width: 90px !important; font-weight: bold !important; }
+    .schedule-table:not(.game-schedule) td:nth-child(2) { text-align: left !important; padding-left: 15px !important; }
   
-    /* 7. Tiny icons for the calendar column */
-    .calendar-btn-small img { 
-      width: 14px !important; 
-      height: 14px !important; 
-    }
-  
-    /* 8. Extra-small field link to help it fit in 35px */
-    .field-link {
-      font-size: 8px !important;
-      word-break: break-all !important;
+    /* Alignment for Location Labels (Unionville, BEA) */
+    .schedule-table:not(.game-schedule) td:nth-child(2) strong,
+    .schedule-table:not(.game-schedule) td:nth-child(2) a {
       display: block !important;
-      line-height: 0.9 !important;
+      text-align: left !important;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
     }
+  
+    .schedule-table:not(.game-schedule) td:nth-child(2) strong {
+      margin-top: 15px !important;
+      margin-bottom: 5px !important;
+      text-decoration: underline !important;
+    }
+  
+    /* Clean tiny icons for the calendar column */
+    .calendar-btn-small img { width: 14px !important; height: 14px !important; }
   }
 
   /* --- Final Optimized Mobile Hero (High Visibility) --- */
