@@ -78,6 +78,8 @@ nav a.register-nav:visited {
 header {
     background: #002a43;
     color: white;
+    position: relative; 
+    z-index: 1000; 
 }
 
 .nav-container {
@@ -125,23 +127,41 @@ nav a:hover {
 
 /* HERO */
 
+/* --- 1. HERO CONTAINER --- */
+
 .hero {
     background: url("images/soccerfield.png") center/cover no-repeat;
-    min-height: 75vh;
     position: relative;
+    min-height: 500px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+
 }
 
 .hero-overlay {
-    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    color: white;
+    /* Brand Gradient: Lighter top (40%), Darker bottom (60%) */
+    background: linear-gradient(
+        rgba(0, 42, 67, 0.4), 
+        rgba(0, 0, 0, 0.6)
+    );
+    
+    /* Layout: Positions logo/text in the upper part of the field */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; 
     align-items: center;
-    color: white;
     text-align: center;
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: 60px; /* Moves content above the soccer net area */
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .hero-logo {
@@ -241,11 +261,15 @@ nav a:hover {
 /* PROGRAMS */
 
 .programs {
-    background: #002a43;
-    padding: 50px 20px 70px 20px;
+    background-color: #002a43; /* Your brand dark blue */
+    margin-top: 0 !important;  /* Ensures no overlap with hero */
+    padding: 60px 20px;       /* Good vertical space */
+    position: relative;
+    z-index: 2;
     text-align: center;
     margin-top: -6px;
 }
+
 
 .program-grid {
     display: grid;
@@ -1358,6 +1382,8 @@ ul {
 
 /* --- Optimized Mobile Schedule Section --- */
 @media (max-width: 600px) {
+
+  
   
     /* 1. Hide the redundant 'Age' and 'Game' (Home/Away) columns */
     .schedule-table th:nth-child(1), .schedule-table td:nth-child(1),
@@ -1420,3 +1446,73 @@ ul {
       display: block;
     }
   }
+
+  /* --- Final Optimized Mobile Hero (High Visibility) --- */
+@media (max-width: 600px) {
+    section.hero {
+        min-height: 420px !important;
+        width: 100vw !important;
+        position: relative !important;
+        overflow: hidden !important;
+        background-size: cover !important;
+        background-position: center 90% !important; /* Crops sky to focus on field */
+        display: block !important;
+    }
+    
+    .hero-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important; /* Vertically centered like desktop */
+        align-items: center !important;
+        text-align: center !important;
+        background: linear-gradient(rgba(0, 42, 67, 0.4), rgba(0, 0, 0, 0.6)) !important;
+    }
+
+    .hero-logo {
+        height: 90px !important; /* Larger logo for mobile branding */
+        width: auto !important;
+        margin-bottom: 15px !important;
+        display: block !important;
+    }
+
+    .hero-overlay h1 {
+        font-size: 32px !important; /* Big, impactful mobile title */
+        line-height: 1.1 !important;
+        margin: 15px 0 10px !important; /* Balanced grouping */
+        color: white !important;
+        display: block !important;
+    }
+
+    .hero-overlay p {
+        font-size: 15px !important; /* Larger subtext for readability */
+        margin: 5px 0 15px !important;
+        color: white !important;
+        display: block !important;
+    }
+
+    .hero-buttons {
+        margin-top: 15px !important;
+        display: flex !important;
+        flex-direction: row !important; /* Side-by-side buttons like desktop */
+        justify-content: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .hero-buttons a, 
+    .hero-buttons button {
+        flex: 1 !important;
+        max-width: 140px !important;
+        padding: 10px 5px !important;
+        font-size: 12px !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+}

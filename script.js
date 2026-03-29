@@ -1,8 +1,7 @@
 function toggleMenu() {
-    const nav = document.getElementById("nav");
-    nav.classList.toggle("active");
-  }
-  
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('active');
+}
   const ageFilter = document.getElementById("ageFilter");
   const teamFilter = document.getElementById("teamFilter");
   
