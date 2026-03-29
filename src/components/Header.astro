@@ -1,0 +1,41 @@
+---
+// Header Component
+---
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="/beyslogo.png" alt="Bald Eagle Youth Soccer Logo">
+        </div>
+
+        <nav id="nav">
+            <a href="/">Home</a>
+            <a href="/#programs">Programs</a>
+            <a href="/schedule">Schedule</a>
+            <a href="/fields">Fields</a>
+            <a href="/foodtrucks">Food Truck Schedule</a>
+            <a href="/board">Board</a>
+            <a href="/fundraisers">Fundraisers</a>
+            <a href="/sponsors">Sponsors</a>
+            <a href="/coach-resources">Coach Resources</a>
+
+            <a class="register-nav"
+                href="https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports"
+                target="_blank">
+                Register
+            </a>
+        </nav>
+        
+        <div class="menu" id="menu-btn">☰</div>
+    </div>
+</header>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav');
+
+    if (menuBtn && nav) {
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    }
+</script>
