@@ -22,9 +22,12 @@ const { title } = Astro.props;
 		<script src="https://kit.fontawesome.com/f595c3e68f.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 		<AlertBar />
 		<Header />
-		<slot />
+		<main id="main-content">
+			<slot />
+		</main>
 		<Footer />
 	</body>
 </html>

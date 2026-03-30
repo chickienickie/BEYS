@@ -19,12 +19,13 @@
 
             <a class="register-nav"
                 href="https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports"
-                target="_blank">
+                target="_blank"
+                aria-label="Register (opens in a new tab)">
                 Register
             </a>
         </nav>
         
-        <div class="menu" id="menu-btn">☰</div>
+        <button class="menu" id="menu-btn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
     </div>
 </header>
 
@@ -35,6 +36,8 @@
     if (menuBtn && nav) {
         menuBtn.addEventListener('click', () => {
             nav.classList.toggle('active');
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', String(!isExpanded));
         });
 
         // Close menu using event delegation when a link is clicked

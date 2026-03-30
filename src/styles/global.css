@@ -4,6 +4,26 @@ body {
     color: #333;
 }
 
+/* SKIP LINK */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background: #d5d49b;
+    color: #002a43;
+    padding: 8px 16px;
+    font-weight: 600;
+    z-index: 9999;
+    transition: top 0.2s ease;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid #002a43;
+    outline-offset: -2px;
+}
+
 /* ALERT BAR */
 
 .alert-bar {
@@ -132,6 +152,10 @@ nav a:hover {
     display: none;
     font-size: 26px;
     cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    padding: 0;
 }
 
 /* HERO */
@@ -717,6 +741,10 @@ ul {
         display: block;
         font-size: 26px;
         cursor: pointer;
+        background: none;
+        border: none;
+        color: white;
+        padding: 0;
       }
     
    
@@ -945,6 +973,11 @@ ul {
         transform: translateX(-100%);
     }
 
+}
+
+.ticker:hover .ticker-text,
+.ticker:focus-within .ticker-text {
+    animation-play-state: paused;
 }
 
 .schedule-page {
