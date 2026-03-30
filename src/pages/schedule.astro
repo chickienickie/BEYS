@@ -354,4 +354,54 @@ import Layout from '../layouts/Layout.astro';
             });
         }
     </script>
+
+    <style is:global>
+        @media print {
+            /* 1. Hide layout and non-essential elements */
+            header, 
+            footer, 
+            .alert-bar, 
+            .page-hero, 
+            .schedule-info, 
+            .schedule-controls h2, 
+            .schedule-controls select, 
+            .print-btn, 
+            .empty-schedule-state {
+                display: none !important;
+            }
+
+            /* 2. Format the table for print */
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .schedule-section {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            #scheduleTableContainer {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .schedule-table {
+                width: 100% !important;
+                border-collapse: collapse !important;
+            }
+
+            /* 3. Hide the 'Add to Calendar' column */
+            .schedule-table th:last-child,
+            .schedule-table td:last-child {
+                display: none !important;
+            }
+        }
+    </style>
 </Layout>
