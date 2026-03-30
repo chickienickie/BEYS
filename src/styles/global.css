@@ -95,13 +95,21 @@ header {
     height: 55px;
 }
 
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px 20px;
+}
+
 nav a {
     color: white;
-    margin-left: 20px;
     text-decoration: none;
     font-weight: 600;
     font-family: Oswald;
     font-size: 16px;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -1580,8 +1588,9 @@ ul {
 
 
 
-    /* Mobile Navigation Menu - Ensuring it fits the viewport and doesn't cut off content */
-nav.active {
+@media (max-width: 768px) {
+  /* Mobile Navigation Menu - Ensuring it fits the viewport and doesn't cut off content */
+  nav.active {
     height: auto !important; /* Allow menu to expand to fit its contents */
     max-height: calc(100vh - 110px); /* Limit height to viewport and header height */
     overflow-y: auto; /* Allow scrolling if content is too long */
@@ -1600,4 +1609,5 @@ nav.active {
     font-size: 15px !important;
     text-align: center !important;
   }
-  
+}
+

@@ -4,12 +4,11 @@
 <header>
     <div class="nav-container">
         <div class="logo">
-            <img src="/beyslogo.png" alt="Bald Eagle Youth Soccer Logo">
+            <a href="/"><img src="/beyslogo.png" alt="Bald Eagle Youth Soccer Logo"></a>
         </div>
 
         <nav id="nav">
             <a href="/">Home</a>
-            <a href="/#programs">Programs</a>
             <a href="/schedule">Schedule</a>
             <a href="/fields">Fields</a>
             <a href="/foodtrucks">Food Truck Schedule</a>
@@ -36,6 +35,13 @@
     if (menuBtn && nav) {
         menuBtn.addEventListener('click', () => {
             nav.classList.toggle('active');
+        });
+
+        // Close menu using event delegation when a link is clicked
+        nav.addEventListener('click', (e) => {
+            if (e.target.closest('a')) {
+                nav.classList.remove('active');
+            }
         });
     }
 </script>
