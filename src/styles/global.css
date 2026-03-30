@@ -421,6 +421,35 @@ nav a:hover {
 
 /* Table */
 
+.empty-schedule-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.empty-schedule-state .empty-state-icon {
+    margin-bottom: 1rem;
+    color: #002a43;
+    opacity: 0.5;
+}
+
+.empty-schedule-state h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #002a43;
+    font-family: 'Oswald', sans-serif;
+}
+
+.empty-schedule-state p {
+    margin: 0;
+    color: #666;
+    font-family: 'Inter', sans-serif;
+}
+
 .schedule-table-container {
     overflow-x: auto;
 }
