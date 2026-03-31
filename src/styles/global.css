@@ -4,6 +4,26 @@ body {
     color: #333;
 }
 
+/* SKIP LINK */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background: #d5d49b;
+    color: #002a43;
+    padding: 8px 16px;
+    font-weight: 600;
+    z-index: 9999;
+    transition: top 0.2s ease;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid #002a43;
+    outline-offset: -2px;
+}
+
 /* ALERT BAR */
 
 .alert-bar {
@@ -95,13 +115,21 @@ header {
     height: 55px;
 }
 
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px 20px;
+}
+
 nav a {
     color: white;
-    margin-left: 20px;
     text-decoration: none;
     font-weight: 600;
     font-family: Oswald;
     font-size: 16px;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -124,6 +152,10 @@ nav a:hover {
     display: none;
     font-size: 26px;
     cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    padding: 0;
 }
 
 /* HERO */
@@ -388,6 +420,35 @@ nav a:hover {
 }
 
 /* Table */
+
+.empty-schedule-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.empty-schedule-state .empty-state-icon {
+    margin-bottom: 1rem;
+    color: #002a43;
+    opacity: 0.5;
+}
+
+.empty-schedule-state h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #002a43;
+    font-family: 'Oswald', sans-serif;
+}
+
+.empty-schedule-state p {
+    margin: 0;
+    color: #666;
+    font-family: 'Inter', sans-serif;
+}
 
 .schedule-table-container {
     overflow-x: auto;
@@ -678,6 +739,9 @@ ul {
     nav {
         display: none;
         flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
         position: absolute;
         top: 100%;
         left: 0;
@@ -699,6 +763,8 @@ ul {
         font-size: 16px;
         padding: 8px 0;
         border-bottom: 1px solid rgba(255,255,255,0.08);
+        width: 100%;
+        box-sizing: border-box;
       }
     
       nav a:last-child {
@@ -709,6 +775,10 @@ ul {
         display: block;
         font-size: 26px;
         cursor: pointer;
+        background: none;
+        border: none;
+        color: white;
+        padding: 0;
       }
     
    
@@ -937,6 +1007,11 @@ ul {
         transform: translateX(-100%);
     }
 
+}
+
+.ticker:hover .ticker-text,
+.ticker:focus-within .ticker-text {
+    animation-play-state: paused;
 }
 
 .schedule-page {
@@ -1580,8 +1655,9 @@ ul {
 
 
 
-    /* Mobile Navigation Menu - Ensuring it fits the viewport and doesn't cut off content */
-nav.active {
+@media (max-width: 768px) {
+  /* Mobile Navigation Menu - Ensuring it fits the viewport and doesn't cut off content */
+  nav.active {
     height: auto !important; /* Allow menu to expand to fit its contents */
     max-height: calc(100vh - 110px); /* Limit height to viewport and header height */
     overflow-y: auto; /* Allow scrolling if content is too long */
@@ -1600,4 +1676,5 @@ nav.active {
     font-size: 15px !important;
     text-align: center !important;
   }
-  
+}
+
