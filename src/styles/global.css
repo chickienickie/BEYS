@@ -1686,3 +1686,54 @@ ul {
   .coach-nav .primary-btn {
     margin: 6px;
   }
+
+  .coach-card {
+    background: #f9f9f9;
+    padding: 16px 18px;
+    border-radius: 10px;
+    margin: 0;
+    border-left: 4px solid #caa64b;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  
+  .coach-card h3 {
+    margin-top: 0;
+  }
+  
+  .coach-card h4 {
+    margin-bottom: 6px;
+  }
+
+  .coach-card:hover {
+    transform: translateY(-2px);
+    transition: 0.2s ease;
+  }
+  .coach-section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .coach-section .coach-card:first-of-type {
+    margin-top: 16px;
+  }
+  .coach-card {
+    background: #f9f9f9;
+    padding: 16px 18px;
+    border-radius: 10px;
+    margin: 24px 0; /* increased from ~18px */
+    border-left: 4px solid #caa64b;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+
+  .coach-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Desktop */
+  @media (min-width: 768px) {
+    .coach-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+  }
