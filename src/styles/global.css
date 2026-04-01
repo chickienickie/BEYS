@@ -1678,3 +1678,11 @@ ul {
   }
 }
 
+.coach-nav {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .coach-nav .primary-btn {
+    margin: 6px;
+  }
