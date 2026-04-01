@@ -1680,11 +1680,12 @@ ul {
 
 .coach-nav {
     text-align: center;
-    margin: 20px 0;
+    margin: 10px 0 25px;
   }
-  
   .coach-nav .primary-btn {
     margin: 6px;
+    padding: 8px 14px; /* slightly tighter than normal buttons */
+    font-size: 0.8rem;
   }
 
   .coach-card {
@@ -1736,4 +1737,8 @@ ul {
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
+  }
+  p.thankyou {
+    margin-left: auto;
+    margin-right: auto;
   }
