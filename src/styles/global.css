@@ -1742,3 +1742,26 @@ ul {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* Navigation buttons container */
+section.coach-nav .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  /* Individual buttons */
+  section.coach-nav .primary-btn {
+    margin: 0;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+  }
+  
+  
