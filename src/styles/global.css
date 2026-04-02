@@ -1282,8 +1282,8 @@ ul {
     background: #f5f7fa;
 }
 
-.format-list li {
-    margin-bottom: 8px;
+.coach-card.full-width {
+    grid-column: 1 / -1;
   }
 
 .coach-section h2 {
