@@ -1282,6 +1282,10 @@ ul {
     background: #f5f7fa;
 }
 
+.format-list li {
+    margin-bottom: 8px;
+  }
+
 .coach-section h2 {
     font-family: 'Oswald', sans-serif;
     color: #002a43;
@@ -1342,6 +1346,9 @@ ul {
     background: #d5d49b;
     color: #002a43;
 }
+
+
+
 
 /* ======================== */
 /* FUNDRAISERS PAGE */
@@ -1655,9 +1662,7 @@ ul {
 
 
 
-.format-list li {
-    margin-bottom: 8px;
-  }
+
 @media (max-width: 768px) {
   /* Mobile Navigation Menu - Ensuring it fits the viewport and doesn't cut off content */
   nav.active {
