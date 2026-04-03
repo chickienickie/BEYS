@@ -1060,14 +1060,13 @@ ul {
 }
 
 /* GRID LAYOUT */
+
 .announcement-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* 4 in a row */
+    display: flex;
+    flex-wrap: nowrap; /* Ensures they stay in one row */
     gap: 25px;
-    max-width: 1200px;
-    margin: 40px auto 0;
-}
+    overflow-x: auto; /* Adds a scrollbar if the screen is too narrow */
+  }
 
 /* CARD STYLE (MATCH PROGRAMS) */
 .announcement {
