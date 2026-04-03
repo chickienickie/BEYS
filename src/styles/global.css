@@ -1078,6 +1078,9 @@ ul {
     transition: all 0.25s ease;
     border-top: 4px solid transparent;
     position: relative;
+ flex: 1;
+        min-width: 0;
+    
 }
 
 /* HOVER EFFECT */
