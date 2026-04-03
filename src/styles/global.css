@@ -1176,6 +1176,9 @@ ul {
     color: #111 !important;
 }
 
+/* Target mobile screens (adjust the max-width as needed) */
+
+
 /* Tablet */
 @media (max-width: 1000px) {
     .announcement-cards {
@@ -1186,7 +1189,9 @@ ul {
 /* Mobile */
 @media (max-width: 600px) {
     .announcement-cards {
-        grid-template-columns: 1fr;
+        display: flex;
+      flex-direction: column; /* This makes the cards stack vertically */
+      gap: 20px;         
     }
 }
 
