@@ -1458,7 +1458,24 @@ ul {
     background: #d5d49b;
     color: #002a43;
 }
+/* Target the specific image in the Marianna card */
+.fundraiser-card .sub-img {
+    width: 180px;
+    height: auto;
+    margin: 5px auto;
+    display: block; /* Ensures the auto margin centers the image */
+}
 
+/* Ensure the card itself uses flexbox for consistent vertical alignment */
+.fundraiser-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Centers the image within the flex container */
+.fundraiser-card .sub-img {
+    align-self: center;
+}
 img.sub-img {
     width: 250px;
     height: auto;
