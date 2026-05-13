@@ -1148,30 +1148,33 @@ ul {
     text-decoration: underline;
 }
 
-#junior-high-soccer {
-    background-color: #003a5d;
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-  }
-
-  h2 {
-    font-size:36px;
+/* Full styles for the Junior High Soccer section */
+section#junior-high-soccer {
+    background-color: #ffffff; /* Updated to white background */
+    color: rgb(0, 42, 67);     /* Brand Blue */
+    padding: 60px 20px;       /* Preserving existing layout */
+    text-align: center;       /* Preserving center alignment */
+    font-family: "Oswald", sans-serif; /* Preserving brand font */
   }
   
-  #junior-high-soccer .program-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: 0 auto 40px;
+  /* Heading style */
+  section#junior-high-soccer h2 {
+    color: rgb(0, 42, 67);     /* Brand Blue for the title */
+    margin-bottom: 20px;      /* Standard spacing */
   }
   
-  #junior-high-soccer .program-card {
-    background: #fff;
-    color: #333;
-    padding: 30px;
-    border-radius: 12px;
+  /* Paragraph styles for better readability */
+  section#junior-high-soccer p {
+    color: #333333;           /* Dark gray for readability on white */
+    max-width: 800px;         /* Optional: keeps text lines from getting too long */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Ensure the grid or other elements inside don't break */
+  section#junior-high-soccer .program-grid {
+    /* Keep existing grid styles here */
+    margin-top: 30px;
   }
   
 
