@@ -1157,6 +1157,9 @@ section#junior-high-soccer {
     font-family: "Oswald", sans-serif; /* Preserving brand font */
   }
   
+  h2 {
+    font-size: 36px;
+  }
   /* Heading style */
   section#junior-high-soccer h2 {
     color: rgb(0, 42, 67);     /* Brand Blue for the title */
