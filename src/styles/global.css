@@ -1305,7 +1305,540 @@ section#junior-high-soccer {
     font-family: Oswald;
 }
 
+/* ==========================================
+   PARTNER WITH BEYS PAGE
+========================================== */
 
+
+/* HERO */
+
+.sponsor-intro {
+    background: #002a43;
+    color: white;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+
+.sponsor-intro h1 {
+    color: white;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.25rem;
+}
+
+
+.sponsor-intro p {
+    max-width: 750px;
+    margin: 0 auto 1rem;
+    line-height: 1.7;
+}
+
+
+.sponsor-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+
+
+
+/* BUTTONS */
+
+.button {
+    display: inline-block;
+    background: #d5d49b;
+    color: #002a43;
+    padding: .85rem 1.75rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+
+.button:hover {
+    transform: translateY(-2px);
+    opacity: .9;
+}
+
+
+
+
+/* GENERAL SECTION SPACING */
+
+.why-sponsor,
+.sponsor-levels,
+.impact,
+.sponsor-faq,
+.sponsor-news {
+    padding: 4rem 1rem;
+}
+
+
+.why-sponsor h2,
+.sponsor-levels h2,
+.impact h2,
+.sponsor-faq h2,
+.sponsor-news h2 {
+    text-align: center;
+    color: #002a43;
+    margin-bottom: 1rem;
+}
+
+
+.why-sponsor > .container > p,
+.sponsor-news > .container > p {
+    max-width: 750px;
+    text-align: center;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+}
+
+
+
+
+/* SPONSOR CARDS */
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+
+.sponsor-card {
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 1.75rem;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+
+    border: 1px solid #eeeeee;
+
+    text-align: center;
+
+}
+
+
+.sponsor-card h3 {
+
+    color: #002a43;
+
+    margin-bottom: .75rem;
+
+}
+
+
+.sponsor-card h4 {
+
+    color: #555;
+
+    margin-bottom: 1rem;
+
+}
+
+
+.sponsor-card ul {
+
+    text-align: left;
+
+    padding-left: 1.25rem;
+
+    line-height: 1.8;
+
+}
+
+
+.featured-sponsor {
+
+    border: 3px solid #d5d49b;
+
+}
+
+
+
+
+/* IMPACT SECTION */
+
+.impact {
+
+    background: #f7f7f4;
+
+}
+
+
+.impact-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 1rem;
+
+    margin-top: 2rem;
+
+}
+
+
+.impact-grid div {
+
+    background: white;
+
+    padding: 1.25rem;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-weight: 700;
+
+    color: #002a43;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.06);
+
+}
+
+
+
+
+/* CTA */
+
+.sponsor-cta {
+
+    background: #d5d49b;
+
+    padding: 3.5rem 1rem;
+
+    text-align: center;
+
+}
+
+
+.sponsor-cta h2 {
+
+    color: #002a43;
+
+}
+
+
+.sponsor-cta p {
+
+    max-width: 650px;
+
+    margin: 0 auto 1.5rem;
+
+}
+
+
+
+
+/* ==========================================
+   SPONSOR FORM
+========================================== */
+
+
+.sponsor-form {
+
+    background: #002a43;
+
+    padding: 4rem 1rem;
+
+}
+
+
+.sponsor-form h2 {
+
+    color: white;
+
+    text-align: center;
+
+    margin-bottom: 1rem;
+
+}
+
+
+.sponsor-form > .container > p {
+
+    color: white;
+
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 2rem;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* TRUST PILLS */
+
+
+.sponsor-trust {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+
+}
+
+
+.sponsor-trust span {
+
+    background: white;
+
+    color: #002a43;
+
+    padding: .65rem 1rem;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+}
+
+
+
+
+
+/* FORM CARD */
+
+
+.contact-form {
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    background: white;
+
+    padding: 2.5rem;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,.18);
+
+    display: grid;
+
+    gap: 1.25rem;
+
+}
+
+
+
+
+.contact-form label {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: .45rem;
+
+    color: #002a43;
+
+    font-weight: 700;
+
+}
+
+
+
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+
+    width: 100%;
+
+    padding: .85rem 1rem;
+
+    border-radius: 8px;
+
+    border: 2px solid #e5e5e5;
+
+    font-size: 1rem;
+
+    font-family: inherit;
+
+    transition: border .2s ease, box-shadow .2s ease;
+
+}
+
+
+
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+
+    outline: none;
+
+    border-color: #d5d49b;
+
+    box-shadow: 0 0 0 3px rgba(213,212,155,.35);
+
+}
+
+
+
+
+.contact-form textarea {
+
+    resize: vertical;
+
+}
+
+
+
+
+.checkbox-option {
+
+    flex-direction: row !important;
+
+    align-items: center;
+
+    gap: .75rem !important;
+
+    font-weight: 500 !important;
+
+}
+
+
+.checkbox-option input {
+
+    width: auto;
+
+}
+
+
+
+
+.contact-form .button {
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    margin-top: .5rem;
+
+}
+
+
+
+
+/* ==========================================
+   FAQ
+========================================== */
+
+
+.sponsor-faq {
+
+    background: white;
+
+}
+
+
+.faq-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 1.5rem;
+
+    margin-top: 2rem;
+
+}
+
+
+.faq-item {
+
+    background: #f7f7f4;
+
+    padding: 1.5rem;
+
+    border-radius: 12px;
+
+}
+
+
+.faq-item h3 {
+
+    color: #002a43;
+
+    margin-bottom: .75rem;
+
+}
+
+
+.faq-item p {
+
+    line-height: 1.6;
+
+    margin: 0;
+
+}
+
+
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+
+@media (max-width: 600px) {
+
+
+    .sponsor-intro {
+
+        padding: 3rem 1rem;
+
+    }
+
+
+    .contact-form {
+
+        padding: 1.5rem;
+
+        border-radius: 12px;
+
+    }
+
+
+    .sponsor-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+}
 
 /* ======================== */
 /* COACH RESOURCES PAGE */

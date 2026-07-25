@@ -4,8 +4,9 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Partner With BEYS | Bald Eagle Youth Soccer">
 
-    <!-- PARTNER HERO -->
+    <!-- HERO -->
     <section class="sponsor-intro">
+
         <div class="container">
 
             <h1>Partner With Bald Eagle Youth Soccer</h1>
@@ -16,23 +17,27 @@ import Layout from '../layouts/Layout.astro';
             </p>
 
             <p>
-                Bald Eagle Youth Soccer (BEYS) is a volunteer-run nonprofit organization
-                dedicated to providing an affordable, positive soccer experience where kids
-                can build skills, confidence, friendships, and lasting memories.
+                Bald Eagle Youth Soccer (BEYS) is a volunteer-run 501(c)(3) nonprofit organization
+                dedicated to providing an affordable, positive soccer experience where kids can
+                build skills, confidence, friendships, and lasting memories.
             </p>
 
             <div class="sponsor-buttons">
+
                 <a href="/2026-sponsorship-packet.pdf" class="button">
                     Download Sponsorship Packet
                 </a>
 
-                <a class="button" href="#sponsor-form">
-                    Complete Sponsorship Form
+                <a href="#sponsor-form" class="button">
+                    Become a Partner
                 </a>
+
             </div>
 
         </div>
+
     </section>
+
 
 
     <!-- WHY PARTNER -->
@@ -43,10 +48,10 @@ import Layout from '../layouts/Layout.astro';
             <h2>Why Partner With BEYS?</h2>
 
             <p>
-                Community partners make it possible for us to keep registration affordable
-                while providing players with the equipment, fields, and resources needed
-                for a successful season.
+                Community partners make it possible for us to keep registration affordable while
+                providing players with the equipment, fields, and resources needed for a successful season.
             </p>
+
 
             <div class="sponsor-grid">
 
@@ -57,12 +62,14 @@ import Layout from '../layouts/Layout.astro';
                     </p>
                 </div>
 
+
                 <div class="sponsor-card">
                     <h3>🏆 Fall & Spring Seasons</h3>
                     <p>
                         Gain visibility throughout the year.
                     </p>
                 </div>
+
 
                 <div class="sponsor-card">
                     <h3>❤️ Community Impact</h3>
@@ -71,10 +78,11 @@ import Layout from '../layouts/Layout.astro';
                     </p>
                 </div>
 
+
                 <div class="sponsor-card">
-                    <h3>501(c)(3) Nonprofit</h3>
+                    <h3>501(c)(3)</h3>
                     <p>
-                        Donations are tax deductible as permitted by law.
+                        Tax deductible nonprofit organization.
                     </p>
                 </div>
 
@@ -83,6 +91,8 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
     </section>
+
+
 
 
     <!-- SPONSOR LEVELS -->
@@ -104,14 +114,14 @@ import Layout from '../layouts/Layout.astro';
 
                     <ul>
                         <li>Business name/logo displayed on BEYS website</li>
-                        <li>$100+ contributions receive field signage during Fall and Spring seasons</li>
+                        <li>$100+ contributions receive field signage</li>
                     </ul>
 
                 </div>
 
 
 
-                <div class="sponsor-card">
+                <div class="sponsor-card featured-sponsor">
 
                     <h3>🏆 Gold Team Sponsor</h3>
 
@@ -120,7 +130,7 @@ import Layout from '../layouts/Layout.astro';
                     <ul>
                         <li>Business logo/name displayed on team jerseys</li>
                         <li>Select jersey color for your sponsored team</li>
-                        <li>Business recognition on BEYS website</li>
+                        <li>Website recognition</li>
                         <li>Field signage during Fall and Spring seasons</li>
                     </ul>
 
@@ -134,38 +144,24 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
 
-    <!-- SPONSOR IMPACT -->
+
+
+    <!-- IMPACT -->
     <section class="impact">
 
         <div class="container">
 
             <h2>Your Partnership Helps Provide</h2>
 
-            <div class="sponsor-grid">
 
-                <div class="sponsor-card">
-                    ⚽ Player Jerseys
-                </div>
+            <div class="impact-grid">
 
-                <div class="sponsor-card">
-                    🥅 Goals & Nets
-                </div>
-
-                <div class="sponsor-card">
-                    🎯 Training Equipment
-                </div>
-
-                <div class="sponsor-card">
-                    🌱 Field Maintenance
-                </div>
-
-                <div class="sponsor-card">
-                    👟 Affordable Registration
-                </div>
-
-                <div class="sponsor-card">
-                    ❤️ Youth Opportunities
-                </div>
+                <div>⚽ Player Jerseys</div>
+                <div>🥅 Goals & Nets</div>
+                <div>🎯 Training Equipment</div>
+                <div>🌱 Field Maintenance</div>
+                <div>👟 Affordable Registration</div>
+                <div>❤️ Youth Opportunities</div>
 
             </div>
 
@@ -175,190 +171,203 @@ import Layout from '../layouts/Layout.astro';
 
 
 
-    <!-- CALL TO ACTION -->
-<section class="sponsor-cta">
 
-    <div class="container">
+    <!-- FORM CTA -->
+    <section class="sponsor-cta">
 
-        <h2>Ready To Partner With BEYS?</h2>
+        <div class="container">
 
-        <p>
-            Join the businesses and community members helping provide a positive
-            soccer experience for local youth.
-        </p>
+            <h2>Ready To Partner With BEYS?</h2>
 
-        <a class="button" href="#sponsor-form">
-            Become a Partner
-        </a>
-
-    </div>
-
-</section>
+            <p>
+                Join the businesses and community members helping provide a positive soccer
+                experience for local youth.
+            </p>
 
 
-<!-- SPONSOR FORM -->
-<section id="sponsor-form" class="sponsor-form">
+            <a href="#sponsor-form" class="button">
+                Become a BEYS Partner
+            </a>
 
-    <div class="container">
+        </div>
 
-        <h2>Become a BEYS Community Partner</h2>
-
-        <p>
-            Complete the form below and we will follow up with sponsorship details,
-            payment options, and logo information.
-        </p>
+    </section>
 
 
-        <!-- Hidden form for Netlify detection -->
-        <form name="sponsor-interest" netlify hidden>
-
-            <input type="text" name="business-name" />
-            <input type="text" name="contact-name" />
-            <input type="email" name="email" />
-            <input type="tel" name="phone" />
-            <input type="text" name="website" />
-            <input type="text" name="sponsorship-level" />
-            <input type="text" name="jersey-color" />
-            <textarea name="message"></textarea>
-
-        </form>
 
 
-        <!-- Visible Form -->
-        <form
-            name="sponsor-interest"
-            method="POST"
-            data-netlify="true"
-            class="contact-form"
-        >
+    <!-- FORM -->
+    <section id="sponsor-form" class="sponsor-form">
 
-            <input type="hidden" name="form-name" value="sponsor-interest" />
+        <div class="container">
 
 
-            <label>
-                Business Name *
+            <h2>Become a BEYS Community Partner</h2>
+
+
+            <p>
+                Complete the form below and we will follow up with sponsorship details,
+                payment options, and logo information.
+            </p>
+
+
+
+            <div class="sponsor-trust">
+
+                <span>⚽ Nearly 100 Players</span>
+                <span>🏆 501(c)(3) Nonprofit</span>
+                <span>❤️ Community Supported</span>
+
+            </div>
+
+
+
+
+            <!-- Netlify Detection -->
+
+            <form name="sponsor-interest" netlify hidden>
+
+                <input type="text" name="business-name" />
+                <input type="text" name="contact-name" />
+                <input type="email" name="email" />
+                <input type="tel" name="phone" />
+                <input type="text" name="website" />
+                <input type="text" name="sponsorship-level" />
+                <input type="text" name="jersey-color" />
+                <textarea name="message"></textarea>
+
+            </form>
+
+
+
+
+
+            <form
+                name="sponsor-interest"
+                method="POST"
+                data-netlify="true"
+                class="contact-form"
+            >
+
+                <input type="hidden" name="form-name" value="sponsor-interest" />
+
+
+                <label>
+                    Business Name *
+                    <input type="text" name="business-name" required />
+                </label>
+
+
+                <label>
+                    Contact Person *
+                    <input type="text" name="contact-name" required />
+                </label>
+
+
+                <label>
+                    Email *
+                    <input type="email" name="email" required />
+                </label>
+
+
+                <label>
+                    Phone Number
+                    <input type="tel" name="phone" />
+                </label>
+
+
+                <label>
+                    Business Website or Social Media
+                    <input type="text" name="website" placeholder="https://" />
+                </label>
+
+
+                <label>
+                    Sponsorship Level *
+                    <select name="sponsorship-level" required>
+
+                        <option value="">
+                            Select sponsorship level
+                        </option>
+
+                        <option>
+                            Gold Team Sponsor ($300+)
+                        </option>
+
+                        <option>
+                            Blue Community Sponsor (Up to $299)
+                        </option>
+
+                        <option>
+                            General Donation
+                        </option>
+
+                    </select>
+                </label>
+
+
+                <label>
+                    Preferred Jersey Color (Gold Sponsors)
+                    <input 
+                        type="text"
+                        name="jersey-color"
+                        placeholder="Example: Navy, Gold, White"
+                    />
+                </label>
+
+
+
+                <label class="checkbox-option">
+
+                    <input 
+                        type="checkbox"
+                        name="logo-email"
+                        value="Will email logo"
+                    />
+
+                    I will email my logo to BEYS
+
+                </label>
+
+
+
+
+                <label>
+                    Additional Notes
+
+                    <textarea
+                        name="message"
+                        rows="5"
+                        placeholder="Anything else you would like us to know?"
+                    ></textarea>
+
+                </label>
+
+
+
                 <input
-                    type="text"
-                    name="business-name"
-                    required
+                    type="hidden"
+                    name="source"
+                    value="Website Sponsor Page"
                 />
-            </label>
 
 
-            <label>
-                Contact Person *
-                <input
-                    type="text"
-                    name="contact-name"
-                    required
-                />
-            </label>
+
+                <button type="submit" class="button">
+                    Become a BEYS Partner
+                </button>
 
 
-            <label>
-                Email *
-                <input
-                    type="email"
-                    name="email"
-                    required
-                />
-            </label>
+            </form>
 
 
-            <label>
-                Phone Number
-                <input
-                    type="tel"
-                    name="phone"
-                />
-            </label>
+        </div>
+
+    </section>
 
 
-            <label>
-                Business Website or Social Media
-                <input
-                    type="text"
-                    name="website"
-                    placeholder="https://"
-                />
-            </label>
 
 
-            <label>
-                Sponsorship Level *
-                <select name="sponsorship-level" required>
-
-                    <option value="">
-                        Select sponsorship level
-                    </option>
-
-                    <option value="Gold Team Sponsor ($300+)">
-                        🏆 Gold Team Sponsor ($300+)
-                    </option>
-
-                    <option value="Blue Community Sponsor (Up to $299)">
-                        ⚽ Blue Community Sponsor (Up to $299)
-                    </option>
-
-                    <option value="General Donation">
-                        ❤️ General Donation
-                    </option>
-
-                </select>
-            </label>
-
-
-            <label>
-                Preferred Jersey Color (Gold Sponsors)
-                <input
-                    type="text"
-                    name="jersey-color"
-                    placeholder="Example: Navy, Gold, White"
-                />
-            </label>
-
-
-            <label>
-                How will you provide your logo?
-            </label>
-
-            <label class="checkbox-option">
-                <input
-                    type="checkbox"
-                    name="logo-email"
-                    value="Will email logo"
-                />
-                I will email my logo to BEYS
-            </label>
-
-
-            <label>
-                Additional Notes
-                <textarea
-                    name="message"
-                    rows="5"
-                    placeholder="Anything else you would like us to know?"
-                ></textarea>
-            </label>
-
-
-            <input
-                type="hidden"
-                name="source"
-                value="Website Sponsor Page"
-            />
-
-
-            <button type="submit" class="button">
-                Submit Sponsorship Request
-            </button>
-
-
-        </form>
-
-    </div>
-
-</section>
     <!-- FAQ -->
     <section class="sponsor-faq">
 
@@ -369,13 +378,12 @@ import Layout from '../layouts/Layout.astro';
 
             <div class="faq-grid">
 
-
                 <div class="faq-item">
                     <h3>Is my sponsorship tax deductible?</h3>
                     <p>
                         Yes. Bald Eagle Youth Soccer is a registered 501(c)(3)
-                        nonprofit organization (EIN #45-0666301). Donations are
-                        tax deductible to the extent permitted by law.
+                        nonprofit organization. Donations are tax deductible
+                        to the extent permitted by law.
                     </p>
                 </div>
 
@@ -384,8 +392,7 @@ import Layout from '../layouts/Layout.astro';
                     <h3>How will my business be recognized?</h3>
                     <p>
                         Sponsors may receive recognition through team jerseys,
-                        field signage, and the BEYS website throughout the
-                        Fall and Spring seasons.
+                        field signage, and the BEYS website.
                     </p>
                 </div>
 
@@ -393,8 +400,9 @@ import Layout from '../layouts/Layout.astro';
                 <div class="faq-item">
                     <h3>When is the sponsorship deadline?</h3>
                     <p>
-                        To be included on team jerseys and sponsorship materials,
-                        please submit sponsorship by <strong>&lt;Jersey Order Deadline&gt;</strong>.
+                        Sponsorships must be submitted by
+                        <strong>&lt;Jersey Order Deadline&gt;</strong>
+                        to be included on team jerseys.
                     </p>
                 </div>
 
@@ -402,26 +410,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class="faq-item">
                     <h3>Can I sponsor more than one team?</h3>
                     <p>
-                        Absolutely! Businesses are welcome to provide additional
-                        support beyond the listed sponsorship levels.
-                    </p>
-                </div>
-
-
-                <div class="faq-item">
-                    <h3>How do I provide my logo?</h3>
-                    <p>
-                        After becoming a partner, BEYS will collect your logo
-                        and any additional information needed.
-                    </p>
-                </div>
-
-
-                <div class="faq-item">
-                    <h3>Can individuals support BEYS?</h3>
-                    <p>
-                        Yes! Families, individuals, and community members are
-                        welcome to support youth soccer.
+                        Yes! Additional support is always welcome.
                     </p>
                 </div>
 
@@ -431,6 +420,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
     </section>
+
 
 
 
@@ -442,7 +432,7 @@ import Layout from '../layouts/Layout.astro';
             <h2>Thank You To Our Community Partners</h2>
 
             <p>
-                We are grateful for the businesses, organizations, families,
+                We are grateful to the businesses, organizations, families,
                 and individuals who help make youth soccer possible.
             </p>
 
@@ -454,18 +444,8 @@ import Layout from '../layouts/Layout.astro';
                 <div class="sponsor-card">Nittany Meat Market</div>
                 <div class="sponsor-card">Weis Market (Bellefonte)</div>
                 <div class="sponsor-card">Walmart (Benner Pike)</div>
-                <div class="sponsor-card">Karen Day</div>
-                <div class="sponsor-card">Alaina Lucas</div>
-                <div class="sponsor-card">Todd and Elaine Warner</div>
-                <div class="sponsor-card">Nancy Warner</div>
-                <div class="sponsor-card">Danielle Fritchman</div>
 
             </div>
-
-
-            <p class="volunteer-thanks">
-                Thank you to our family and friend volunteers who helped make our events successful!
-            </p>
 
 
         </div>
