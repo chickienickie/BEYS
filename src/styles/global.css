@@ -1321,7 +1321,8 @@ section#junior-high-soccer {
 
 
 .sponsor-intro h1 {
-    color: white;
+ 
+    color: #d5d49b;
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 1.25rem;
 }
@@ -1331,7 +1332,7 @@ section#junior-high-soccer {
     max-width: 750px;
     margin: 0 auto 1rem;
     line-height: 1.7;
-    color: #d5d49b;
+    color: white;
 }
 
 
