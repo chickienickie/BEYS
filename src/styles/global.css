@@ -1364,7 +1364,11 @@ section#junior-high-soccer {
     opacity: .9;
 }
 
-
+.button:visited {
+    background: #d5d49b;
+    color: #002a43;
+    text-decoration: none;
+}
 
 
 /* GENERAL SECTION SPACING */
