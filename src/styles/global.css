@@ -1466,7 +1466,9 @@ section#junior-high-soccer {
     line-height: 1.8;
 
 }
-
+.blue-sponsor {
+    border: 3px solid #002a43;
+}
 .blue-sponsor,
 .featured-sponsor {
     transition: transform .2s ease, box-shadow .2s ease;
