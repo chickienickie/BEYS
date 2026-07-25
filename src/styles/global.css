@@ -1359,9 +1359,16 @@ section#junior-high-soccer {
 }
 
 
-.button:hover {
-    transform: translateY(-2px);
-    opacity: .9;
+.button:hover,
+.button:focus {
+    background: #002a43;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.button:active {
+    transform: translateY(1px);
 }
 
 .button:visited {
