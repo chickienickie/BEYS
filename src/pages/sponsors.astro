@@ -176,24 +176,24 @@ import Layout from '../layouts/Layout.astro';
 
 
     <!-- CALL TO ACTION -->
-    <section class="sponsor-cta">
+<section class="sponsor-cta">
 
-        <div class="container">
+    <div class="container">
 
-            <h2>Ready To Partner With BEYS?</h2>
+        <h2>Ready To Partner With BEYS?</h2>
 
-            <p>
-                Join the businesses and community members helping provide a positive
-                soccer experience for local youth.
-            </p>
+        <p>
+            Join the businesses and community members helping provide a positive
+            soccer experience for local youth.
+        </p>
 
-            <a class="button" href="/sponsor-form">
-                Complete Sponsorship Form
-            </a>
+        <a class="button" href="#sponsor-form">
+            Become a Partner
+        </a>
 
-        </div>
+    </div>
 
-    </section>
+</section>
 
 
 <!-- SPONSOR FORM -->
@@ -201,15 +201,31 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="container">
 
-        <h2>Become a BEYS Partner</h2>
+        <h2>Become a BEYS Community Partner</h2>
 
         <p>
-            Complete the form below and we will follow up with payment details,
-            sponsorship information, and logo requirements.
+            Complete the form below and we will follow up with sponsorship details,
+            payment options, and logo information.
         </p>
 
 
-        <form 
+        <!-- Hidden form for Netlify detection -->
+        <form name="sponsor-interest" netlify hidden>
+
+            <input type="text" name="business-name" />
+            <input type="text" name="contact-name" />
+            <input type="email" name="email" />
+            <input type="tel" name="phone" />
+            <input type="text" name="website" />
+            <input type="text" name="sponsorship-level" />
+            <input type="text" name="jersey-color" />
+            <textarea name="message"></textarea>
+
+        </form>
+
+
+        <!-- Visible Form -->
+        <form
             name="sponsor-interest"
             method="POST"
             data-netlify="true"
@@ -221,9 +237,9 @@ import Layout from '../layouts/Layout.astro';
 
             <label>
                 Business Name *
-                <input 
-                    type="text" 
-                    name="business-name" 
+                <input
+                    type="text"
+                    name="business-name"
                     required
                 />
             </label>
@@ -231,9 +247,9 @@ import Layout from '../layouts/Layout.astro';
 
             <label>
                 Contact Person *
-                <input 
-                    type="text" 
-                    name="contact-name" 
+                <input
+                    type="text"
+                    name="contact-name"
                     required
                 />
             </label>
@@ -241,9 +257,9 @@ import Layout from '../layouts/Layout.astro';
 
             <label>
                 Email *
-                <input 
-                    type="email" 
-                    name="email" 
+                <input
+                    type="email"
+                    name="email"
                     required
                 />
             </label>
@@ -251,18 +267,19 @@ import Layout from '../layouts/Layout.astro';
 
             <label>
                 Phone Number
-                <input 
-                    type="tel" 
+                <input
+                    type="tel"
                     name="phone"
                 />
             </label>
 
 
             <label>
-                Website or Social Media
-                <input 
-                    type="url" 
+                Business Website or Social Media
+                <input
+                    type="text"
                     name="website"
+                    placeholder="https://"
                 />
             </label>
 
@@ -272,19 +289,19 @@ import Layout from '../layouts/Layout.astro';
                 <select name="sponsorship-level" required>
 
                     <option value="">
-                        Select an option
+                        Select sponsorship level
                     </option>
 
-                    <option value="Gold Team Sponsor">
-                        Gold Team Sponsor ($300+)
+                    <option value="Gold Team Sponsor ($300+)">
+                        🏆 Gold Team Sponsor ($300+)
                     </option>
 
-                    <option value="Blue Community Sponsor">
-                        Blue Community Sponsor (Up to $299)
+                    <option value="Blue Community Sponsor (Up to $299)">
+                        ⚽ Blue Community Sponsor (Up to $299)
                     </option>
 
                     <option value="General Donation">
-                        General Donation
+                        ❤️ General Donation
                     </option>
 
                 </select>
@@ -293,8 +310,8 @@ import Layout from '../layouts/Layout.astro';
 
             <label>
                 Preferred Jersey Color (Gold Sponsors)
-                <input 
-                    type="text" 
+                <input
+                    type="text"
                     name="jersey-color"
                     placeholder="Example: Navy, Gold, White"
                 />
@@ -302,13 +319,14 @@ import Layout from '../layouts/Layout.astro';
 
 
             <label>
-                How would you like to provide your logo?
+                How will you provide your logo?
             </label>
 
-            <label class="checkbox">
-                <input 
+            <label class="checkbox-option">
+                <input
                     type="checkbox"
                     name="logo-email"
+                    value="Will email logo"
                 />
                 I will email my logo to BEYS
             </label>
@@ -316,11 +334,19 @@ import Layout from '../layouts/Layout.astro';
 
             <label>
                 Additional Notes
-                <textarea 
+                <textarea
                     name="message"
-                    rows="5">
-                </textarea>
+                    rows="5"
+                    placeholder="Anything else you would like us to know?"
+                ></textarea>
             </label>
+
+
+            <input
+                type="hidden"
+                name="source"
+                value="Website Sponsor Page"
+            />
 
 
             <button type="submit" class="button">
