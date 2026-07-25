@@ -1514,39 +1514,26 @@ section#junior-high-soccer {
 
 .impact-list {
 
-    max-width: 650px;
+    max-width: 600px;
 
     margin: 0 auto;
 
-    padding: 0;
+    padding-left: 1.5rem;
 
-    list-style: none;
+    color: #002a43;
 
-    display: grid;
+    line-height: 2;
 
-    gap: 1rem;
+    font-size: 1.1rem;
 
 }
 
 
 .impact-list li {
 
-    background: white;
-
-    padding: 1rem 1.25rem;
-
-    border-left: 5px solid #002a43;
-
-    border-radius: 8px;
-
-    box-shadow: 0 3px 12px rgba(0,0,0,.06);
-
-    color: #002a43;
-
-    font-weight: 600;
+    padding-left: .5rem;
 
 }
-
 
 
 /* CTA */
