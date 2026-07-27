@@ -1379,7 +1379,29 @@ section#junior-high-soccer {
     text-decoration: none;
 }
 
+.sponsor-benefits {
+    max-width: 800px;
+    margin: 30px auto 0;
+    padding: 0;
+    list-style: none;
+}
 
+.sponsor-benefits li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.sponsor-benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
 /* GENERAL SECTION SPACING */
 
 .why-sponsor,
