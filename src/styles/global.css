@@ -1401,7 +1401,28 @@ section#junior-high-soccer {
     top: 0;
     font-weight: bold;
     font-size: 1.2rem;
+
 }
+/* Mobile adjustments for the sponsorship section */
+@media (max-width: 767px) {
+    .container {
+      text-align: center;
+    }
+  
+    .sponsor-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem; /* Adjust spacing between buttons */
+      margin-top: 2rem;
+    }
+  
+    .sponsor-buttons .button {
+      width: auto;         /* Allow buttons to shrink to fit text */
+      display: inline-block;
+      min-width: 200px;    /* Optional: ensures buttons have a consistent minimum size */
+    }
+  }
 /* GENERAL SECTION SPACING */
 
 .why-sponsor,
