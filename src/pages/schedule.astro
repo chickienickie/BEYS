@@ -3,12 +3,13 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Game Schedule | Bald Eagle Youth Soccer">
     <!-- HERO -->
+    <!-- schedule 
     <section class="page-hero">
         <h1>Game Schedules</h1>
         <p>Select your age group and team to view the schedule.</p>
     </section>
 
-    <!-- SCHEDULE -->
+    SCHEDULE 
     <section class="schedule-section">
         <div class="container">
             <h2>Find Your Team Schedule</h2>
@@ -400,4 +401,56 @@ import Layout from '../layouts/Layout.astro';
             }
         }
     </style>
+    -->
+    <section class="page-hero">
+      <h1>Fall 2026 Game Schedules</h1>
+      <p>Schedules are currently being finalized and will be posted soon.</p>
+  </section>
+  <section class="schedule-section">
+    <div class="container">
+
+        <div class="coming-soon-card">
+            <h2>🍂 Fall 2026 Schedules Coming Soon</h2>
+
+            <p>
+                Our coaches are finalizing teams and game schedules for the
+                Fall 2026 season.
+            </p>
+
+            <p>
+                Please check back soon! Once schedules are released, you'll be
+                able to select your age group and team to view your complete
+                schedule.
+            </p>
+
+            <a href="/contact" class="btn-primary">
+                Contact Us
+            </a>
+        </div>
+
+    </div>
+</section>
+<style>
+  .coming-soon-card {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 3rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.coming-soon-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.coming-soon-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1rem;
+}
+</style>
 </Layout>
