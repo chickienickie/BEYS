@@ -2841,3 +2841,17 @@ section.coach-nav .container {
         margin-top: 22px;
     }
 }
+
+/* Temporary centered layout until sponsors are added */
+
+.sponsor-carousel.sponsor-coming-soon {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    padding-bottom: 10px;
+}
+
+.sponsor-carousel.sponsor-coming-soon .sponsor-slide {
+    flex: 0 1 850px;
+    width: 100%;
+}
