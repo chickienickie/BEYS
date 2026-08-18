@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Home -->
+    <url>
+        <loc>https://baldeagleyouthsoccer.org/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Schedule -->
+    <url>
+        <loc>https://baldeagleyouthsoccer.org/schedule/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Field Locations -->
+    <url>
+        <loc>https://baldeagleyouthsoccer.org/fields/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Food Truck Schedule -->
+    <url>
+        <loc>https://baldeagleyouthsoccer.org/food-truck-schedule/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Board -->
+    <url>
+        <loc>https://baldeagleyouthsoccer.org/board/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Fundraisers -->
+    <url>
+        <loc>https://baldeagleyouthsoccer.org/fundraisers/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Sponsors -->
+    <url>
+        <loc>https://baldeagleyouthsoccer.org/sponsors/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Coach Resources -->
+    <url>
+        <loc>https://baldeagleyouthsoccer.org/coach-resources/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+</urlset>
