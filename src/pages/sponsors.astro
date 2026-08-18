@@ -183,176 +183,265 @@ the families who make up our community.
 
 
     <!-- FORM -->
-    <section id="sponsor-form" class="sponsor-form">
+<section id="sponsor-form" class="sponsor-form">
 
-        <div class="container">
+    <div class="container">
+
+        <h2>Become a BEYS Community Partner</h2>
+
+        <p>
+            Complete the form below and we will follow up with sponsorship details,
+            payment options, and logo information.
+        </p>
+
+        <div class="sponsor-trust">
+
+            <span>⚽ Over 100 Players each season</span>
+            <span>🏆 501(c)(3) Nonprofit</span>
+            <span>❤️ Community Supported</span>
+
+        </div>
 
 
-            <h2>Become a BEYS Community Partner</h2>
+        <!-- Netlify Detection -->
+
+        <form name="sponsor-interest" netlify hidden>
+
+            <input type="text" name="business-name" />
+            <input type="text" name="contact-name" />
+            <input type="email" name="email" />
+            <input type="tel" name="phone" />
+            <input type="text" name="website" />
+            <input type="text" name="sponsorship-level" />
+            <input type="text" name="preferred-team" />
+            <input type="text" name="jersey-color" />
+            <input type="checkbox" name="logo-email" />
+            <textarea name="message"></textarea>
+
+        </form>
 
 
-            <p>
-                Complete the form below and we will follow up with sponsorship details,
-                payment options, and logo information.
-            </p>
+        <!-- SPONSORSHIP FORM -->
+
+        <form
+            name="sponsor-interest"
+            method="POST"
+            data-netlify="true"
+            class="contact-form"
+        >
+
+            <input type="hidden" name="form-name" value="sponsor-interest" />
 
 
+            <!-- BUSINESS INFORMATION -->
 
-            <div class="sponsor-trust">
+            <label>
+                Business Name *
+                <input
+                    type="text"
+                    name="business-name"
+                    required
+                />
+            </label>
 
-                <span>⚽ Over 100 Players each season</span>
-                <span>🏆 501(c)(3) Nonprofit</span>
-                <span>❤️ Community Supported</span>
+
+            <label>
+                Contact Person *
+                <input
+                    type="text"
+                    name="contact-name"
+                    required
+                />
+            </label>
+
+
+            <label>
+                Email *
+                <input
+                    type="email"
+                    name="email"
+                    required
+                />
+            </label>
+
+
+            <label>
+                Phone Number
+                <input
+                    type="tel"
+                    name="phone"
+                />
+            </label>
+
+
+            <label>
+                Business Website or Social Media
+                <input
+                    type="text"
+                    name="website"
+                    placeholder="https://"
+                />
+            </label>
+
+
+            <!-- SPONSORSHIP LEVEL -->
+
+            <label>
+                Sponsorship Level *
+
+                <select
+                    name="sponsorship-level"
+                    required
+                >
+
+                    <option value="">
+                        Select sponsorship level
+                    </option>
+
+                    <option value="Gold Team Sponsor ($300+)">
+                        Gold Team Sponsor ($300+)
+                    </option>
+
+                    <option value="Blue Community Sponsor (Up to $299)">
+                        Blue Community Sponsor (Up to $299)
+                    </option>
+
+                    <option value="General Donation">
+                        General Donation
+                    </option>
+
+                </select>
+            </label>
+
+
+            <!-- TEAM SPONSORSHIP AVAILABILITY -->
+
+            <div class="team-sponsorship-notice">
+
+                <h3>⚽ Team Sponsorship Availability</h3>
+
+                <p>
+                    Team sponsorship opportunities are limited and available
+                    on a first-come, first-served basis.
+                </p>
+
+                <div class="team-availability">
+
+                    <div class="team-status full">
+                        <strong>U13</strong>
+                        <span>Team Sponsorships Full</span>
+                    </div>
+
+                    <div class="team-status full">
+                        <strong>U10</strong>
+                        <span>Team Sponsorships Full</span>
+                    </div>
+
+                    <div class="team-status available">
+                        <strong>U8</strong>
+                        <span>1 Sponsorship Available</span>
+                    </div>
+
+                    <div class="team-status available">
+                        <strong>U6</strong>
+                        <span>2 Sponsorships Available</span>
+                    </div>
+
+                </div>
 
             </div>
 
 
+            <!-- PREFERRED TEAM -->
+
+            <label>
+                Preferred Team
+
+                <select name="preferred-team">
+
+                    <option value="">
+                        Select a team
+                    </option>
+
+                    <option value="U8">
+                        U8 — 1 Sponsorship Available
+                    </option>
+
+                    <option value="U6">
+                        U6 — 2 Sponsorships Available
+                    </option>
+
+                </select>
+            </label>
 
 
-            <!-- Netlify Detection -->
+            <!-- JERSEY COLOR -->
 
-            <form name="sponsor-interest" netlify hidden>
-
-                <input type="text" name="business-name" />
-                <input type="text" name="contact-name" />
-                <input type="email" name="email" />
-                <input type="tel" name="phone" />
-                <input type="text" name="website" />
-                <input type="text" name="sponsorship-level" />
-                <input type="text" name="jersey-color" />
-                <textarea name="message"></textarea>
-
-            </form>
-
-
-
-
-
-            <form
-                name="sponsor-interest"
-                method="POST"
-                data-netlify="true"
-                class="contact-form"
-            >
-
-                <input type="hidden" name="form-name" value="sponsor-interest" />
-
-
-                <label>
-                    Business Name *
-                    <input type="text" name="business-name" required />
-                </label>
-
-
-                <label>
-                    Contact Person *
-                    <input type="text" name="contact-name" required />
-                </label>
-
-
-                <label>
-                    Email *
-                    <input type="email" name="email" required />
-                </label>
-
-
-                <label>
-                    Phone Number
-                    <input type="tel" name="phone" />
-                </label>
-
-
-                <label>
-                    Business Website or Social Media
-                    <input type="text" name="website" placeholder="https://" />
-                </label>
-
-
-                <label>
-                    Sponsorship Level *
-                    <select name="sponsorship-level" required>
-
-                        <option value="">
-                            Select sponsorship level
-                        </option>
-
-                        <option>
-                            Gold Team Sponsor ($300+)
-                        </option>
-
-                        <option>
-                            Blue Community Sponsor (Up to $299)
-                        </option>
-
-                        <option>
-                            General Donation
-                        </option>
-
-                    </select>
-                </label>
-
-
-                <label>
-                    Preferred Jersey Color (Gold Sponsors)
-                    <input 
-                        type="text"
-                        name="jersey-color"
-                        placeholder="Example: Navy, Gold, White"
-                    />
-                </label>
-
-
-
-                <label class="checkbox-option">
-
-                    <input 
-                        type="checkbox"
-                        name="logo-email"
-                        value="Will email logo"
-                    />
-
-                    I will email my logo to BEYS
-
-                </label>
-
-
-
-
-                <label>
-                    Additional Notes
-
-                    <textarea
-                        name="message"
-                        rows="5"
-                        placeholder="Anything else you would like us to know?"
-                    ></textarea>
-
-                </label>
-
-
+            <label>
+                Preferred Jersey Color (Gold Sponsors)
 
                 <input
-                    type="hidden"
-                    name="source"
-                    value="Website Sponsor Page"
+                    type="text"
+                    name="jersey-color"
+                    placeholder="Example: Navy, Gold, White"
                 />
 
+            </label>
 
 
-                <button type="submit" class="button">
-                    Become a BEYS Partner
-                </button>
+            <!-- LOGO -->
+
+            <label class="checkbox-option">
+
+                <input
+                    type="checkbox"
+                    name="logo-email"
+                    value="Will email logo"
+                />
+
+                I will email my logo to BEYS
+
+            </label>
 
 
-            </form>
+            <!-- ADDITIONAL NOTES -->
+
+            <label>
+                Additional Notes
+
+                <textarea
+                    name="message"
+                    rows="5"
+                    placeholder="Anything else you would like us to know?"
+                ></textarea>
+
+            </label>
 
 
-        </div>
+            <!-- SOURCE -->
 
-    </section>
+            <input
+                type="hidden"
+                name="source"
+                value="Website Sponsor Page"
+            />
 
 
+            <!-- SUBMIT -->
 
+            <button
+                type="submit"
+                class="button"
+            >
+                Become a BEYS Partner
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
 
     <!-- FAQ -->
     <section class="sponsor-faq">
