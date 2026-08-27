@@ -2,8 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Game Schedule | Bald Eagle Youth Soccer">
-    <!-- HERO -->
-    <!-- schedule 
+   
     <section class="page-hero">
         <h1>Game Schedules</h1>
         <p>Select your age group and team to view the schedule.</p>
@@ -16,9 +15,9 @@ import Layout from '../layouts/Layout.astro';
             <div class="schedule-info">
                 <h3>Standard Game Start Times</h3>
                 <ul>
-                    <li><strong>U7:</strong> 6:00 PM</li>
-                    <li><strong>U9:</strong> 9:30 AM</li>
-                    <li><strong>U11:</strong> 11:00 AM</li>
+                    <li><strong>U6:</strong> 6:00 PM</li>
+                    <li><strong>U8:</strong> 9:30 AM</li>
+                    <li><strong>U10:</strong> 11:00 AM</li>
                     <li><strong>U13:</strong> 12:30 PM</li>
                 </ul>
                 <p class="schedule-note">
@@ -29,9 +28,9 @@ import Layout from '../layouts/Layout.astro';
             <div class="schedule-controls">
                 <select id="ageGroup">
                     <option value="">Select Age Group</option>
-                    <option value="U7">U7</option>
-                    <option value="U9">U9</option>
-                    <option value="U11">U11</option>
+                    <option value="U6">U6</option>
+                    <option value="U8">U8</option>
+                    <option value="U10">U10</option>
                     <option value="U13">U13</option>
                 </select>
 
@@ -76,93 +75,113 @@ import Layout from '../layouts/Layout.astro';
 
     <script>
         const schedules = {
-          U7: [
-            { date: "Apr 2", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
-            { date: "Apr 9", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
-            { date: "Apr 16", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
-            { date: "Apr 23", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
-            { date: "Apr 25", home: "BEYS1", away: "BEYS2", field: "BEYS1 at 12:30pm" },
-            { date: "Apr 30", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
-            { date: "May 7", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
-            { date: "May 14", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
-            { date: "May 16", home: "BEYS1", away: "BEYS2", field: "BEYS1 at 12:30pm" },
-            { date: "May 21", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
-            { date: "May 28", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+          U6: [
+          
+             { date: "Sept 17", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Sept 19", home: "BEYS1", away: "BEYS2", field: "BEYS1 at 11AM" },
+            { date: "Sept 24", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Oct 1", home: "BEYS1", away: "BEYS2", field: "BEYS1 },
+            { date: "Oct 8", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Oct 15", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+             { date: "Oct 22", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+               { date: "Oct 29", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Oct 31", home: "BEYS1", away: "BEYS2", field: "BEYS1 at 11AM" },
+        
           ],
-          U9: [
-            { date: "Apr 11", home: "PVYS5", away: "BEYS3", field: "PV3" },
-            { date: "Apr 11", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
-            { date: "Apr 18", home: "BEYS1", away: "PVYS5", field: "BEYS1" },
-            { date: "Apr 18", home: "BEYS2", away: "BEYS3", field: "BEYS2" },
-            { date: "Apr 25", home: "PVYS3", away: "BEYS1", field: "PV2" },
-            { date: "Apr 25", home: "BEYS2", away: "BSA2", field: "BEYS1" },
-            { date: "Apr 25", home: "BEYS3", away: "BSA4", field: "BEYS2" },
-            { date: "May 2", home: "BEYS2", away: "BSA1", field: "BEYS1" },
-            { date: "May 2", home: "BEYS3", away: "BEYS1", field: "BEYS2" },
-            { date: "May 9", home: "BEYS3", away: "PVYS3", field: "BEYS1" },
-            { date: "May 9", home: "BEYS1", away: "BSA3", field: "BEYS2" },
-            { date: "May 9", home: "PVYS2", away: "BEYS2", field: "PV2" },
-            { date: "May 16", home: "BSA1", away: "BEYS3", field: "BSA WALKER" },
-            { date: "May 16", home: "BEYS1", away: "BSA2", field: "BEYS1" },
-            { date: "May 16", home: "BEYS2", away: "BSA4", field: "BEYS2" },
-            { date: "May 30", home: "PVYS1", away: "BEYS1", field: "PV1" },
-            { date: "May 30", home: "BEYS2", away: "PVYS5", field: "BEYS1" },
-            { date: "May 30", home: "BEYS3", away: "BSA3", field: "BEYS2" }
+          U8: [
+           { date: "Sept 12", home: "BEYS1", away: "PV5", field: "BEYS1" },
+            { date: "Sept 12", home: "BEYS2", away: "BEYS3", field: "BEYS2" },
+              { date: "Sept 12", home: "BEYS4", away: "BYE", field: "" },
+            { date: "Sept 19", home: "BEYS2", away: "PV2, field: "BEYS1" },
+            { date: "Sept 19", home: "BSA2", away: "BEYS1", field: "BSA WALKER" },
+             { date: "Sept 19", home: "BEYS4", away: "BSA3", field: "BEYS2" },
+            { date: "Sept 19", home: "BEYS3", away: "BSA5", field: "BEYS3" },
+            { date: "Sept 26", home: "BEYS1", away: "PV1", field: "BEYS1" },
+            { date: "Sept 26", home: "BEYS2", away: "BSA4", field: "BEYS3" },
+              { date: "Sept 26", home: "BEYS3", away: "BEYS4", field: "BEYS2" },
+            { date: "Oct 3", home: "BEYS4", away: "PV4", field: "BEYS1" },
+            { date: "Oct 3", home: "BEYS3", away: "BSA3", field: "BEYS3" },
+             { date: "Oct 3", home: "BEYS2", away: "BEYS1", field: "BEYS2" },
+            { date: "Oct 10", home: "BEYS4", away: "BSA1", field: "BEYS3" },
+            { date: "Oct 10", home: "BEYS1", away: "BSA6", field: "BEYS2" },
+             { date: "Oct 10", home: "BEYS2", away: "BSA7", field: "BEYS1" },
+                 { date: "Oct 10", home: "BSA4", away: "BEYS3", field: "BSA WALKER" },
+            { date: "Oct 17", home: "PV1", away: "BEYS2", field: "PV1" },
+            { date: "Oct 17", home: "PV2, away: "BEYS1", field: "PV1" },
+             { date: "Oct 17", home: "PV1", away: "BEYS3", field: "PV1" },
+            { date: "Oct 17", home: "PV2, away: "BEYS4", field: "PV1" },
+            { date: "Oct 24", home: "PV4", away: "BEYS2", field: "PV1" },
+            { date: "Oct 24", home: "BEYS3", away: "PV5", field: "BEYS1" },
+             { date: "Oct 24", home: "BEYS4", away: "BSA6", field: "BEYS2" },
+            { date: "Oct 24", home: "BEYS1", away: "BSA1", field: "BEYS3" },
+             { date: "Oct 31", home: "BEYS1", away: "BSA7", field: "BEYS1" },
+               { date: "Oct 31", home: "BEYS2", away: "BEYS4", field: "BEYS2" },
+                     { date: "Oct 31", home: "BEYS3", away: "BSA6", field: "BEYS13" },
+              
           ],
-          U11: [
-            { date: "Apr 11", home: "BEYS1", away: "BSA3", field: "BEYS1" },
-            { date: "Apr 11", home: "BEYS2", away: "BYE WEEK / IN HOUSE SCRIMMAGE", field: "BEYS2" },
-            { date: "Apr 18", home: "BEYS2", away: "PVYS2", field: "BEYS1" },
-            { date: "Apr 18", home: "BSA1", away: "BEYS1", field: "BSA WALKER" },
-            { date: "Apr 23", home: "BEYS2", away: "CSA", field: "BEYS1 AT 6PM" },
-            { date: "Apr 25", home: "BEYS2", away: "PVYS1", field: "BEYS1" },
-            { date: "Apr 25", home: "BEYS1", away: "BYE WEEK / IN HOUSE SCRIMMAGE", field: "BEYS2" },
-            { date: "May 2", home: "BEYS1", away: "PVYS2", field: "BEYS1" },
-            { date: "May 2", home: "BSA2", away: "BEYS2", field: "BSA GOVERNORS" },
-            { date: "May 7", home: "BEYS1", away: "CSA", field: "BEYS1 AT 6PM" },
-            { date: "May 9", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
-            { date: "May 16", home: "BEYS1", away: "BSA2", field: "BEYS1" },
-            { date: "May 16", home: "BSA3", away: "BEYS2", field: "BSA GOVERNORS" },
-            { date: "May 30", home: "PVYS1", away: "BEYS1", field: "PV1" },
-            { date: "May 30", home: "BEYS2", away: "BSA1", field: "BEYS1" }
+          U10: [
+            { date: "Sept 12", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Sept 12", home: "PV3", away: "BEYS3", field: "PV2" },
+            { date: "Sept 19", home: "BSA5", away: "BEYS1, field: "BSA WALKER" },
+            { date: "Sept 19", home: "PV1", away: "BEYS2", field: "PV2" },
+            { date: "Sept 21", home: "BEYS3", away: "BSA2", field: "BEYS1 AT 6PM" },
+            { date: "Sept 26", home: "BEYS1", away: "BEYS3", field: "BEYS2" },
+            { date: "Sept 26", home: "BEYS2", away: "BSA4", field: "BEYS1" },
+            { date: "Oct 3", home: "PV2", away: "BEYS1", field: "PV1" },
+            { date: "Oct 3", home: "BEYS3", away: "BSA1", field: "BEYS1" },
+             { date: "Oct 3", home: "BEYS2", away: "BSA3", field: "BEYS2" },
+            { date: "Oct 10", home: "BEYS3", away: "PV1", field: "BEYS1" },
+            { date: "Oct 10", home: "PV3", away: "BEYS2", field: "PV2" },
+             { date: "Oct 10", home: "BEYS1", away: "BSA6", field: "BEYS2" },
+            { date: "Oct 17", home: "PV1", away: "BEYS2", field: "PV1" },
+            { date: "Oct 17", home: "PV2, away: "BEYS1", field: "PV1" },
+             { date: "Oct 17", home: "PV2, away: "BEYS3", field: "PV1" },
+            { date: "Oct 24", home: "BSA4", away: "BEYS3", field: "BSA GOVERNERS" },
+            { date: "Oct 24", home: "BSA2", away: "BEYS1", field: "BSA WALKER" },
+              { date: "Oct 24", home: "BEYS2", away: "BSA6", field: "BEYS1" },
+             { date: "Oct 31", home: "BEYS1", away: "PV3", field: "BEYS1" },
+               { date: "Oct 31", home: "BEYS2", away: "BEYS3", field: "BEYS2" },
           ],
           U13: [
-            { date: "Apr 11", home: "BEYS1", away: "WBS1", field: "BEYS1" },
-            { date: "Apr 11", home: "WBS2", away: "BEYS2", field: "WB1" },
-            { date: "Apr 18", home: "BEYS1", away: "WBS2", field: "BEYS1" },
-            { date: "Apr 25", home: "PVYS2", away: "BEYS2", field: "PV1" },
-            { date: "Apr 28", home: "BEYS2", away: "BSA1", field: "BEYS1 AT 6PM" },
-            { date: "Apr 30", home: "CSA", away: "BEYS2", field: "CSA AT 6PM" },
-         
-            { date: "May 2", home: "PVYS1", away: "BEYS1", field: "PV1" },
-            { date: "May 9", home: "BEYS2", away: "WBS3", field: "BEYS1" },
-            { date: "May 9", home: "BSA1", away: "BEYS1", field: "BSA GOVERNORS" },
-            { date: "May 14", home: "CSA", away: "BEYS1", field: "CSA AT 6PM" },
-            { date: "May 16", home: "BEYS1", away: "BEYS2", field: "BEA HS Alumni Stadium AT 6PM" },
-            { date: "May 21", home: "CSA", away: "BEYS2", field: "CSA AT 6PM" },
-            { date: "May 30", home: "BEYS2", away: "PVYS1", field: "BEYS1" },
-            { date: "May 30", home: "BSA2", away: "BEYS1", field: "BSA GOVERNORS" },
+            { date: "Sept 12", home: "BEYS1", away: "PV1", field: "BEYS1" },
+            { date: "Sept 12", home: "WBS1", away: "BEYS2", field: "WB1" },
+            { date: "Sept 19", home: "BEYS2", away: "PV3", field: "BEYS1" },
+            { date: "Sept 19", home: "BSA3", away: "BEYS1", field: "BSA FIRST BAPTIST CHURCH" },
+            { date: "Sept 26", home: "BEYS2", away: "BSA1", field: "BEYS1" },
+            { date: "Sept 26", home: "WBS4", away: "BEYS1", field: "WB2" },
+            { date: "Oct 3", home: "WBS3", away: "BEYS1", field: "WB2" },
+            { date: "Oct 3", home: "BEYS2", away: "BSA3", field: "BEYS1" },
+            { date: "Oct 10", home: "BEYS1", away: "BSA2", field: "BEYS1 },
+            { date: "Oct 10", home: "PV2", away: "BEYS2", field: "PV1" },
+            { date: "Oct 17", home: "PV1", away: "BEYS2", field: "PV1" },
+            { date: "Oct 17", home: "PV2, away: "BEYS1", field: "PV1" },
+            { date: "Oct 24", home: "BEYS1", away: "PV3", field: "BEYS1" },
+            { date: "Oct 24", home: "BEYS2", away: "WBS2", field: "BEYS1 at 11AM" },
+             { date: "Oct 31", home: "BEYS1", away: "BEYS2", field: "BEYS1" }
           ]
         };
 
         // COACHES
         const coaches: Record<string, Record<string, string>> = {
-          U7: { BEYS1: "Coach Grieb", BEYS2: "Coach Day" },
-          U9: { BEYS1: "Coach Wible/DeChow", BEYS2: "Coach Lowe", BEYS3: "Coach Lomax/McCloskey" },
-          U11: { BEYS1: "Coach Potter/Romine", BEYS2: "Coach Quick/Lopes"},
-          U13: { BEYS1: "Coach Gassner", BEYS2: "Coach Tice/Harter" }
+          U6: { BEYS1: "Coach Lowe", BEYS2: "Coach TBA" },
+          U8: { BEYS1: "Coach Lowe", BEYS2: "Coach Wible", BEYS3: "Coach Lomax", BEYS4: "Coach Dinger" },
+          U10: { BEYS1: "Coach Hackett", BEYS2: "Coach Bartley", BEYS3: "Coach Romine/Lopes"},
+          U13: { BEYS1: "Coach Gassner", BEYS2: "Coach Foust" }
         };
 
         // 📍 FIELD ADDRESS MAP
         const fieldAddresses: Record<string, string> = {
           "BSA WALKER": "1000 Sand Trap Dr, Bellefonte, PA 16823",
           "BSA GOVERNORS": "Governors Park Rd, Bellefonte, PA 16823",
+          "BSA FIRST BAPTIST CHURCH": "539 Jacksonville Rd Bellefonte, PA 16823"
           "BEYS1": "309 Apple Street, Julian, PA 16844",
           "BEYS2": "309 Apple Street, Julian, PA 16844",
+           "BEYS3": "309 Apple Street, Julian, PA 16844",
           "PV1": "211 N Hoffer Ave, Centre Hall, PA 16828",
           "PV2": "211 N Hoffer Ave, Centre Hall, PA 16828",
           "PV3": "211 N Hoffer Ave, Centre Hall, PA 16828",
           "WB1": "173 Havenview Dr, Lock Haven, PA 17745",
+          "WB2": "173 Havenview Dr, Lock Haven, PA 17745",
           "CSA": "145 Farmstead Lane, State College, PA 16803",
           "BEA HS Alumni Stadium": "751 S Eagle Valley Rd, Wingate, PA 16823"
         };
@@ -185,19 +204,19 @@ import Layout from '../layouts/Layout.astro';
             if (period === "AM" && hour === 12) hour = 0;
             return `${hour.toString().padStart(2, "0")}:${min}`;
           }
-          if (group === "U7" && (game.date === "Apr 25" || game.date === "May 16")) {
+          if (group === "U6" && (game.date === "Apr 25" || game.date === "May 16")) {
             return "12:30";
           }
-          if (group === "U11" && game.field.toUpperCase().includes("AT 6PM")) {
+          if (group === "U10" && game.field.toUpperCase().includes("AT 6PM")) {
             return "18:00";
           }
           if (group === "U13" && game.field.toUpperCase().includes("AT 6PM")) {
             return "18:00";
           }
           switch (group) {
-            case "U7": return "18:00";
-            case "U9": return "09:30";
-            case "U11": return "11:00";
+            case "U6": return "18:00";
+            case "U8": return "09:30";
+            case "U10": return "11:00";
             case "U13": return "12:30";
             default: return "10:00";
           }
@@ -401,60 +420,5 @@ import Layout from '../layouts/Layout.astro';
             }
         }
     </style>
-    -->
-    <section class="page-hero">
-      <h1>Fall 2026 Game Schedules</h1>
-      <p>Schedules are currently being finalized and will be posted soon.</p>
-  </section>
-  <section class="schedule-section">
-    <div class="container">
 
-        <div class="coming-soon-card">
-            <h2>🍂 Fall 2026 Schedules Coming Soon</h2>
-
-            <p>
-                Our coaches are finalizing teams and game schedules for the
-                Fall 2026 season.
-            </p>
-
-            <p>
-                Please check back soon! Once schedules are released, you'll be
-                able to select your age group and team to view your complete
-                schedule.
-            </p>
-
-            <a href="/contact" class="btn-primary">
-                Contact Us
-            </a>
-        </div>
-
-    </div>
-</section>
-<style>
-  .coming-soon-card {
-    max-width: 700px;
-    margin: 3rem auto;
-    padding: 3rem;
-    text-align: center;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
-}
-
-.coming-soon-card h2 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-}
-
-.coming-soon-card p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 1rem;
-}
-</style>
 </Layout>
