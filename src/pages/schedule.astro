@@ -223,7 +223,99 @@ import Layout from '../layouts/Layout.astro';
         }
 
         // 📅 CALENDAR LINK
-     function createCalendarLink( game: any, team: string, opponent: string, isHome: boolean, group: string ) { const year = 2026; // Month lookup for Fall 2026 schedule const months: Record<string, string> = { Jan: "01", Feb: "02", Mar: "03", Apr: "04", May: "05", Jun: "06", Jul: "07", Aug: "08", Sep: "09", Sept: "09", Oct: "10", Nov: "11", Dec: "12" }; // Split schedule date, e.g. "Sept 17" const [monthName, day] = game.date.trim().split(/\s+/); const month = months[monthName]; if (!month) { console.error("Invalid schedule date:", game.date); return "#"; } // Get the correct game start time const startTime = getGameTime(game, group); const [startHour, startMin] = startTime.split(":").map(Number); /* * Fall 2026 is during Daylight Saving Time in Pennsylvania. * America/New_York is used by Google Calendar so the event * stays tied to Eastern Time. */ const startDate = new Date( `${year}-${month}-${day.padStart(2, "0")}T${startTime}:00-04:00` ); // All games are 60 minutes const endDate = new Date( startDate.getTime() + 60 * 60 * 1000 ); /* * Format the date for Google Calendar. * The ctz parameter below tells Google Calendar that these * times are Eastern Time. */ const formatForCalendar = (dt: Date) => { const pad = (n: number) => n.toString().padStart(2, "0"); return ( `${dt.getFullYear()}` + `${pad(dt.getMonth() + 1)}` + `${pad(dt.getDate())}` + `T${pad(dt.getHours())}` + `${pad(dt.getMinutes())}` + `00` ); }; const start = formatForCalendar(startDate); const end = formatForCalendar(endDate); // Remove time information from field name const cleanField = game.field.split(" AT ")[0]; // Get the field address const address = fieldAddresses[cleanField] || game.field; // Coaches const teamCoach = coaches[group][team] || ""; const opponentCoach = opponent.startsWith("BEYS") ? coaches[group][opponent] || "" : ""; // Calendar event title const title = `${team} vs ${opponent} (${isHome ? "HOME" : "AWAY"})`; // Calendar event details const details = `${team} - ${teamCoach}\n` + `${opponent}${opponentCoach ? " - " + opponentCoach : ""}\n\n` + `Field: ${cleanField}\n` + `Address: ${address}`; // Google Calendar event URL return ( `https://www.google.com/calendar/render` + `?action=TEMPLATE` + `&text=${encodeURIComponent(title)}` + `&dates=${start}/${end}` + `&ctz=America%2FNew_York` + `&location=${encodeURIComponent(address)}` + `&details=${encodeURIComponent(details)}` ); }
+        
+function createCalendarLink(
+  game: any,
+  team: string,
+  opponent: string,
+  isHome: boolean,
+  group: string
+) {
+  const year = "2026";
+
+  // Fall 2026 month numbers
+  const months: Record<string, string> = {
+    Jan: "01",
+    Feb: "02",
+    Mar: "03",
+    Apr: "04",
+    May: "05",
+    Jun: "06",
+    Jul: "07",
+    Aug: "08",
+    Sep: "09",
+    Sept: "09",
+    Oct: "10",
+    Nov: "11",
+    Dec: "12"
+  };
+
+  // Get month and day from schedule date
+  // Example: "Sept 17" → "Sept", "17"
+  const [monthName, day] = game.date.trim().split(/\s+/);
+  const month = months[monthName];
+
+  if (!month) {
+    console.error("Invalid game date:", game.date);
+    return "#";
+  }
+
+  // Get game start time
+  // Returns 24-hour format, e.g. 18:00 or 09:30
+  const startTime = getGameTime(game, group);
+  const [startHour, startMinute] = startTime.split(":").map(Number);
+
+  // Calculate the end time (games are 60 minutes)
+  let endHour = startHour + 1;
+  let endMinute = startMinute;
+
+  if (endHour >= 24) {
+    endHour = 0;
+  }
+
+  const pad = (num: number) => num.toString().padStart(2, "0");
+
+  // Build Google Calendar dates DIRECTLY.
+  // No JavaScript Date object = no browser timezone conversion.
+  const start = `${year}${month}${day.padStart(2, "0")}T${pad(startHour)}${pad(startMinute)}00`;
+  const end = `${year}${month}${day.padStart(2, "0")}T${pad(endHour)}${pad(endMinute)}00`;
+
+  // Remove "AT 11AM" / "AT 6PM" from field name
+  const cleanField = game.field.split(" AT ")[0];
+
+  // Get field address
+  const address = fieldAddresses[cleanField] || game.field;
+
+  // Coaches
+  const teamCoach = coaches[group][team] || "";
+
+  const opponentCoach = opponent.startsWith("BEYS")
+    ? coaches[group][opponent] || ""
+    : "";
+
+  // Calendar event title
+  const title = `${team} vs ${opponent} (${isHome ? "HOME" : "AWAY"})`;
+
+  // Calendar event details
+  const details =
+    `${team} - ${teamCoach}\n` +
+    `${opponent}${opponentCoach ? " - " + opponentCoach : ""}\n\n` +
+    `Field: ${cleanField}\n` +
+    `Address: ${address}`;
+
+  // Google Calendar template
+  return (
+    `https://www.google.com/calendar/render` +
+    `?action=TEMPLATE` +
+    `&text=${encodeURIComponent(title)}` +
+    `&dates=${start}/${end}` +
+    `&ctz=America%2FNew_York` +
+    `&location=${encodeURIComponent(address)}` +
+    `&details=${encodeURIComponent(details)}`
+  );
+}
+```
+
 
         // 📍 MAP LINK
         function createMapsLink(field: string) {
