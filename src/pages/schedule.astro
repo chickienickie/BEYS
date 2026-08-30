@@ -106,10 +106,10 @@ import Layout from '../layouts/Layout.astro';
             { date: "Oct 10", home: "BEYS1", away: "BSA6", field: "BEYS2" },
              { date: "Oct 10", home: "BEYS2", away: "BSA7", field: "BEYS1" },
                  { date: "Oct 10", home: "BSA4", away: "BEYS3", field: "BSA WALKER" },
-            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS2", field: "PV1" },
-            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS1", field: "PV1" },
-             { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS3", field: "PV1" },
-            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS4", field: "PV1" },
+            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS2", field: "PV1", tournament: true  },
+            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS1", field: "PV1", tournament: true  },
+             { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS3", field: "PV1", tournament: true  },
+            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS4", field: "PV1", tournament: true },
             { date: "Oct 24", home: "PV4", away: "BEYS2", field: "PV1" },
             { date: "Oct 24", home: "BEYS3", away: "PV5", field: "BEYS1" },
              { date: "Oct 24", home: "BEYS4", away: "BSA6", field: "BEYS2" },
@@ -133,9 +133,9 @@ import Layout from '../layouts/Layout.astro';
             { date: "Oct 10", home: "BEYS3", away: "PV1", field: "BEYS1" },
             { date: "Oct 10", home: "PV3", away: "BEYS2", field: "PV2" },
              { date: "Oct 10", home: "BEYS1", away: "BSA6", field: "BEYS2" },
-            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS2", field: "PV1" },
-            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS1", field: "PV1" },
-             { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS3", field: "PV1" },
+            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS2", field: "PV1", tournament: true  },
+            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS1", field: "PV1", tournament: true  },
+             { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS3", field: "PV1", tournament: true  },
             { date: "Oct 24", home: "BSA4", away: "BEYS3", field: "BSA GOVERNERS" },
             { date: "Oct 24", home: "BSA2", away: "BEYS1", field: "BSA WALKER" },
               { date: "Oct 24", home: "BEYS2", away: "BSA6", field: "BEYS1" },
@@ -153,8 +153,8 @@ import Layout from '../layouts/Layout.astro';
             { date: "Oct 3", home: "BEYS2", away: "BSA3", field: "BEYS1" },
             { date: "Oct 10", home: "BEYS1", away: "BSA2", field: "BEYS1" },
             { date: "Oct 10", home: "PV2", away: "BEYS2", field: "PV1" },
-            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS2", field: "PV1" },
-            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS1", field: "PV1" },
+            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS2", field: "PV1", tournament: true  },
+            { date: "Oct 17", home: "TOURNAMENT TBA", away: "BEYS1", field: "PV1", tournament: true  },
             { date: "Oct 24", home: "BEYS1", away: "PV3", field: "BEYS1" },
             { date: "Oct 24", home: "BEYS2", away: "WBS2", field: "BEYS1 AT 11AM" },
              { date: "Oct 31", home: "BEYS1", away: "BEYS2", field: "BEYS1" }
@@ -258,7 +258,47 @@ function createCalendarLink(
     console.error("Invalid game date:", game.date);
     return "#";
   }
+// 🏆 TOURNAMENT — ALL-DAY EVENT UNTIL GAME TIMES ARE ANNOUNCED
+if (game.tournament) {
+  const tournamentDate =
+    `${year}${month}${day.padStart(2, "0")}`;
 
+  // Calculate the following day for Google Calendar all-day events
+  const dateObj = new Date(
+    Date.UTC(
+      Number(year),
+      Number(month) - 1,
+      Number(day)
+    )
+  );
+
+  dateObj.setUTCDate(dateObj.getUTCDate() + 1);
+
+  const nextDay =
+    `${dateObj.getUTCFullYear()}` +
+    `${String(dateObj.getUTCMonth() + 1).padStart(2, "0")}` +
+    `${String(dateObj.getUTCDate()).padStart(2, "0")}`;
+
+  const cleanField = game.field.split(" AT ")[0];
+  const address = fieldAddresses[cleanField] || game.field;
+
+  const title = `${team} - Penns Valley Tournament (Time TBA)`;
+
+  const details =
+    `Penns Valley Tournament\n\n` +
+    `Game times are still to be announced.\n` +
+    `Please reserve the day.\n\n` +
+    `Location: ${address}`;
+
+  return (
+    `https://calendar.google.com/calendar/r/eventedit` +
+    `?action=TEMPLATE` +
+    `&text=${encodeURIComponent(title)}` +
+    `&dates=${tournamentDate}%2F${nextDay}` +
+    `&location=${encodeURIComponent(address)}` +
+    `&details=${encodeURIComponent(details)}`
+  );
+}
   // Get game time in 24-hour format
   // Examples: 09:30, 11:00, 12:30, 18:00
   const startTime = getGameTime(game, group);
