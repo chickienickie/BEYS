@@ -2932,6 +2932,14 @@ section.coach-nav .container {
         align-items: flex-start;
         gap: 4px;
     }
+    h2::after {
+        content: "";
+        display: block;
+        width: 80px; /* or whatever width you have set */
+        height: 3px;
+        background-color: #d5d49b; /* your gold color */
+        margin: 10px auto 0; /* The 'auto' here centers the block */
+      }
 
 }
 
