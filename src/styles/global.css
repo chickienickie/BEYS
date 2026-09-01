@@ -2551,7 +2551,7 @@ SPONSOR SPOTLIGHT
     margin-bottom: 10px;
     padding: 6px 16px;
     
-    ```
+    
     border-radius: 999px;
     
     background: #d5d49b;
@@ -2561,7 +2561,7 @@ SPONSOR SPOTLIGHT
     font-weight: 700;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    ```
+  
     
     }
     
@@ -2574,14 +2574,14 @@ SPONSOR SPOTLIGHT
     content: "";
     display: block;
     
-    ```
+  
     width: 55px;
     height: 3px;
     
     margin: 12px auto 0;
     
     background: #d5d49b;
-    ```
+ 
     
     }
     
@@ -2589,11 +2589,11 @@ SPONSOR SPOTLIGHT
     max-width: 650px;
     margin: 18px auto 0;
     
-    ```
+  
     color: #555;
     
     line-height: 1.7;
-    ```
+   
     
     }
     
@@ -2605,13 +2605,13 @@ SPONSOR SPOTLIGHT
     max-width: 1150px;
     margin: 0 auto;
     
-    ```
+  
     display: grid;
     
     grid-template-columns: repeat(3, 1fr);
     
     gap: 24px;
-    ```
+ 
     
     }
     
@@ -2623,7 +2623,7 @@ SPONSOR SPOTLIGHT
     display: flex;
     flex-direction: column;
     
-    ```
+
     background: #ffffff;
     
     border: 1px solid #e3e7e9;
@@ -2636,16 +2636,16 @@ SPONSOR SPOTLIGHT
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
-    ```
+ 
     
     }
     
     .sponsor-card:hover {
     transform: translateY(-4px);
     
-    ```
+  
     box-shadow: 0 12px 30px rgba(0, 42, 67, 0.12);
-    ```
+  
     
     }
     
@@ -2656,16 +2656,16 @@ SPONSOR SPOTLIGHT
     .sponsor-logo-link {
     display: block;
     
-    ```
+   
     text-decoration: none;
-    ```
+ 
     
     }
     
     .sponsor-logo-wrap {
     height: 190px;
     
-    ```
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2675,14 +2675,14 @@ SPONSOR SPOTLIGHT
     background: #ffffff;
     
     border-bottom: 1px solid #edf0f1;
-    ```
+ 
     
     }
     
     .sponsor-logo-wrap img {
     display: block;
     
-    ```
+  
     max-width: 85%;
     max-height: 135px;
     
@@ -2692,7 +2692,7 @@ SPONSOR SPOTLIGHT
     object-fit: contain;
     
     transition: transform 0.25s ease;
-    ```
+
     
     }
     
@@ -2708,19 +2708,18 @@ SPONSOR SPOTLIGHT
     display: flex;
     flex-direction: column;
     flex: 1;
-    
-    ```
+
     padding: 25px 22px 28px;
     
     text-align: center;
-    ```
+
     
     }
     
     .sponsor-level {
     display: inline-block;
     
-    ```
+
     margin-bottom: 8px;
     
     color: #777;
@@ -2730,30 +2729,29 @@ SPONSOR SPOTLIGHT
     
     letter-spacing: 1.1px;
     text-transform: uppercase;
-    ```
+  
     
     }
     
     .sponsor-info h3 {
     margin: 0 0 18px;
     
-    ```
+  
     color: #002a43;
     
     font-size: 1.25rem;
     line-height: 1.35;
-    ```
-    
+   
     }
     
     .sponsor-info h3 a {
     color: #002a43;
     
-    ```
+ 
     text-decoration: none;
     
     transition: color 0.2s ease;
-    ```
+
     
     }
     
@@ -2768,7 +2766,7 @@ SPONSOR SPOTLIGHT
     .sponsor-link {
     display: inline-block;
     
-    ```
+  
     align-self: center;
     
     margin-top: auto;
@@ -2787,16 +2785,15 @@ SPONSOR SPOTLIGHT
     transition:
         color 0.2s ease,
         border-color 0.2s ease;
-    ```
+  
     
     }
     
     .sponsor-link:hover {
     color: #315f78;
-    
-    ```
+ 
     border-color: #002a43;
-    ```
+ 
     
     }
     
@@ -2825,19 +2822,19 @@ SPONSOR SPOTLIGHT
     .anonymous-sponsor .sponsor-info p {
     margin: 0 0 18px;
     
-    ```
+  
     color: #555;
     
     font-size: 0.9rem;
     line-height: 1.6;
-    ```
+  
     
     }
     
     .anonymous-thanks {
     display: inline-block;
     
-    ```
+  
     align-self: center;
     
     margin-top: auto;
@@ -2851,7 +2848,7 @@ SPONSOR SPOTLIGHT
     
     font-size: 0.82rem;
     font-weight: 700;
-    ```
+   
     
     }
     
@@ -2866,16 +2863,16 @@ SPONSOR SPOTLIGHT
     .sponsor-footer p {
     margin-bottom: 15px;
     
-    ```
+   
     color: #555;
-    ```
+   
     
     }
     
     .sponsor-btn {
     display: inline-block;
     
-    ```
+ 
     padding: 12px 24px;
     
     background: #002a43;
@@ -2890,16 +2887,16 @@ SPONSOR SPOTLIGHT
     transition:
         background 0.2s ease,
         transform 0.2s ease;
-    ```
+   
     
     }
     
     .sponsor-btn:hover {
     background: #315f78;
     
-    ```
+   
     transform: translateY(-2px);
-    ```
+    
     
     }
     
@@ -2909,11 +2906,11 @@ SPONSOR SPOTLIGHT
     
     @media (max-width: 900px) {
     
-    ```
+    
     .sponsor-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    ```
+    
     
     }
     
@@ -2923,7 +2920,6 @@ SPONSOR SPOTLIGHT
     
     @media (max-width: 600px) {
     
-    ```
     .sponsor-spotlight {
         padding: 60px 5%;
     }
@@ -2952,7 +2948,7 @@ SPONSOR SPOTLIGHT
     .sponsor-info h3 {
         font-size: 1.2rem;
     }
-    ```
+    
     
     }
     
