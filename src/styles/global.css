@@ -2934,25 +2934,3 @@ section.coach-nav .container {
     }
 
 }
-/* ANONYMOUS SPONSOR */
-
-.anonymous-sponsor {
-    background: linear-gradient(
-        135deg,
-        rgba(213, 212, 155, 0.15),
-        #ffffff
-    );
-}
-
-.anonymous-logo {
-    background: rgba(213, 212, 155, 0.12);
-}
-
-.anonymous-thanks {
-    display: inline-block;
-    padding: 10px 16px;
-    background: #002a43;
-    color: #ffffff;
-    border-radius: 5px;
-    font-weight: 700;
-}
