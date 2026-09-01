@@ -2669,21 +2669,17 @@ section.coach-nav .container {
     max-height: 130px; 
 }
 
-/* Specifically for Junction 144 if it still feels too large compared to others */
-/* You can add a class to that specific image or use an attribute selector */
-.sponsor-logo img[src*="junction144"] {
-    max-height: 110px;
-    max-width: 110px;
-}
+
 
 .sponsor-item:hover .sponsor-logo img {
     transform: scale(1.04);
 }
 
-/* Update this rule to match the others */
-.sponsor-logo img[src*="junction144"] {
-    max-height: 130px;
-    max-width: 220px;
+/* Increase size for DeadRiver and Junction 144 */
+.sponsor-logo img[alt*="DeadRiver"],
+.sponsor-logo img[alt*="Junction 144"] {
+    max-height: 160px;
+    max-width: 250px;
 }
 
 /* ---------- SPONSOR TEXT ---------- */
