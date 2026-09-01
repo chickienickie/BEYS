@@ -2646,7 +2646,8 @@ section.coach-nav .container {
 
 
 .sponsor-logo {
-    height: 115px;
+    /* Set a consistent container height that accommodates larger logos */
+    height: 150px; 
     width: 100%;
 
     display: flex;
@@ -2655,36 +2656,29 @@ section.coach-nav .container {
 
     margin-bottom: 12px;
 }
-.sponsor-logo img {
-    max-width: 220px;
-    max-height: 150px;
-  }
-  
-  .sponsor-logo img {
-    max-height: 130px;
-    max-width: 130px;
-    transform: none;
-  }
 
 .sponsor-logo img {
     display: block;
-
-    max-width: 175px;
-    max-height: 95px;
-
     width: auto;
     height: auto;
-
     object-fit: contain;
-
     transition: transform 0.2s ease;
+
+    /* Increased limits to allow logos to be bigger than the original 95px */
+    max-width: 220px;
+    max-height: 130px; 
 }
 
+/* Specifically for Junction 144 if it still feels too large compared to others */
+/* You can add a class to that specific image or use an attribute selector */
+.sponsor-logo img[src*="junction144"] {
+    max-height: 110px;
+    max-width: 110px;
+}
 
 .sponsor-item:hover .sponsor-logo img {
     transform: scale(1.04);
 }
-
 
 /* ---------- SPONSOR TEXT ---------- */
 
