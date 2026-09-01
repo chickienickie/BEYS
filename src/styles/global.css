@@ -2644,6 +2644,7 @@ section.coach-nav .container {
 
 /* ---------- LOGO ---------- */
 
+
 .sponsor-logo {
     height: 115px;
     width: 100%;
@@ -2654,7 +2655,16 @@ section.coach-nav .container {
 
     margin-bottom: 12px;
 }
-
+.sponsor-logo img {
+    max-width: 220px;
+    max-height: 150px;
+  }
+  
+  .sponsor-logo img {
+    max-height: 130px;
+    max-width: 130px;
+    transform: none;
+  }
 
 .sponsor-logo img {
     display: block;
