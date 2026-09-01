@@ -2680,6 +2680,12 @@ section.coach-nav .container {
     transform: scale(1.04);
 }
 
+/* Update this rule to match the others */
+.sponsor-logo img[src*="junction144"] {
+    max-height: 130px;
+    max-width: 220px;
+}
+
 /* ---------- SPONSOR TEXT ---------- */
 
 .sponsor-level {
