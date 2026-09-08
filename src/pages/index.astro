@@ -183,142 +183,225 @@ import Layout from '../layouts/Layout.astro';
 
 </div>
     </section>
-  <!-- SPONSOR SPOTLIGHT -->
-<section class="sponsor-spotlight">
-
-  <div class="sponsor-heading">
-      <span class="sponsor-eyebrow">Supporting Our Community</span>
-      <h2>Our Gold Sponsors</h2>
-      <p>
-          We are proud to recognize the local businesses and community supporters
-          who help make Bald Eagle Youth Soccer possible.
-      </p>
-  </div>
-
-  <div class="sponsor-panel">
-
-      <!-- DEAD RIVER REMODELING -->
-      <a href="https://www.facebook.com/profile.php?id=61558120787119"
-         class="sponsor-item"
-         target="_blank"
-         rel="noopener"
-         aria-label="Visit DeadRiver Remodeling & Construction LLC on Facebook">
-
-          <div class="sponsor-logo">
-              <img src="/readriver-removebg-preview.png"
-                   alt="DeadRiver Remodeling & Construction LLC">
-          </div>
-
-          <span class="sponsor-level">Gold Sponsor</span>
-          <h3>DeadRiver Remodeling &amp; Construction LLC</h3>
-          <span class="sponsor-visit">Visit Sponsor →</span>
-
-      </a>
-
-
-      <!-- GOURMET GRIDDLE CO -->
-      <a href="https://www.facebook.com/profile.php?id=100091734101743"
-         class="sponsor-item"
-         target="_blank"
-         rel="noopener"
-         aria-label="Visit Gourmet Griddle Co on Facebook">
-
-          <div class="sponsor-logo">
-              <img src="/gourmetgriddlecompany.jpg"
-                   alt="Gourmet Griddle Co">
-          </div>
-
-          <span class="sponsor-level">Gold Sponsor</span>
-          <h3>Gourmet Griddle Co</h3>
-          <span class="sponsor-visit">Visit Sponsor →</span>
-
-      </a>
-
-
-      <!-- THE JUNCTION 144 -->
-      <a href="https://www.facebook.com/profile.php?id=100094147954680"
-         class="sponsor-item"
-         target="_blank"
-         rel="noopener"
-         aria-label="Visit The Junction 144 on Facebook">
-
-          <div class="sponsor-logo">
-              <img src="/junction144logo-removebg-preview.png"
-                   alt="The Junction 144">
-          </div>
-
-          <span class="sponsor-level">Gold Sponsor</span>
-          <h3>The Junction 144</h3>
-          <span class="sponsor-visit">Visit Sponsor →</span>
-
-      </a>
-
-
-      <!-- BIG D'S CONES & SHAKES -->
-      <a href="https://www.facebook.com/profile.php?id=100057323864875"
-         class="sponsor-item"
-         target="_blank"
-         rel="noopener"
-         aria-label="Visit Big D's Cones & Shakes on Facebook">
-
-          <div class="sponsor-logo">
-              <img src="/bigd-removebg-preview.png"
-                   alt="Big D's Cones & Shakes">
-          </div>
-
-          <span class="sponsor-level">Gold Sponsor</span>
-          <h3>Big D's Cones &amp; Shakes</h3>
-          <span class="sponsor-visit">Visit Sponsor →</span>
-
-      </a>
-
-
-      <!-- R & S CORL TRANSPORTATION -->
-      <a href="https://www.stauffertransportation.com"
-         class="sponsor-item"
-         target="_blank"
-         rel="noopener"
-         aria-label="Visit R & S Corl Transportation">
-
-          <div class="sponsor-logo">
-              <img src="/rscorl.png"
-                   alt="R & S Corl Transportation">
-          </div>
-
-          <span class="sponsor-level">Gold Sponsor</span>
-          <h3>R &amp; S Corl Transportation</h3>
-          <span class="sponsor-visit">Visit Sponsor →</span>
-
-      </a>
-
-
-      <!-- ANONYMOUS COMMUNITY SPONSOR -->
-      <div class="sponsor-item">
-
-          <div class="sponsor-logo">
-              <img src="/beyslogo.png"
-                   alt="Bald Eagle Youth Soccer">
-          </div>
-
-          <span class="sponsor-level">Gold Sponsor</span>
-          <h3>Anonymous Community Sponsor</h3>
-
-          <p>
-              Thank you to a generous community member who has chosen
-              to support BEYS anonymously.
-          </p>
-
-          <span class="sponsor-visit">
-              Thank You for Supporting BEYS ⚽️ 🦅
-          </span>
-
-      </div>
-
-  </div>
-
-
-<!-- ===================================================== BLUE COMMUNITY SPONSORS ===================================================== --> <div class="sponsor-tier blue-community-tier"> <div class="tier-heading"> <span class="tier-label blue-label">Blue Community Sponsors</span> <p> We are grateful to the local organizations and businesses that support youth soccer in our community. </p> </div> <div class="community-sponsor-panel"> <!-- LOYAL ORDER OF MOOSE LODGE 1565 --> <div class="community-sponsor"> <div class="community-sponsor-icon">🦅</div> <h3>Loyal Order of Moose Lodge 1565</h3> <span>Blue Community Sponsor</span> </div> <!-- AMERICAN LEGION --> <div class="community-sponsor"> <div class="community-sponsor-icon">🦅</div> <h3>American Legion Mumper Shawley Post</h3> <span>Blue Community Sponsor</span> </div> <!-- NATURE'S COVER --> <div class="community-sponsor"> <div class="community-sponsor-icon">🦅</div> <h3>Nature's Cover</h3> <span>Blue Community Sponsor</span> </div> </div> </div> <!-- ===================================================== SPONSOR CTA ===================================================== --> <div class="sponsor-footer"> <p> Interested in supporting youth soccer in our community? </p> <a href="/sponsors" class="sponsor-btn"> Become a BEYS Sponsor </a> </div> </section>
-  
+    ```html
+    <!-- =========================================================
+         SPONSOR SPOTLIGHT
+         ========================================================= -->
+    
+    <section class="sponsor-spotlight">
+    
+        <!-- SECTION HEADING -->
+        <div class="sponsor-heading">
+            <span class="sponsor-eyebrow">Supporting Our Community</span>
+            <h2>Our Sponsors</h2>
+            <p>
+                We are proud to recognize the local businesses, organizations,
+                and community supporters who help make Bald Eagle Youth Soccer possible.
+            </p>
+        </div>
+    
+    
+        <!-- =====================================================
+             GOLD SPONSORS
+             ===================================================== -->
+    
+        <div class="sponsor-tier">
+    
+            <div class="tier-heading">
+                <span class="tier-label gold-label">Gold Sponsors</span>
+                <p>
+                    Thank you to our Gold Sponsors for their generous support
+                    of Bald Eagle Youth Soccer.
+                </p>
+            </div>
+    
+    
+            <div class="sponsor-panel gold-panel">
+    
+                <!-- DEAD RIVER REMODELING -->
+                <a href="https://www.facebook.com/profile.php?id=61558120787119"
+                   class="sponsor-item"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Visit DeadRiver Remodeling & Construction LLC on Facebook">
+    
+                    <div class="sponsor-logo">
+                        <img src="/deadriver.png"
+                             alt="DeadRiver Remodeling & Construction LLC">
+                    </div>
+    
+                    <span class="sponsor-level">Gold Sponsor</span>
+                    <h3>DeadRiver Remodeling &amp; Construction LLC</h3>
+                    <span class="sponsor-visit">Visit Sponsor →</span>
+    
+                </a>
+    
+    
+                <!-- GOURMET GRIDDLE CO -->
+                <a href="https://www.facebook.com/profile.php?id=100091734101743"
+                   class="sponsor-item"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Visit Gourmet Griddle Co on Facebook">
+    
+                    <div class="sponsor-logo">
+                        <img src="/gourmetgriddle.png"
+                             alt="Gourmet Griddle Co">
+                    </div>
+    
+                    <span class="sponsor-level">Gold Sponsor</span>
+                    <h3>Gourmet Griddle Co</h3>
+                    <span class="sponsor-visit">Visit Sponsor →</span>
+    
+                </a>
+    
+    
+                <!-- THE JUNCTION 144 -->
+                <a href="https://www.facebook.com/profile.php?id=100094147954680"
+                   class="sponsor-item"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Visit The Junction 144 on Facebook">
+    
+                    <div class="sponsor-logo">
+                        <img src="/thejunction144.png"
+                             alt="The Junction 144">
+                    </div>
+    
+                    <span class="sponsor-level">Gold Sponsor</span>
+                    <h3>The Junction 144</h3>
+                    <span class="sponsor-visit">Visit Sponsor →</span>
+    
+                </a>
+    
+    
+                <!-- BIG D'S CONES & SHAKES -->
+                <a href="https://www.facebook.com/profile.php?id=100057323864875"
+                   class="sponsor-item"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Visit Big D's Cones & Shakes on Facebook">
+    
+                    <div class="sponsor-logo">
+                        <img src="/bigdscones.png"
+                             alt="Big D's Cones & Shakes">
+                    </div>
+    
+                    <span class="sponsor-level">Gold Sponsor</span>
+                    <h3>Big D's Cones &amp; Shakes</h3>
+                    <span class="sponsor-visit">Visit Sponsor →</span>
+    
+                </a>
+    
+    
+                <!-- R & S CORL TRANSPORTATION -->
+                <a href="https://www.stauffertransportation.com"
+                   class="sponsor-item"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Visit R & S Corl Transportation">
+    
+                    <div class="sponsor-logo">
+                        <img src="/rscorl.png"
+                             alt="R & S Corl Transportation">
+                    </div>
+    
+                    <span class="sponsor-level">Gold Sponsor</span>
+                    <h3>R &amp; S Corl Transportation</h3>
+                    <span class="sponsor-visit">Visit Sponsor →</span>
+    
+                </a>
+    
+    
+                <!-- ANONYMOUS COMMUNITY SPONSOR -->
+                <div class="sponsor-item anonymous-sponsor">
+    
+                    <div class="sponsor-logo">
+                        <img src="/beyslogo.png"
+                             alt="Bald Eagle Youth Soccer">
+                    </div>
+    
+                    <span class="sponsor-level">Gold Sponsor</span>
+                    <h3>Anonymous Community Sponsor</h3>
+    
+                    <p>
+                        Thank you to a generous community member who has chosen
+                        to support BEYS anonymously.
+                    </p>
+    
+                    <span class="anonymous-thanks">
+                        Thank You for Supporting BEYS 💙💛
+                    </span>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    
+        <!-- =====================================================
+             BLUE COMMUNITY SPONSORS
+             ===================================================== -->
+    
+        <div class="sponsor-tier blue-community-tier">
+    
+            <div class="tier-heading">
+                <span class="tier-label blue-label">Blue Community Sponsors</span>
+                <p>
+                    We are grateful to the local organizations and businesses
+                    that support youth soccer in our community.
+                </p>
+            </div>
+    
+    
+            <div class="community-sponsor-panel">
+    
+                <!-- LOYAL ORDER OF MOOSE LODGE 1565 -->
+                <div class="community-sponsor">
+                    <div class="community-sponsor-icon">🦅</div>
+                    <h3>Loyal Order of Moose Lodge 1565</h3>
+                    <span>Blue Community Sponsor</span>
+                </div>
+    
+    
+                <!-- AMERICAN LEGION -->
+                <div class="community-sponsor">
+                    <div class="community-sponsor-icon">🦅</div>
+                    <h3>American Legion Mumper Shawley Post</h3>
+                    <span>Blue Community Sponsor</span>
+                </div>
+    
+    
+                <!-- NATURE'S COVER -->
+                <div class="community-sponsor">
+                    <div class="community-sponsor-icon">🦅</div>
+                    <h3>Nature's Cover</h3>
+                    <span>Blue Community Sponsor</span>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    
+        <!-- =====================================================
+             SPONSOR CTA
+             ===================================================== -->
+    
+        <div class="sponsor-footer">
+            <p>
+                Interested in supporting youth soccer in our community?
+            </p>
+    
+            <a href="/sponsors" class="sponsor-btn">
+                Become a BEYS Sponsor
+            </a>
+        </div>
+    
+    </section>
+    ```
+    
   
     <section id="junior-high-soccer">
         <h2>Continuing the Soccer Journey</h2>
