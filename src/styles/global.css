@@ -2526,386 +2526,549 @@ section.coach-nav .container {
     margin-right: auto;
   }
 
-/* =========================================================
-   SPONSOR SPOTLIGHT
-   ========================================================= */
-
-   .sponsor-spotlight {
-    padding: 75px 5%;
-    background: #f7f9fa;
-    text-align: center;
-}
-
-
-/* ---------- HEADING ---------- */
-
-.sponsor-heading {
-    max-width: 700px;
-    margin: 0 auto 38px;
-}
-
-.sponsor-eyebrow {
-    display: inline-block;
-    margin-bottom: 10px;
-    padding: 6px 15px;
-    border-radius: 999px;
-    background: #d5d49b;
-    color: #002a43;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-}
-
-.sponsor-heading h2 {
-    margin: 0 0 12px;
-    color: #002a43;
-}
-
-.sponsor-heading h2::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    margin: 12px auto 0;
-    background: #d5d49b;
-}
-
-.sponsor-heading p {
-    max-width: 620px;
-    margin: 17px auto 0;
-    color: #555;
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   WHITE SPONSOR PANEL
-   ========================================================= */
-
-.sponsor-panel {
-    max-width: 1050px;
-    margin: 0 auto;
-    padding: 12px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    background: #ffffff;
-    border: 1px solid #e3e7e9;
-    border-radius: 14px;
-
-    box-shadow: 0 8px 28px rgba(0, 42, 67, 0.06);
-}
-
-
-/* ---------- INDIVIDUAL SPONSOR ---------- */
-
-.sponsor-item {
-    min-height: 245px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    padding: 25px 22px;
-
-    text-align: center;
-    text-decoration: none;
-
-    border-right: 1px solid #edf0f1;
-    border-bottom: 1px solid #edf0f1;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-/* Remove right border from columns 3 and 6 */
-
-.sponsor-item:nth-child(3n) {
-    border-right: none;
-}
-
-
-/* Remove bottom border from last row */
-
-.sponsor-item:nth-child(n+4) {
-    border-bottom: none;
-}
-
-
-.sponsor-item:hover {
-    background: #fafcfc;
-}
-
-
-/* ---------- LOGO ---------- */
-
-
-.sponsor-logo {
-    /* Set a consistent container height that accommodates larger logos */
-    height: 150px; 
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 12px;
-}
-
-.sponsor-logo img {
-    display: block;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    transition: transform 0.2s ease;
-
-    /* Increased limits to allow logos to be bigger than the original 95px */
-    max-width: 220px;
-    max-height: 130px; 
-}
-
-
-
-.sponsor-item:hover .sponsor-logo img {
-    transform: scale(1.04);
-}
-
-/* Increase size for DeadRiver and Junction 144 */
-.sponsor-logo img[alt*="DeadRiver"],
-.sponsor-logo img[alt*="Junction 144"] {
-    max-height: 160px;
-    max-width: 250px;
-}
-
-/* ---------- SPONSOR TEXT ---------- */
-
-.sponsor-level {
-    margin-bottom: 5px;
-
-    color: #777;
-
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-}
-
-
-.sponsor-item h3 {
-    max-width: 230px;
-
-    margin: 0 0 10px;
-
-    color: #002a43;
-
-    font-size: 1rem;
-    line-height: 1.3;
-}
-
-
-.sponsor-visit {
-    margin-top: auto;
-
-    color: #002a43;
-
-    font-size: 0.78rem;
-    font-weight: 700;
-
-    border-bottom: 2px solid #d5d49b;
-
-    padding-bottom: 2px;
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
-}
-
-
-.sponsor-item:hover .sponsor-visit {
-    color: #315f78;
-    border-color: #002a43;
-}
-
-
-/* =========================================================
-   ANONYMOUS SPONSOR
-   ========================================================= */
-
-.anonymous-sponsor {
-    cursor: default;
-    background: rgba(213, 212, 155, 0.06);
-}
-
-
-.anonymous-sponsor:hover {
-    background: rgba(213, 212, 155, 0.10);
-}
-
-
-.anonymous-sponsor .sponsor-logo img {
-    max-width: 75px;
-    max-height: 75px;
-}
-
-
-.anonymous-sponsor p {
-    max-width: 220px;
-
-    margin: 0 0 12px;
-
-    color: #555;
-
-    font-size: 0.78rem;
-    line-height: 1.5;
-}
-
-
-.anonymous-thanks {
-    margin-top: auto;
-
-    padding: 7px 11px;
-
-    background: #002a43;
-    color: #ffffff;
-
-    border-radius: 4px;
-
-    font-size: 0.7rem;
-    font-weight: 700;
-}
-
-
-/* =========================================================
-   FOOTER / CTA
-   ========================================================= */
-
-.sponsor-footer {
-    margin-top: 35px;
-}
-
-
-.sponsor-footer p {
-    margin: 0 0 14px;
-
-    color: #555;
-}
-
-
-.sponsor-btn {
-    display: inline-block;
-
-    padding: 11px 22px;
-
-    background: #002a43;
-    color: #ffffff;
-
-    border-radius: 5px;
-
-    font-weight: 700;
-    text-decoration: none;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-.sponsor-btn:hover {
-    background: #315f78;
-    transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-    .sponsor-panel {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sponsor-item:nth-child(3n) {
-        border-right: 1px solid #edf0f1;
-    }
-
-    .sponsor-item:nth-child(2n) {
-        border-right: none;
-    }
-
-    .sponsor-item:nth-child(n+5) {
-        border-bottom: none;
-    }
-
-    .sponsor-item:nth-child(-n+4) {
-        border-bottom: 1px solid #edf0f1;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .sponsor-spotlight {
-        padding: 55px 5%;
-    }
-
-    .sponsor-heading {
-        margin-bottom: 28px;
-    }
-
-    .sponsor-panel {
-        grid-template-columns: 1fr;
-        padding: 8px;
-        border-radius: 12px;
-    }
-
-    .sponsor-item,
-    .sponsor-item:nth-child(2n),
-    .sponsor-item:nth-child(3n) {
-        min-height: 220px;
-
-        padding: 23px 18px;
-
-        border-right: none;
-        border-bottom: 1px solid #edf0f1;
-    }
-
-    .sponsor-item:last-child {
-        border-bottom: none;
-    }
-
-    .sponsor-logo {
-        height: 105px;
-    }
-
-    .sponsor-logo img {
-        max-width: 165px;
-        max-height: 90px;
-    }
-
-    .anonymous-sponsor .sponsor-logo img {
-        max-width: 70px;
-        max-height: 70px;
-    }
-
-    .sponsor-footer {
-        margin-top: 28px;
-    }
-
-}
-    
+  ```css
+  /* =========================================================
+     SPONSOR SPOTLIGHT
+     ========================================================= */
+  
+  .sponsor-spotlight {
+      padding: 75px 5%;
+      background: #f7f9fa;
+      text-align: center;
+  }
+  
+  
+  /* =========================================================
+     MAIN HEADING
+     ========================================================= */
+  
+  .sponsor-heading {
+      max-width: 700px;
+      margin: 0 auto 42px;
+  }
+  
+  .sponsor-eyebrow {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 6px 15px;
+  
+      border-radius: 999px;
+  
+      background: #d5d49b;
+      color: #002a43;
+  
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+  }
+  
+  .sponsor-heading h2 {
+      margin: 0 0 12px;
+      color: #002a43;
+  }
+  
+  .sponsor-heading h2::after {
+      content: "";
+      display: block;
+  
+      width: 50px;
+      height: 3px;
+  
+      margin: 12px auto 0;
+  
+      background: #d5d49b;
+  }
+  
+  .sponsor-heading p {
+      max-width: 620px;
+      margin: 17px auto 0;
+  
+      color: #555;
+  
+      line-height: 1.7;
+  }
+  
+  
+  /* =========================================================
+     SPONSOR TIERS
+     ========================================================= */
+  
+  .sponsor-tier {
+      max-width: 1050px;
+      margin: 0 auto;
+  }
+  
+  .blue-community-tier {
+      margin-top: 48px;
+  }
+  
+  
+  /* =========================================================
+     TIER HEADINGS
+     ========================================================= */
+  
+  .tier-heading {
+      margin-bottom: 20px;
+      text-align: center;
+  }
+  
+  .tier-label {
+      display: inline-block;
+  
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+  
+      text-transform: uppercase;
+  }
+  
+  .gold-label {
+      color: #8a8750;
+  }
+  
+  .blue-label {
+      color: #002a43;
+  }
+  
+  .tier-heading p {
+      max-width: 600px;
+      margin: 7px auto 0;
+  
+      color: #666;
+  
+      font-size: 0.9rem;
+      line-height: 1.6;
+  }
+  
+  
+  /* =========================================================
+     GOLD SPONSOR PANEL
+     ========================================================= */
+  
+  .gold-panel {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  
+      padding: 12px;
+  
+      background: #ffffff;
+  
+      border: 1px solid #e3e7e9;
+      border-radius: 14px;
+  
+      box-shadow: 0 8px 28px rgba(0, 42, 67, 0.06);
+  }
+  
+  
+  /* =========================================================
+     GOLD SPONSOR ITEMS
+     ========================================================= */
+  
+  .sponsor-item {
+      min-height: 245px;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+  
+      padding: 25px 22px;
+  
+      color: inherit;
+      text-align: center;
+      text-decoration: none;
+  
+      border-right: 1px solid #edf0f1;
+      border-bottom: 1px solid #edf0f1;
+  
+      transition: background 0.2s ease;
+  }
+  
+  .sponsor-item:nth-child(3n) {
+      border-right: none;
+  }
+  
+  .sponsor-item:nth-child(n+4) {
+      border-bottom: none;
+  }
+  
+  .sponsor-item:hover {
+      background: #fafcfc;
+  }
+  
+  
+  /* =========================================================
+     GOLD LOGOS
+     ========================================================= */
+  
+  .sponsor-logo {
+      width: 100%;
+      height: 115px;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      margin-bottom: 12px;
+  }
+  
+  .sponsor-logo img {
+      display: block;
+  
+      max-width: 175px;
+      max-height: 95px;
+  
+      width: auto;
+      height: auto;
+  
+      object-fit: contain;
+  
+      transition: transform 0.2s ease;
+  }
+  
+  .sponsor-item:hover .sponsor-logo img {
+      transform: scale(1.04);
+  }
+  
+  
+  /* =========================================================
+     GOLD SPONSOR TEXT
+     ========================================================= */
+  
+  .sponsor-level {
+      margin-bottom: 5px;
+  
+      color: #777;
+  
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+  
+      text-transform: uppercase;
+  }
+  
+  .sponsor-item h3 {
+      max-width: 230px;
+  
+      margin: 0 0 10px;
+  
+      color: #002a43;
+  
+      font-size: 1rem;
+      line-height: 1.3;
+  }
+  
+  .sponsor-visit {
+      margin-top: auto;
+  
+      color: #002a43;
+  
+      font-size: 0.78rem;
+      font-weight: 700;
+  
+      padding-bottom: 2px;
+  
+      border-bottom: 2px solid #d5d49b;
+  
+      transition:
+          color 0.2s ease,
+          border-color 0.2s ease;
+  }
+  
+  .sponsor-item:hover .sponsor-visit {
+      color: #315f78;
+      border-color: #002a43;
+  }
+  
+  
+  /* =========================================================
+     ANONYMOUS GOLD SPONSOR
+     ========================================================= */
+  
+  .anonymous-sponsor {
+      cursor: default;
+  
+      background: rgba(213, 212, 155, 0.06);
+  }
+  
+  .anonymous-sponsor:hover {
+      background: rgba(213, 212, 155, 0.10);
+  }
+  
+  .anonymous-sponsor .sponsor-logo img {
+      max-width: 75px;
+      max-height: 75px;
+  }
+  
+  .anonymous-sponsor p {
+      max-width: 220px;
+  
+      margin: 0 0 12px;
+  
+      color: #555;
+  
+      font-size: 0.78rem;
+      line-height: 1.5;
+  }
+  
+  .anonymous-thanks {
+      margin-top: auto;
+  
+      padding: 7px 11px;
+  
+      background: #002a43;
+      color: #ffffff;
+  
+      border-radius: 4px;
+  
+      font-size: 0.7rem;
+      font-weight: 700;
+  }
+  
+  
+  /* =========================================================
+     BLUE COMMUNITY SPONSOR PANEL
+     ========================================================= */
+  
+  .community-sponsor-panel {
+      max-width: 850px;
+      margin: 0 auto;
+  
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  
+      padding: 8px;
+  
+      background: #ffffff;
+  
+      border: 1px solid #e3e7e9;
+      border-radius: 12px;
+  
+      box-shadow: 0 5px 18px rgba(0, 42, 67, 0.045);
+  }
+  
+  
+  /* =========================================================
+     BLUE COMMUNITY SPONSOR
+     ========================================================= */
+  
+  .community-sponsor {
+      min-height: 145px;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      padding: 22px 18px;
+  
+      border-right: 1px solid #edf0f1;
+  
+      text-align: center;
+  }
+  
+  .community-sponsor:last-child {
+      border-right: none;
+  }
+  
+  
+  /* Small BEYS accent */
+  
+  .community-sponsor-icon {
+      width: 38px;
+      height: 38px;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      margin-bottom: 10px;
+  
+      background: rgba(213, 212, 155, 0.25);
+  
+      border-radius: 50%;
+  
+      font-size: 1rem;
+  }
+  
+  
+  /* Business name */
+  
+  .community-sponsor h3 {
+      max-width: 230px;
+  
+      margin: 0 0 6px;
+  
+      color: #002a43;
+  
+      font-size: 0.95rem;
+      line-height: 1.3;
+  }
+  
+  
+  /* Sponsor level */
+  
+  .community-sponsor span {
+      color: #777;
+  
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.9px;
+  
+      text-transform: uppercase;
+  }
+  
+  
+  /* =========================================================
+     SPONSOR CTA
+     ========================================================= */
+  
+  .sponsor-footer {
+      margin-top: 38px;
+  }
+  
+  .sponsor-footer p {
+      margin: 0 0 14px;
+  
+      color: #555;
+  }
+  
+  .sponsor-btn {
+      display: inline-block;
+  
+      padding: 11px 22px;
+  
+      background: #002a43;
+      color: #ffffff;
+  
+      border-radius: 5px;
+  
+      font-weight: 700;
+      text-decoration: none;
+  
+      transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+  }
+  
+  .sponsor-btn:hover {
+      background: #315f78;
+      transform: translateY(-2px);
+  }
+  
+  
+  /* =========================================================
+     TABLET
+     ========================================================= */
+  
+  @media (max-width: 850px) {
+  
+      .gold-panel {
+          grid-template-columns: repeat(2, 1fr);
+      }
+  
+      .sponsor-item:nth-child(3n) {
+          border-right: 1px solid #edf0f1;
+      }
+  
+      .sponsor-item:nth-child(2n) {
+          border-right: none;
+      }
+  
+      .sponsor-item:nth-child(n+5) {
+          border-bottom: none;
+      }
+  
+      .sponsor-item:nth-child(-n+4) {
+          border-bottom: 1px solid #edf0f1;
+      }
+  
+      .community-sponsor-panel {
+          max-width: 700px;
+      }
+  }
+  
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 600px) {
+  
+      .sponsor-spotlight {
+          padding: 55px 5%;
+      }
+  
+      .sponsor-heading {
+          margin-bottom: 34px;
+      }
+  
+      .gold-panel {
+          grid-template-columns: 1fr;
+          padding: 8px;
+      }
+  
+      .sponsor-item,
+      .sponsor-item:nth-child(2n),
+      .sponsor-item:nth-child(3n) {
+          min-height: 220px;
+  
+          padding: 23px 18px;
+  
+          border-right: none;
+          border-bottom: 1px solid #edf0f1;
+      }
+  
+      .sponsor-item:last-child {
+          border-bottom: none;
+      }
+  
+      .sponsor-logo {
+          height: 105px;
+      }
+  
+      .sponsor-logo img {
+          max-width: 165px;
+          max-height: 90px;
+      }
+  
+      .anonymous-sponsor .sponsor-logo img {
+          max-width: 70px;
+          max-height: 70px;
+      }
+  
+  
+      /* Blue sponsors stack on mobile */
+  
+      .community-sponsor-panel {
+          grid-template-columns: 1fr;
+          padding: 6px;
+      }
+  
+      .community-sponsor {
+          min-height: 120px;
+  
+          padding: 20px 15px;
+  
+          border-right: none;
+          border-bottom: 1px solid #edf0f1;
+      }
+  
+      .community-sponsor:last-child {
+          border-bottom: none;
+      }
+  
+      .blue-community-tier {
+          margin-top: 38px;
+      }
+  
+      .sponsor-footer {
+          margin-top: 30px;
+      }
+  }
+
+  
    
 
 
