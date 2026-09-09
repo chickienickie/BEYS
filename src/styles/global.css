@@ -3167,4 +3167,9 @@ section.coach-nav .container {
     font-weight: 400;
   }
 
- 
+  .fanwear-qr {
+    width: 125px;
+    height: 125px;
+    display: block;
+    margin: 15px auto;
+  }
