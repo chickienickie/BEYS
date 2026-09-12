@@ -3173,3 +3173,17 @@ section.coach-nav .container {
     display: block;
     margin: 15px auto;
   }
+  .schedule-table td a {
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.cancelled {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.schedule-table .schedule-note {
+    margin: 6px 0 0;
+    font-size: 0.85rem;
+}
