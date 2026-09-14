@@ -754,9 +754,11 @@ ul {
         overflow-y: auto;
       }
     
-      nav.active {
-        display: flex;
-      }
+      /* Update your mobile nav style */
+nav.active {
+    flex-wrap: nowrap; /* Change this from 'wrap' to 'nowrap' */
+    overflow-y: auto;  /* Ensure the menu is scrollable if items are tall */
+}
     
       nav a {
         margin: 8px 0;
