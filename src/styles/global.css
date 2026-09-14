@@ -3187,3 +3187,9 @@ section.coach-nav .container {
     margin: 6px 0 0;
     font-size: 0.85rem;
 }
+
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea {
+    box-sizing: border-box;
+}
