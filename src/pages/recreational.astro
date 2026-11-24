@@ -20,7 +20,7 @@ const groups = [
         <a class="modern-btn" href={registrationUrl} target="_blank" rel="noopener noreferrer">Register →</a>
         <a class="modern-btn outline" href="#age-groups">Explore Age Groups</a>
       </div>
-      <p class="rec-date" data-rec-opening>Spring 2027 registration opens January 1.</p>
+      <p class="rec-date" data-rec-opening>Spring 2027 Registration: January 1 – February 5</p>
     </div>
   </section>
   <section class="modern-section modern-wrap two-grid rec-intro">
@@ -69,11 +69,80 @@ const groups = [
       <a href="/foodtrucks"><strong>Food Truck Schedule</strong><span>See what's coming to the fields →</span></a>
     </div>
   </section>
+
+<!-- SPRING 2027 IMPORTANT DATES -->
+<section class="modern-section soft-section">
+    <div class="modern-wrap">
+  
+      <div class="modern-heading">
+        <p class="eyebrow">Mark your calendars</p>
+        <h2>Spring 2027 important dates.</h2>
+        <p>Get ready for another great season of BEYS soccer!</p>
+      </div>
+  
+      <div class="travel-process-grid">
+  
+        <article class="travel-step">
+          <span class="travel-step-number">
+            <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+          </span>
+          <div>
+            <h3>Spring Registration</h3>
+            <strong>January 1 – February 5, 2027</strong>
+            <p>
+              Registration for recreational and travel soccer.
+            </p>
+          </div>
+        </article>
+  
+        <article class="travel-step">
+          <span class="travel-step-number">
+            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+          </span>
+          <div>
+            <h3>Open Field Day</h3>
+            <strong>Tentatively February 21 or 28</strong>
+            <p>
+              Join us at Alumni Stadium for an open field day,
+              weather and field conditions permitting.
+            </p>
+          </div>
+        </article>
+  
+        <article class="travel-step">
+          <span class="travel-step-number">
+            <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+          </span>
+          <div>
+            <h3>Recreational Games Begin</h3>
+            <strong>Saturday, April 10, 2027</strong>
+            <p>
+              Additional game schedule information will be
+              available closer to the season.
+            </p>
+          </div>
+        </article>
+  
+      </div>
+  
+      <p class="season-dates-note">
+        The final open field day date and additional details
+        will be communicated to registered families after
+        registration closes.
+      </p>
+  
+    </div>
+  </section>
+  
   <section class="modern-section gold-section">
     <div class="modern-wrap modern-heading">
       <p class="eyebrow">Join the BEYS family</p>
       <h2>Ready to play?</h2>
-      <p>Register through our Stack Sports portal. Available programs will appear when registration opens.</p>
+      <p>
+        Spring 2027 registration runs from January 1 through
+        February 5. Register through our Stack Sports portal
+        to join us for another great season of BEYS soccer!
+      </p>
       <a class="modern-btn navy" href={registrationUrl} target="_blank" rel="noopener noreferrer">Register Now →</a>
       <p>Looking for a more competitive experience? <a href="/travel">Explore Travel Soccer →</a></p>
     </div>
@@ -97,13 +166,40 @@ const groups = [
   @media (max-width: 1000px) { .rec-groups { grid-template-columns: repeat(2,minmax(0,1fr)); } }
   @media (max-width: 600px) { .rec-groups, .rec-resources { grid-template-columns: 1fr; } .rec-hero { padding: 48px 0; } }
 </style>
+
 <script>
-  function updateRecDate() {
-    const date = document.querySelector('[data-rec-opening]');
-    if (date && Date.now() >= Date.parse('2027-01-01T00:00:00-05:00')) {
-      date.textContent = 'Spring 2027 registration is open!';
+    function updateRecDate() {
+      const date = document.querySelector('[data-rec-opening]');
+  
+      if (!date) return;
+  
+      const openingDate = Date.parse(
+        '2027-01-01T00:00:00-05:00'
+      );
+  
+      const closingDate = Date.parse(
+        '2027-02-06T00:00:00-05:00'
+      );
+  
+      const now = Date.now();
+  
+      if (now >= closingDate) {
+        date.textContent =
+          'Spring 2027 registration is closed.';
+      } else if (now >= openingDate) {
+        date.textContent =
+          'Registration is open through February 5, 2027!';
+      } else {
+        date.textContent =
+          'Spring 2027 Registration: January 1 – February 5';
+      }
     }
-  }
-  updateRecDate();
-  document.addEventListener('astro:page-load', updateRecDate);
-</script>
+  
+    updateRecDate();
+  
+    document.addEventListener(
+      'astro:page-load',
+      updateRecDate
+    );
+  </script>
+  
