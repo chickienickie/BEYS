@@ -1,3 +1,4 @@
+
 ---
 import '../styles/global.css';
 import '../styles/modern.css';
@@ -6,30 +7,192 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
-	title: string;
+  title: string;
+  description?: string;
+  image?: string;
 }
 
-const { title } = Astro.props;
+const siteUrl = 'https://baldeagleyouthsoccer.org';
+
+const pageDescriptions: Record<string, string> = {
+  '/':
+    'Bald Eagle Youth Soccer (BEYS) offers recreational and travel youth soccer in the Bald Eagle Area of Centre County, Pennsylvania. Building skills, confidence and community.',
+
+  '/recreational':
+    'Explore recreational youth soccer with Bald Eagle Youth Soccer. A fun, supportive environment for local players to learn soccer, build confidence and make friends.',
+
+  '/travel':
+    'Explore BEYS travel soccer in Centre County, PA. Learn about competitive PA West soccer, proposed U10 and U12 teams, eligibility, registration and schedules.',
+
+  '/schedule':
+    'Find Bald Eagle Youth Soccer recreational and travel game schedules, practice days and upcoming season information.',
+
+  '/fields':
+    'Find BEYS soccer field locations, field maps, parking guidelines and directions to soccer fields throughout Central Pennsylvania.',
+
+  '/coach-resources':
+    'Access Bald Eagle Youth Soccer coaching resources, required clearances, training, game day guidelines and player development tools.',
+
+  '/foodtrucks':
+    'Explore the Bald Eagle Youth Soccer food truck schedule and support local food vendors while enjoying soccer at our Unionville fields.',
+
+  '/fundraisers':
+    'Support Bald Eagle Youth Soccer through community fundraisers that help keep youth soccer affordable and accessible for local families.',
+
+  '/sponsors':
+    'Become a Bald Eagle Youth Soccer community sponsor. Explore sponsorship opportunities and support youth soccer in the Bald Eagle Area.',
+
+  '/board':
+    'Meet the volunteer board behind Bald Eagle Youth Soccer, a nonprofit organization dedicated to youth soccer, player development and community.'
+};
+
+const pathname =
+  Astro.url.pathname.replace(/\/+$/, '') || '/';
+
+const {
+  title,
+  description = pageDescriptions[pathname] || pageDescriptions['/'],
+  image = '/images/soccerfield.png'
+} = Astro.props;
+
+const canonicalURL = new URL(
+  pathname === '/' ? '/' : `${pathname}/`,
+  siteUrl
+).href;
+
+const socialImage = new URL(image, siteUrl).href;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsOrganization',
+  '@id': `${siteUrl}/#organization`,
+  name: 'Bald Eagle Youth Soccer',
+  alternateName: 'BEYS',
+  url: siteUrl,
+  logo: `${siteUrl}/beyslogo.png`,
+  image: `${siteUrl}/images/soccerfield.png`,
+  description:
+    'A volunteer-driven nonprofit youth soccer organization offering recreational and travel soccer in the Bald Eagle Area of Centre County, Pennsylvania.',
+  sport: 'Soccer',
+  email: 'baldeagleyouthsoccer@gmail.com',
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Centre County, Pennsylvania'
+  }
+};
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{title}</title>
-		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-		<meta name="google-site-verification" content="th4nupLft3c_ArhO9uLhmKR84200jduJ4JZohR0h2nU" />
-		<script src="https://kit.fontawesome.com/f595c3e68f.js" crossorigin="anonymous"></script>
-	</head>
-	<body>
-		<a href="#main-content" class="skip-link">Skip to main content</a>
-		<AlertBar />
-		<Header />
-		<main id="main-content">
-			<slot />
-		</main>
-		<Footer />
-	</body>
+
+  <head>
+
+    <!-- Essential Metadata -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>{title}</title>
+
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#002a43" />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/beyslogo.png"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Bald Eagle Youth Soccer"
+    />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImage} />
+    <meta
+      property="og:image:alt"
+      content="Bald Eagle Youth Soccer"
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Social Sharing -->
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta name="twitter:title" content={title} />
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+    <meta name="twitter:image" content={socialImage} />
+
+    <!-- Google Search Console -->
+    <meta
+      name="google-site-verification"
+      content="th4nupLft3c_ArhO9uLhmKR84200jduJ4JZohR0h2nU"
+    />
+
+    <!-- Font Performance -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Structured Data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+
+  </head>
+
+  <body>
+
+    <a href="#main-content" class="skip-link">
+      Skip to main content
+    </a>
+
+    <AlertBar />
+
+    <Header />
+
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+
+    <Footer />
+
+  </body>
+
 </html>
