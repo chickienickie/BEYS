@@ -398,3 +398,50 @@ a.sponsor-btn:focus-visible {
     gap: 24px;
     margin-top: 32px;
 }
+
+/* =========================================
+   BINGO BALL LETTERING
+========================================= */
+
+.bingo-section .bingo-event-name {
+    display: block;
+    color: #d5d49b;
+    font-size: 0.7em;
+    letter-spacing: 0.15em;
+    margin: 12px 0 8px;
+}
+
+.bingo-section .bingo-letters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 1.5vw, 12px);
+    margin: 12px auto 24px;
+}
+
+.bingo-section .bingo-ball {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: clamp(42px, 10vw, 72px);
+    height: clamp(42px, 10vw, 72px);
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #d5d49b;
+    color: #002a43;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(1.5rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bingo-section .bingo-ball::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid #002a43;
+    border-radius: 50%;
+    pointer-events: none;
+}
