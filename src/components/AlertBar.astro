@@ -1,4 +1,3 @@
-
 ---
 const registrationOpens = "2027-01-01T00:00:00-05:00";
 ---
@@ -23,7 +22,7 @@ const registrationOpens = "2027-01-01T00:00:00-05:00";
     color: #002a43;
     padding: 10px 20px;
     white-space: normal;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -76,35 +75,28 @@ const registrationOpens = "2027-01-01T00:00:00-05:00";
 
 <script>
   function updateAnnouncement() {
-    const bar = document.querySelector<HTMLElement>(
-      '.alert-bar[data-opens]'
-    );
+    const bar = document.querySelector<HTMLElement>(".alert-bar[data-opens]");
 
     if (!bar?.dataset.opens) return;
 
     const openingDate = Date.parse(bar.dataset.opens);
 
     if (Date.now() >= openingDate) {
-      const registration = bar.querySelector(
-        '[data-alert-registration]'
-      );
+      const registration = bar.querySelector("[data-alert-registration]");
 
-      const sponsorship = bar.querySelector(
-        '[data-alert-sponsor]'
-      );
+      const sponsorship = bar.querySelector("[data-alert-sponsor]");
 
       if (registration) {
         registration.textContent =
-          'Spring 2027 Registration Is Open • Rec & Travel';
+          "Spring 2027 Registration Is Open • Rec & Travel";
       }
 
       if (sponsorship) {
-        sponsorship.textContent =
-          '2027 Business Sponsorships Are Open';
+        sponsorship.textContent = "2027 Business Sponsorships Are Open";
       }
     }
   }
 
   updateAnnouncement();
-  document.addEventListener('astro:page-load', updateAnnouncement);
+  document.addEventListener("astro:page-load", updateAnnouncement);
 </script>

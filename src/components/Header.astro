@@ -1,617 +1,599 @@
-
 ---
-const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 
 const registrationDate = "2027-01-01T00:00:00-05:00";
 
 const registrationUrl =
-  "https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports";
+    "https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports";
 
 const isActive = (path: string) => currentPath === path;
 ---
 
 <header class="site-header">
-  <div class="nav-container">
+    <div class="nav-container">
+        <!-- BEYS Logo -->
+        <div class="logo">
+            <a href="/" aria-label="BEYS Home">
+                <img src="/beyslogo.png" alt="Bald Eagle Youth Soccer" />
+            </a>
+        </div>
 
-    <!-- BEYS Logo -->
-    <div class="logo">
-      <a href="/" aria-label="BEYS Home">
-        <img
-          src="/beyslogo.png"
-          alt="Bald Eagle Youth Soccer"
-        />
-      </a>
+        <!-- Main Navigation -->
+        <nav id="nav" aria-label="Main navigation">
+            <!-- Home -->
+            <a href="/" aria-current={isActive("/") ? "page" : undefined}>
+                Home
+            </a>
+
+            <!-- Programs Dropdown -->
+            <details class="nav-dropdown">
+                <summary
+                    class:list={{
+                        "active-section":
+                            isActive("/recreational") || isActive("/travel"),
+                    }}
+                >
+                    Programs
+                </summary>
+
+                <div class="dropdown-menu">
+                    <a
+                        href="/recreational"
+                        aria-current={isActive("/recreational")
+                            ? "page"
+                            : undefined}
+                    >
+                        Recreational Soccer
+                    </a>
+
+                    <a
+                        href="/travel"
+                        aria-current={isActive("/travel") ? "page" : undefined}
+                    >
+                        Travel Soccer
+                    </a>
+                </div>
+            </details>
+
+            <!-- Schedules Dropdown -->
+            <details class="nav-dropdown">
+                <summary
+                    class:list={{
+                        "active-section":
+                            isActive("/schedule") || isActive("/foodtrucks"),
+                    }}
+                >
+                    Schedules
+                </summary>
+
+                <div class="dropdown-menu">
+                    <a
+                        href="/schedule"
+                        aria-current={isActive("/schedule")
+                            ? "page"
+                            : undefined}
+                    >
+                        Game Schedules
+                    </a>
+
+                    <a
+                        href="/foodtrucks"
+                        aria-current={isActive("/foodtrucks")
+                            ? "page"
+                            : undefined}
+                    >
+                        Food Truck Schedule
+                    </a>
+                </div>
+            </details>
+
+            <!-- Resources Dropdown -->
+            <details class="nav-dropdown">
+                <summary
+                    class:list={{
+                        "active-section":
+                            isActive("/fields") ||
+                            isActive("/coach-resources") ||
+                            isActive("/fundraisers"),
+                    }}
+                >
+                    Resources
+                </summary>
+
+                <div class="dropdown-menu">
+                    <a
+                        href="/fields"
+                        aria-current={isActive("/fields") ? "page" : undefined}
+                    >
+                        Fields &amp; Directions
+                    </a>
+
+                    <a
+                        href="/coach-resources"
+                        aria-current={isActive("/coach-resources")
+                            ? "page"
+                            : undefined}
+                    >
+                        Coach Resources
+                    </a>
+
+                    <a
+                        href="/fundraisers"
+                        aria-current={isActive("/fundraisers")
+                            ? "page"
+                            : undefined}
+                    >
+                        Fundraisers
+                    </a>
+                </div>
+            </details>
+
+            <!-- Sponsors -->
+            <a
+                href="/sponsors"
+                aria-current={isActive("/sponsors") ? "page" : undefined}
+            >
+                Sponsors
+            </a>
+
+            <!-- About Us -->
+            <a
+                href="/board"
+                aria-current={isActive("/board") ? "page" : undefined}
+            >
+                About Us
+            </a>
+
+            <!-- Registration Button -->
+            <a
+                class="register-nav"
+                id="nav-registration"
+                href="/registration"
+                data-opens={registrationDate}
+                data-registration-url={registrationUrl}
+            >
+                Registration Opens Jan 1
+            </a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+            class="menu"
+            id="menu-btn"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
-
-    <!-- Main Navigation -->
-    <nav id="nav" aria-label="Main navigation">
-
-      <!-- Home -->
-      <a
-        href="/"
-        aria-current={isActive('/') ? 'page' : undefined}
-      >
-        Home
-      </a>
-
-      <!-- Programs Dropdown -->
-      <details class="nav-dropdown">
-        <summary
-          class:list={{
-            'active-section':
-              isActive('/recreational') ||
-              isActive('/travel')
-          }}
-        >
-          Programs
-        </summary>
-
-        <div class="dropdown-menu">
-          <a
-            href="/recreational"
-            aria-current={isActive('/recreational') ? 'page' : undefined}
-          >
-            Recreational Soccer
-          </a>
-
-          <a
-            href="/travel"
-            aria-current={isActive('/travel') ? 'page' : undefined}
-          >
-            Travel Soccer
-          </a>
-        </div>
-      </details>
-
-      <!-- Schedules Dropdown -->
-      <details class="nav-dropdown">
-        <summary
-          class:list={{
-            'active-section':
-              isActive('/schedule') ||
-              isActive('/foodtrucks')
-          }}
-        >
-          Schedules
-        </summary>
-
-        <div class="dropdown-menu">
-          <a
-            href="/schedule"
-            aria-current={isActive('/schedule') ? 'page' : undefined}
-          >
-            Game Schedules
-          </a>
-
-          <a
-            href="/foodtrucks"
-            aria-current={isActive('/foodtrucks') ? 'page' : undefined}
-          >
-            Food Truck Schedule
-          </a>
-        </div>
-      </details>
-
-      <!-- Resources Dropdown -->
-      <details class="nav-dropdown">
-        <summary
-          class:list={{
-            'active-section':
-              isActive('/fields') ||
-              isActive('/coach-resources') ||
-              isActive('/fundraisers')
-          }}
-        >
-          Resources
-        </summary>
-
-        <div class="dropdown-menu">
-          <a
-            href="/fields"
-            aria-current={isActive('/fields') ? 'page' : undefined}
-          >
-            Fields &amp; Directions
-          </a>
-
-          <a
-            href="/coach-resources"
-            aria-current={isActive('/coach-resources') ? 'page' : undefined}
-          >
-            Coach Resources
-          </a>
-
-          <a
-            href="/fundraisers"
-            aria-current={isActive('/fundraisers') ? 'page' : undefined}
-          >
-            Fundraisers
-          </a>
-        </div>
-      </details>
-
-      <!-- Sponsors -->
-      <a
-        href="/sponsors"
-        aria-current={isActive('/sponsors') ? 'page' : undefined}
-      >
-        Sponsors
-      </a>
-
-      <!-- About Us -->
-      <a
-        href="/board"
-        aria-current={isActive('/board') ? 'page' : undefined}
-      >
-        About Us
-      </a>
-
-      <!-- Registration Button -->
-      <a
-        class="register-nav"
-        id="nav-registration"
-        href="/registration"
-        data-opens={registrationDate}
-        data-registration-url={registrationUrl}
-      >
-        Registration Opens Jan 1
-      </a>
-
-    </nav>
-
-    <!-- Mobile Menu Toggle -->
-    <button
-      class="menu"
-      id="menu-btn"
-      type="button"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-      aria-controls="nav"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
 </header>
 
 <style>
-  /* =========================
+    /* =========================
      HEADER & LOGO
   ========================= */
 
-  .site-header {
-    background: #002a43;
-    color: #ffffff;
-    position: relative;
-    z-index: 1000;
-  }
-
-  .nav-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 18px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    box-sizing: border-box;
-  }
-
-  .logo {
-    flex-shrink: 0;
-  }
-
-  .logo a {
-    display: block;
-  }
-
-  .logo img {
-    display: block;
-    height: 65px;
-    width: auto;
-  }
-
-  /* =========================
-     MAIN NAVIGATION
-  ========================= */
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    gap: 26px;
-  }
-
-  nav a,
-  nav a:visited,
-  .nav-dropdown summary {
-    color: #ffffff;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: color 0.2s ease;
-  }
-
-  nav a:hover,
-  nav a[aria-current="page"],
-  .nav-dropdown summary:hover,
-  .nav-dropdown summary.active-section,
-  .nav-dropdown[open] summary {
-    color: #d5d49b;
-  }
-
-  nav a:focus-visible,
-  .nav-dropdown summary:focus-visible,
-  .menu:focus-visible {
-    outline: 2px solid #d5d49b;
-    outline-offset: 5px;
-  }
-
-  /* =========================
-     DROPDOWN NAVIGATION
-  ========================= */
-
-  .nav-dropdown {
-    position: relative;
-  }
-
-  .nav-dropdown summary {
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-
-  .nav-dropdown summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .nav-dropdown summary::after {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-    transform: rotate(45deg);
-    margin-top: -4px;
-    transition: transform 0.2s ease;
-  }
-
-  .nav-dropdown[open] summary::after {
-    transform: rotate(225deg);
-    margin-top: 3px;
-  }
-
-  .nav-dropdown .dropdown-menu {
-    position: absolute;
-    top: calc(100% + 18px);
-    left: -15px;
-    min-width: 215px;
-    padding: 8px 0;
-    background: #002a43;
-    border-top: 3px solid #d5d49b;
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-    z-index: 1100;
-  }
-
-  .dropdown-menu a {
-    display: block;
-    padding: 12px 18px;
-    font-size: 0.82rem;
-  }
-
-  .dropdown-menu a:hover,
-  .dropdown-menu a[aria-current="page"] {
-    background: rgba(255, 255, 255, 0.06);
-    color: #d5d49b;
-  }
-
-  /* =========================
-     REGISTRATION BUTTON
-  ========================= */
-
-  nav a.register-nav,
-  nav a.register-nav:visited {
-    background: #d5d49b;
-    color: #002a43;
-    padding: 12px 18px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    transition: background 0.2s ease;
-  }
-
-  nav a.register-nav:hover {
-    background: #e5e4b8;
-    color: #002a43;
-  }
-
-  /* =========================
-     MOBILE MENU BUTTON
-  ========================= */
-
-  .menu {
-    display: none;
-    background: transparent;
-    border: 0;
-    padding: 8px;
-    cursor: pointer;
-  }
-
-  .menu span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: #ffffff;
-    margin: 5px 0;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-
-  .menu[aria-expanded="true"] span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-
-  .menu[aria-expanded="true"] span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu[aria-expanded="true"] span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
-  /* =========================
-     SMALLER DESKTOP SCREENS
-  ========================= */
-
-  @media (max-width: 1200px) {
-    nav {
-      gap: 18px;
-    }
-
-    nav a,
-    .nav-dropdown summary {
-      font-size: 0.8rem;
+    .site-header {
+        background: #002a43;
+        color: #ffffff;
+        position: relative;
+        z-index: 1000;
     }
 
     .nav-container {
-      padding: 16px 3%;
-      gap: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 18px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        box-sizing: border-box;
     }
-  }
 
-  /* =========================
-     MOBILE NAVIGATION
-  ========================= */
+    .logo {
+        flex-shrink: 0;
+    }
 
-  @media (max-width: 1024px) {
-    .nav-container {
-      padding: 14px 5%;
+    .logo a {
+        display: block;
     }
 
     .logo img {
-      height: 55px;
+        display: block;
+        height: 65px;
+        width: auto;
     }
 
-    .menu {
-      display: block;
-    }
+    /* =========================
+     MAIN NAVIGATION
+  ========================= */
 
     nav {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      padding: 15px 5% 25px;
-      background: #002a43;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: flex-start;
-      gap: 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      box-sizing: border-box;
-      max-height: 75vh;
-      overflow-y: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        gap: 26px;
     }
 
-    nav.active {
-      display: flex;
-      flex-wrap: nowrap;
-    }
-
-    nav > a,
+    nav a,
+    nav a:visited,
     .nav-dropdown summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      margin: 0;
-      padding: 15px 0;
-      font-size: 0.95rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      box-sizing: border-box;
+        color: #ffffff;
+        font-family: "Inter", sans-serif;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color 0.2s ease;
     }
+
+    nav a:hover,
+    nav a[aria-current="page"],
+    .nav-dropdown summary:hover,
+    .nav-dropdown summary.active-section,
+    .nav-dropdown[open] summary {
+        color: #d5d49b;
+    }
+
+    nav a:focus-visible,
+    .nav-dropdown summary:focus-visible,
+    .menu:focus-visible {
+        outline: 2px solid #d5d49b;
+        outline-offset: 5px;
+    }
+
+    /* =========================
+     DROPDOWN NAVIGATION
+  ========================= */
 
     .nav-dropdown {
-      width: 100%;
-      padding: 0;
+        position: relative;
+    }
+
+    .nav-dropdown summary {
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .nav-dropdown summary::after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-right: 1.5px solid currentColor;
+        border-bottom: 1.5px solid currentColor;
+        transform: rotate(45deg);
+        margin-top: -4px;
+        transition: transform 0.2s ease;
+    }
+
+    .nav-dropdown[open] summary::after {
+        transform: rotate(225deg);
+        margin-top: 3px;
     }
 
     .nav-dropdown .dropdown-menu {
-      position: static;
-      min-width: 0;
-      background: rgba(255, 255, 255, 0.04);
-      border: 0;
-      border-radius: 0;
-      box-shadow: none;
-      padding: 5px 15px;
+        position: absolute;
+        top: calc(100% + 18px);
+        left: -15px;
+        min-width: 215px;
+        padding: 8px 0;
+        background: #002a43;
+        border-top: 3px solid #d5d49b;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+        z-index: 1100;
     }
 
     .dropdown-menu a {
-      display: block;
-      margin: 0;
-      padding: 12px 5px;
-      font-size: 0.85rem;
+        display: block;
+        padding: 12px 18px;
+        font-size: 0.82rem;
     }
 
-    nav a.register-nav {
-      display: block;
-      width: 100%;
-      text-align: center;
-      margin-top: 20px;
-      padding: 14px 18px;
-      box-sizing: border-box;
+    .dropdown-menu a:hover,
+    .dropdown-menu a[aria-current="page"] {
+        background: rgba(255, 255, 255, 0.06);
+        color: #d5d49b;
     }
-  }
 
-  /* Reduced Motion Accessibility */
+    /* =========================
+     REGISTRATION BUTTON
+  ========================= */
 
-  @media (prefers-reduced-motion: reduce) {
-    nav a,
-    .nav-dropdown summary::after,
+    nav a.register-nav,
+    nav a.register-nav:visited {
+        background: #d5d49b;
+        color: #002a43;
+        padding: 12px 18px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        transition: background 0.2s ease;
+    }
+
+    nav a.register-nav:hover {
+        background: #e5e4b8;
+        color: #002a43;
+    }
+
+    /* =========================
+     MOBILE MENU BUTTON
+  ========================= */
+
+    .menu {
+        display: none;
+        background: transparent;
+        border: 0;
+        padding: 8px;
+        cursor: pointer;
+    }
+
     .menu span {
-      transition: none;
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: #ffffff;
+        margin: 5px 0;
+        transition:
+            transform 0.2s ease,
+            opacity 0.2s ease;
     }
-  }
+
+    .menu[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* =========================
+     SMALLER DESKTOP SCREENS
+  ========================= */
+
+    @media (max-width: 1200px) {
+        nav {
+            gap: 18px;
+        }
+
+        nav a,
+        .nav-dropdown summary {
+            font-size: 0.8rem;
+        }
+
+        .nav-container {
+            padding: 16px 3%;
+            gap: 20px;
+        }
+    }
+
+    /* =========================
+     MOBILE NAVIGATION
+  ========================= */
+
+    @media (max-width: 1024px) {
+        .nav-container {
+            padding: 14px 5%;
+        }
+
+        .logo img {
+            height: 55px;
+        }
+
+        .menu {
+            display: block;
+        }
+
+        nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 15px 5% 25px;
+            background: #002a43;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            gap: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            box-sizing: border-box;
+            max-height: 75vh;
+            overflow-y: auto;
+        }
+
+        nav.active {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        nav > a,
+        .nav-dropdown summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0;
+            padding: 15px 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+        }
+
+        .nav-dropdown {
+            width: 100%;
+            padding: 0;
+        }
+
+        .nav-dropdown .dropdown-menu {
+            position: static;
+            min-width: 0;
+            background: rgba(255, 255, 255, 0.04);
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 5px 15px;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            margin: 0;
+            padding: 12px 5px;
+            font-size: 0.85rem;
+        }
+
+        nav a.register-nav {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            padding: 14px 18px;
+            box-sizing: border-box;
+        }
+    }
+
+    /* Reduced Motion Accessibility */
+
+    @media (prefers-reduced-motion: reduce) {
+        nav a,
+        .nav-dropdown summary::after,
+        .menu span {
+            transition: none;
+        }
+    }
 </style>
 
 <script>
-  const menuBtn = document.getElementById('menu-btn');
-  const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById("menu-btn");
+    const nav = document.getElementById("nav");
 
-  const dropdowns =
-    document.querySelectorAll<HTMLDetailsElement>(
-      '.site-header .nav-dropdown'
+    const dropdowns = document.querySelectorAll<HTMLDetailsElement>(
+        ".site-header .nav-dropdown",
     );
 
-  function closeDropdowns() {
-    dropdowns.forEach((dropdown) => {
-      dropdown.open = false;
-    });
-  }
-
-  function closeMenu() {
-    nav?.classList.remove('active');
-    menuBtn?.setAttribute('aria-expanded', 'false');
-    menuBtn?.setAttribute(
-      'aria-label',
-      'Open navigation menu'
-    );
-    closeDropdowns();
-  }
-
-  // Mobile menu toggle
-  menuBtn?.addEventListener('click', () => {
-    const isOpen = nav?.classList.toggle('active') ?? false;
-
-    menuBtn.setAttribute(
-      'aria-expanded',
-      String(isOpen)
-    );
-
-    menuBtn.setAttribute(
-      'aria-label',
-      isOpen
-        ? 'Close navigation menu'
-        : 'Open navigation menu'
-    );
-
-    if (!isOpen) closeDropdowns();
-  });
-
-  // Only allow one dropdown to be open at a time
-  dropdowns.forEach((dropdown) => {
-    dropdown.addEventListener('toggle', () => {
-      if (dropdown.open) {
-        dropdowns.forEach((other) => {
-          if (other !== dropdown) {
-            other.open = false;
-          }
+    function closeDropdowns() {
+        dropdowns.forEach((dropdown) => {
+            dropdown.open = false;
         });
-      }
+    }
+
+    function closeMenu() {
+        nav?.classList.remove("active");
+        menuBtn?.setAttribute("aria-expanded", "false");
+        menuBtn?.setAttribute("aria-label", "Open navigation menu");
+        closeDropdowns();
+    }
+
+    // Mobile menu toggle
+    menuBtn?.addEventListener("click", () => {
+        const isOpen = nav?.classList.toggle("active") ?? false;
+
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
+
+        menuBtn.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu",
+        );
+
+        if (!isOpen) closeDropdowns();
     });
-  });
 
-  // Close menu when a link is selected
-  nav?.addEventListener('click', (event) => {
-    if (
-      event.target instanceof Element &&
-      event.target.closest('a')
-    ) {
-      closeMenu();
+    // Only allow one dropdown to be open at a time
+    dropdowns.forEach((dropdown) => {
+        dropdown.addEventListener("toggle", () => {
+            if (dropdown.open) {
+                dropdowns.forEach((other) => {
+                    if (other !== dropdown) {
+                        other.open = false;
+                    }
+                });
+            }
+        });
+    });
+
+    // Close menu when a link is selected
+    nav?.addEventListener("click", (event) => {
+        if (event.target instanceof Element && event.target.closest("a")) {
+            closeMenu();
+        }
+    });
+
+    // Close dropdowns when clicking outside the header
+    document.addEventListener("click", (event) => {
+        if (
+            event.target instanceof Element &&
+            !event.target.closest(".site-header")
+        ) {
+            closeMenu();
+        }
+    });
+
+    // Keyboard accessibility
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            const openDropdown = Array.from(dropdowns).find(
+                (dropdown) => dropdown.open,
+            );
+
+            if (openDropdown) {
+                openDropdown.open = false;
+                openDropdown.querySelector("summary")?.focus();
+            } else if (nav?.classList.contains("active")) {
+                closeMenu();
+                menuBtn?.focus();
+            }
+        }
+    });
+
+    // Reset mobile menu when returning to desktop
+    const desktop = window.matchMedia("(min-width: 1025px)");
+
+    desktop.addEventListener("change", (event) => {
+        if (event.matches) {
+            closeMenu();
+        }
+    });
+
+    // Automatically enable registration on January 1
+    function updateRegistration() {
+        const button =
+            document.querySelector<HTMLAnchorElement>("#nav-registration");
+
+        if (!button?.dataset.opens) return;
+
+        const opens = Date.parse(button.dataset.opens);
+
+        if (Date.now() >= opens && button.dataset.registrationUrl) {
+            button.textContent = "Register Now";
+            button.href = button.dataset.registrationUrl;
+            button.target = "_blank";
+            button.rel = "noopener noreferrer";
+
+            button.setAttribute(
+                "aria-label",
+                "Register for spring soccer (opens in a new tab)",
+            );
+        }
     }
-  });
 
-  // Close dropdowns when clicking outside the header
-  document.addEventListener('click', (event) => {
-    if (
-      event.target instanceof Element &&
-      !event.target.closest('.site-header')
-    ) {
-      closeMenu();
-    }
-  });
-
-  // Keyboard accessibility
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      const openDropdown = Array.from(dropdowns).find(
-        (dropdown) => dropdown.open
-      );
-
-      if (openDropdown) {
-        openDropdown.open = false;
-        openDropdown.querySelector('summary')?.focus();
-      } else if (nav?.classList.contains('active')) {
-        closeMenu();
-        menuBtn?.focus();
-      }
-    }
-  });
-
-  // Reset mobile menu when returning to desktop
-  const desktop = window.matchMedia('(min-width: 1025px)');
-
-  desktop.addEventListener('change', (event) => {
-    if (event.matches) {
-      closeMenu();
-    }
-  });
-
-  // Automatically enable registration on January 1
-  function updateRegistration() {
-    const button =
-      document.querySelector<HTMLAnchorElement>(
-        '#nav-registration'
-      );
-
-    if (!button?.dataset.opens) return;
-
-    const opens = Date.parse(button.dataset.opens);
-
-    if (
-      Date.now() >= opens &&
-      button.dataset.registrationUrl
-    ) {
-      button.textContent = 'Register Now';
-      button.href = button.dataset.registrationUrl;
-      button.target = '_blank';
-      button.rel = 'noopener noreferrer';
-
-      button.setAttribute(
-        'aria-label',
-        'Register for spring soccer (opens in a new tab)'
-      );
-    }
-  }
-
-  updateRegistration();
+    updateRegistration();
 </script>
