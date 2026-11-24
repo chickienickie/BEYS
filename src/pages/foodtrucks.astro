@@ -1,112 +1,171 @@
+
 ---
 import Layout from '../layouts/Layout.astro';
----
-<Layout title="Soccer Saturday Food Trucks">
- 
-    <section class="schedule-section">
-        <div class="container">
-            <h2>Fall 2026 Soccer Saturdays Food Truck Schedule</h2>
-            <div class="schedule-info">
-                <img src="/foodtruck.png" class="announcement-icon" alt="Soccer Ball">
-                <h3>Serving Hours</h3>
-                <ul>
-                    <li><strong>Time:</strong> 9:00 AM – 2:00 PM</li>
-                    <li><strong>Location:</strong> Bald Eagle Youth Soccer Fields</li>
-                </ul>
-                <p class="schedule-note">
-                    *Times and vendors subject to change.
-                </p>
-            </div>
 
-             
-            <div class="schedule-table-container">
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Food Trucks</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>September 12</td>
-                            <td>
-                                <span class="cancelled">
-                                    Windy Wagon — Cancelled
-                                </span>
-                                <p class="schedule-note">
-                                    We apologize for the last-minute change and appreciate your understanding!
-                                </p>
-                            </td>
-                        </tr>
-            
-                        <tr>
-                            <td>September 19</td>
-                            <td>
-                                <a href="https://www.facebook.com/profile.php?id=61576352427634" target="_blank">
-                                    Mad Pea’s BBQ
-                                </a>
-                                <br>
-                                <a href="https://www.facebook.com/profile.php?id=61576722722940" target="_blank">
-                                    Buzzy's Sweet Treats
-                                </a>
-                            </td>
-                        </tr>
-            
-                        <tr>
-                            <td>September 26</td>
-                            <td>
-                                <a href="https://www.facebook.com/profile.php?id=61563883814788" target="_blank">
-                                    Bar-Bees Lunchbox
-                                </a>
-                            </td>
-                        </tr>
-            
-                        <tr>
-                            <td>October 3</td>
-                            <td>
-                                <a href="https://www.facebook.com/profile.php?id=61590944572085" target="_blank">
-                                    Five Dogs & a Food Truck
-                                </a>
-                            </td>
-                        </tr>
-            
-                        <tr>
-                            <td>October 10</td>
-                            <td>
-                                <a href="https://www.facebook.com/profile.php?id=61559097140305" target="_blank">
-                                    J Z BBQ
-                                </a>
-                            </td>
-                        </tr>
-            
-                        <tr>
-                            <td>October 17</td>
-                            <td>
-                              
-                                No food trucks & home games today. Good luck to our U8, U10, & U11 teams competing in the Clash of the Cleats tournament this weekend!
-                               
-                            </td>
-                        </tr>
-            
-                        <tr>
-                            <td>October 24</td>
-                            <td>No food truck available this week</td>
-                        </tr>
-            
-                        <tr>
-                            <td>October 31</td>
-                            <td>
-                               
-                                <a href="https://www.facebook.com/profile.php?id=61576722722940" target="_blank">
-                                    Buzzy's Sweet Treats
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    
+const vendorEmail =
+  'mailto:baldeagleyouthsoccer@gmail.com?subject=Spring%202027%20Food%20Truck%20Interest';
+---
+
+<Layout title="Food Truck Schedule | Bald Eagle Youth Soccer">
+
+  <!-- Page Hero -->
+  <section class="program-hero food-hero">
+    <div class="modern-wrap">
+
+      <p class="eyebrow">
+        Bald Eagle Youth Soccer • Spring 2027
+      </p>
+
+      <h1>
+        Good Food.<br />
+        <span>Great Soccer.</span>
+      </h1>
+
+      <p>
+        Enjoy your favorite local food trucks while
+        cheering on our young athletes.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Coming Soon -->
+  <section class="modern-section modern-wrap">
+
+    <div class="modern-heading food-coming-soon">
+
+      <img
+        src="/foodtruck.png"
+        alt=""
+        class="food-truck-icon"
+      />
+
+      <p class="eyebrow">
+        Spring 2027 Food Truck Schedule
+      </p>
+
+      <h2>Coming Soon!</h2>
+
+      <p>
+        We're looking forward to welcoming our local
+        food trucks back to the fields this spring!
+        Check back as we get closer to the season
+        for our upcoming food truck lineup.
+      </p>
+
+      <p class="vendor-thanks">
+        Thank you to all of the wonderful vendors
+        who joined us throughout the 2026 season!
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- Vendor Interest -->
+  <section class="modern-section soft-section">
+
+    <div class="modern-wrap modern-heading vendor-section">
+
+      <p class="eyebrow">Support Local</p>
+
+      <h2>Are You a Food Truck Vendor?</h2>
+
+      <p>
+        We'd love to have you join us for a day of
+        soccer, great food and community. Reach out
+        to learn more about opportunities for our
+        upcoming season.
+      </p>
+
+      <a class="modern-btn navy" href={vendorEmail}>
+        Get in Touch →
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- Game Day Resources -->
+  <section class="modern-section gold-section">
+
+    <div class="modern-wrap modern-heading">
+
+      <p class="eyebrow">See You at the Fields</p>
+
+      <h2>Make It a Game Day.</h2>
+
+      <p>
+        Find everything you need to plan your next
+        visit to the BEYS soccer fields.
+      </p>
+
+      <div class="modern-actions game-day-actions">
+
+        <a class="modern-btn navy" href="/schedule">
+          Game Schedules →
+        </a>
+
+        <a class="modern-btn line" href="/fields">
+          Fields &amp; Directions →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
 </Layout>
+
+<style>
+  .food-hero h1 span {
+    color: var(--gold);
+  }
+
+  .food-hero p {
+    max-width: 600px;
+  }
+
+  .food-coming-soon {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .food-truck-icon {
+    display: block;
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 24px;
+  }
+
+  .food-coming-soon .eyebrow,
+  .vendor-section .eyebrow {
+    color: #52636e;
+  }
+
+  .vendor-thanks {
+    font-weight: 600;
+    margin-top: 24px;
+  }
+
+  .vendor-section {
+    max-width: 720px;
+    margin-bottom: 0;
+  }
+
+  .vendor-section .modern-btn {
+    margin-top: 16px;
+  }
+
+  .game-day-actions {
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    .game-day-actions .modern-btn {
+      width: 100%;
+    }
+  }
+</style>
