@@ -1,18 +1,29 @@
+
 ---
 const registrationOpens = "2027-01-01T00:00:00-05:00";
+
+const registrationUrl =
+  "https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports";
 ---
 
 <div class="alert-bar" data-opens={registrationOpens}>
   <div class="announcement-inner">
-    <span data-alert-registration>
-      Spring 2027 Registration Opens January 1 • Rec & Travel
-    </span>
+
+    <a
+      href={registrationUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-alert-registration
+    >
+      Spring 2027 Registration Opens January 1 • Rec & Travel →
+    </a>
 
     <span class="announcement-divider" aria-hidden="true">|</span>
 
     <a href="/sponsors" data-alert-sponsor>
-      2027 Business Sponsorships Open January 1
+      2027 Business Sponsorships Open January 1 →
     </a>
+
   </div>
 </div>
 
@@ -56,6 +67,12 @@ const registrationOpens = "2027-01-01T00:00:00-05:00";
     text-underline-offset: 4px;
   }
 
+  .alert-bar a:focus-visible {
+    outline: 2px solid #002a43;
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
   @media (max-width: 768px) {
     .alert-bar {
       padding: 10px 15px;
@@ -83,16 +100,16 @@ const registrationOpens = "2027-01-01T00:00:00-05:00";
 
     if (Date.now() >= openingDate) {
       const registration = bar.querySelector("[data-alert-registration]");
-
       const sponsorship = bar.querySelector("[data-alert-sponsor]");
 
       if (registration) {
         registration.textContent =
-          "Spring 2027 Registration Is Open • Rec & Travel";
+          "Spring 2027 Registration Is Open • Rec & Travel →";
       }
 
       if (sponsorship) {
-        sponsorship.textContent = "2027 Business Sponsorships Are Open";
+        sponsorship.textContent =
+          "2027 Business Sponsorships Are Open →";
       }
     }
   }
