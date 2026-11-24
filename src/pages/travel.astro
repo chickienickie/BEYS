@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 const registrationUrl =
     "https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports";
 const interestUrl =
-    "mailto:baldeagleyouthsoccer@gmail.com?subject=Spring%202027%20Travel%20Soccer%20Interest";
+    "#travel-interest";
 const guideUrl = "/downloads/beys-travel-soccer-guide.pdf";
 const teams = [
     { name: "U10 Boys", grades: "3rd & 4th Grade" },
@@ -219,9 +219,45 @@ const faqs = [
                     href={registrationUrl}
                     target="_blank"
                     rel="noopener noreferrer">Register Now →</a
-                ><a class="modern-btn line" href={interestUrl}
-                    >Email Travel Interest</a>
-            </div><p>
+                ></div>
+            <form id="travel-interest" name="travel-soccer-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="interest-form">
+                <input type="hidden" name="form-name" value="travel-soccer-interest" />
+                <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+                <div class="interest-form-grid">
+                    <div class="interest-field">
+                        <label for="parent-name">Parent/Guardian Name *</label>
+                        <input id="parent-name" name="parent-name" type="text" autocomplete="name" required />
+                    </div>
+                    <div class="interest-field">
+                        <label for="parent-email">Email Address *</label>
+                        <input id="parent-email" name="email" type="email" autocomplete="email" required />
+                    </div>
+                    <div class="interest-field">
+                        <label for="parent-phone">Phone Number (Optional)</label>
+                        <input id="parent-phone" name="phone" type="tel" autocomplete="tel" />
+                    </div>
+                    <div class="interest-field">
+                        <label for="travel-team">Interested Team *</label>
+                        <select id="travel-team" name="interested-team" required>
+                            <option value="">Select a team</option>
+                            <option value="U10 Boys">U10 Boys (Grades 3–4)</option>
+                            <option value="U10 Girls">U10 Girls (Grades 3–4)</option>
+                            <option value="U12 Boys">U12 Boys (Grades 5–6)</option>
+                            <option value="U12 Girls">U12 Girls (Grades 5–6)</option>
+                            <option value="Multiple Teams">Multiple Teams</option>
+                            <option value="Unsure">Not Sure Yet</option>
+                        </select>
+                    </div>
+                    <div class="interest-field full-width">
+                        <label for="travel-message">Questions or Additional Information</label>
+                        <textarea id="travel-message" name="message" rows="4" placeholder="Have questions about travel soccer? Let us know!"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="modern-btn navy">Express Interest →</button>
+                <p class="interest-note">This form is intended to gauge interest and is not an official registration or commitment. Team availability depends on player interest, roster sizes and coaching availability.</p>
+            </form>
+            <p class="interest-contact">Have additional questions? Email us at <a href="mailto:baldeagleyouthsoccer@gmail.com">baldeagleyouthsoccer@gmail.com</a></p>
+            <p>
                 Not quite ready for travel? <a href="/recreational"
                     >Explore Recreational Soccer →</a>
             </p>
@@ -229,6 +265,7 @@ const faqs = [
     </section>
 </Layout>
 <style>
+    #travel-interest { scroll-margin-top: 140px; }
     .travel-hero {
         background:
             linear-gradient(
