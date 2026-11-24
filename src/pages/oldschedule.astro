@@ -1,0 +1,540 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Game Schedule | Bald Eagle Youth Soccer">
+   
+    <section class="page-hero">
+        <h1>Game Schedules</h1>
+        <p>Select your age group and team to view the schedule.</p>
+    </section>
+
+   
+    <section class="schedule-section">
+        <div class="container">
+            <h2>Find Your Team Schedule</h2>
+            <div class="schedule-info">
+                <h3>Standard Game Start Times</h3>
+                <ul>
+                    <li><strong>U6:</strong> 6:00 PM</li>
+                    <li><strong>U8:</strong> 9:30 AM</li>
+                    <li><strong>U10:</strong> 11:00 AM</li>
+                    <li><strong>U13:</strong> 12:30 PM</li>
+                </ul>
+                <p class="schedule-note">
+                    *Unless otherwise noted on the schedule.
+                </p>
+            </div>
+
+            <div class="schedule-controls">
+                <select id="ageGroup">
+                    <option value="">Select Age Group</option>
+                    <option value="U6">U6</option>
+                    <option value="U8">U8</option>
+                    <option value="U10">U10</option>
+                    <option value="U13">U13</option>
+                </select>
+
+                <select id="teamSelect">
+                    <option value="">Select Team</option>
+                </select>
+
+                <button class="print-btn" id="print-schedule-btn">
+                    Print My Team Schedule
+                </button>
+
+                <div id="emptyScheduleState" class="empty-schedule-state" style="width: 100%;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="empty-state-icon">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <h3>Select your team from the dropdown</h3>
+                    <p>To see your schedule</p>
+                </div>
+
+                <div class="schedule-table-container" id="scheduleTableContainer" style="display: none; width: 100%;">
+                  <table class="schedule-table game-schedule">
+                        <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Date</th>
+                                <th>Your Team</th>
+                                <th>Opponent</th>
+                                <th>Game</th>
+                                <th>Field</th>
+                                <th>Add to Calendar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheduleBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const schedules = {
+          U6: [
+          
+             { date: "Sept 17", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Sept 24", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Oct 1", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Oct 8", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Oct 15", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+             { date: "Oct 22", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+               { date: "Oct 29", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Oct 31", home: "BEYS1", away: "BEYS2", field: "BEYS1 AT 11AM" },
+        
+          ],
+          U8: [
+           { date: "Sept 12", home: "BEYS1", away: "PV5", field: "BEYS1" },
+            { date: "Sept 12", home: "BEYS2", away: "BEYS3", field: "BEYS2" },
+              { date: "Sept 12", home: "BEYS4", away: "BYE", field: "" },
+            { date: "Sept 19", home: "BEYS2", away: "PV2", field: "BEYS1" },
+            { date: "Sept 19", home: "BSA2", away: "BEYS1", field: "BSA WALKER" },
+             { date: "Sept 19", home: "BEYS4", away: "BSA3", field: "BEYS2" },
+            { date: "Sept 19", home: "BEYS3", away: "BSA5", field: "BEYS3" },
+            { date: "Sept 26", home: "BEYS1", away: "PV1", field: "BEYS1" },
+            { date: "Sept 26", home: "BEYS2", away: "BSA4", field: "BEYS2" },
+              { date: "Sept 26", home: "BEYS3", away: "BEYS4", field: "BEYS3" },
+            { date: "Oct 3", home: "BEYS4", away: "PV4", field: "BEYS1" },
+            { date: "Oct 3", home: "BEYS3", away: "BSA3", field: "BEYS3" },
+             { date: "Oct 3", home: "BEYS2", away: "BEYS1", field: "BEYS2" },
+            { date: "Oct 10", home: "BEYS4", away: "BSA1", field: "BEYS3" },
+            { date: "Oct 10", home: "BEYS1", away: "BSA6", field: "BEYS2" },
+             { date: "Oct 10", home: "BEYS2", away: "BSA7", field: "BEYS1" },
+                 { date: "Oct 10", home: "BSA4", away: "BEYS3", field: "BSA WALKER" },
+            { date: "Oct 17", home: "PV TOURNAMENT — TIME TBA", away: "BEYS2", field: "PV1", tournament: true  },
+            { date: "Oct 17", home: "PV TOURNAMENT — TIME TBA", away: "BEYS1", field: "PV1", tournament: true  },
+             { date: "Oct 17", home: "PV TOURNAMENT — TIME TBA", away: "BEYS3", field: "PV1", tournament: true  },
+            { date: "Oct 17", home: "PV TOURNAMENT — TIME TBA", away: "BEYS4", field: "PV1", tournament: true },
+            { date: "Oct 24", home: "PV4", away: "BEYS2", field: "PV1" },
+            { date: "Oct 24", home: "BEYS3", away: "PV5", field: "BEYS1" },
+             { date: "Oct 24", home: "BEYS4", away: "BSA6", field: "BEYS2" },
+            { date: "Oct 24", home: "BEYS1", away: "BSA1", field: "BEYS3" },
+             { date: "Oct 31", home: "BEYS1", away: "BSA7", field: "BEYS1" },
+               { date: "Oct 31", home: "BEYS2", away: "BEYS4", field: "BEYS2" },
+                     { date: "Oct 31", home: "BEYS3", away: "BSA6", field: "BEYS3" },
+              
+          ],
+          U10: [
+            { date: "Sept 12", home: "BEYS1", away: "BEYS2", field: "BEYS1" },
+            { date: "Sept 12", home: "PV3", away: "BEYS3", field: "PV1" },
+            { date: "Sept 19", home: "BSA5", away: "BEYS1", field: "BSA WALKER" },
+            { date: "Sept 19", home: "PV1", away: "BEYS2", field: "PV2" },
+            { date: "Sept 21", home: "BEYS3", away: "BSA2", field: "BEYS1 AT 6PM" },
+            { date: "Sept 26", home: "BEYS1", away: "BEYS3", field: "BEYS2" },
+            { date: "Sept 26", home: "BEYS2", away: "BSA4", field: "BEYS1" },
+            { date: "Oct 3", home: "PV2", away: "BEYS1", field: "PV1" },
+            { date: "Oct 3", home: "BEYS3", away: "BSA1", field: "BEYS1" },
+             { date: "Oct 3", home: "BEYS2", away: "BSA3", field: "BEYS2" },
+            { date: "Oct 10", home: "BEYS3", away: "PV1", field: "BEYS1" },
+            { date: "Oct 10", home: "PV3", away: "BEYS2", field: "PV2" },
+             { date: "Oct 10", home: "BEYS1", away: "BSA6", field: "BEYS2" },
+            { date: "Oct 17", home: "PV TOURNAMENT — TIME TBA", away: "BEYS2", field: "PV1", tournament: true  },
+            { date: "Oct 17", home: "PV TOURNAMENT — TIME TBA", away: "BEYS1", field: "PV1", tournament: true  },
+             { date: "Oct 17", home: "PV TOURNAMENT — TIME TBA", away: "BEYS3", field: "PV1", tournament: true  },
+            { date: "Oct 24", home: "BSA4", away: "BEYS3", field: "BSA GOVERNORS" },
+            { date: "Oct 24", home: "BSA2", away: "BEYS1", field: "BSA WALKER" },
+              { date: "Oct 24", home: "BEYS2", away: "BSA6", field: "BEYS1" },
+             { date: "Oct 31", home: "BEYS1", away: "PV3", field: "BEYS1" },
+               { date: "Oct 31", home: "BEYS2", away: "BEYS3", field: "BEYS2" },
+          ],
+          U13: [
+            { date: "Sept 12", home: "BEYS1", away: "PV1", field: "BEYS1" },
+            { date: "Sept 12", home: "WBS1", away: "BEYS2", field: "WB1" },
+            { date: "Sept 19", home: "BEYS2", away: "PV3", field: "BEYS1" },
+            { date: "Sept 19", home: "BSA3", away: "BEYS1", field: "BSA FIRST BAPTIST CHURCH" },
+            { date: "Sept 26", home: "BEYS2", away: "BSA1", field: "BEYS1" },
+            { date: "Sept 26", home: "WBS4", away: "BEYS1", field: "WB2" },
+            { date: "Oct 3", home: "WBS3", away: "BEYS1", field: "WB2" },
+            { date: "Oct 3", home: "BEYS2", away: "BSA3", field: "BEYS1" },
+            { date: "Oct 10", home: "BEYS1", away: "BSA2", field: "BEYS1" },
+            { date: "Oct 10", home: "PV2", away: "BEYS2", field: "PV1" },
+            { date: "Oct 17", home: "PV TOURNAMENT — TIME TBA", away: "BEYS2", field: "PV1", tournament: true  },
+            { date: "Oct 17", home: "PV TOURNAMENT — TIME TBA", away: "BEYS1", field: "PV1", tournament: true  },
+            { date: "Oct 24", home: "BEYS1", away: "PV3", field: "BEYS1" },
+            { date: "Oct 24", home: "BEYS2", away: "WBS2", field: "BEYS1 AT 11AM" },
+             { date: "Oct 31", home: "BEYS1", away: "BEYS2", field: "BEYS1" }
+          ]
+        };
+
+        // COACHES
+        const coaches: Record<string, Record<string, string>> = {
+          U6: { BEYS1: "Coach Lowe/Navy", BEYS2: "Coach TBA/Gray" },
+          U8: { BEYS1: "Coach Lowe/Streightiff", BEYS2: "Coach Wible/Day", BEYS3: "Coach Lomax/Eichelberger", BEYS4: "Coach Dinger/Ciambotti" },
+          U10: { BEYS1: "Coach Hackett", BEYS2: "Coach Bartley", BEYS3: "Coach Romine/Lopes"},
+          U13: { BEYS1: "Coach Gassner/Harter", BEYS2: "Coach Foust/Bougher" }
+        };
+
+        // 📍 FIELD ADDRESS MAP
+        const fieldAddresses: Record<string, string> = {
+          "BSA WALKER": "1000 Sand Trap Dr, Bellefonte, PA 16823",
+          "BSA GOVERNORS": "Governors Park Rd, Bellefonte, PA 16823",
+          "BSA FIRST BAPTIST CHURCH": "539 Jacksonville Rd, Bellefonte, PA 16823",
+          "BEYS1": "309 Apple Street, Julian, PA 16844",
+          "BEYS2": "309 Apple Street, Julian, PA 16844",
+           "BEYS3": "309 Apple Street, Julian, PA 16844",
+          "PV1": "211 N Hoffer Ave, Centre Hall, PA 16828",
+          "PV2": "211 N Hoffer Ave, Centre Hall, PA 16828",
+          "PV3": "211 N Hoffer Ave, Centre Hall, PA 16828",
+          "WB1": "173 Havenview Dr, Lock Haven, PA 17745",
+          "WB2": "173 Havenview Dr, Lock Haven, PA 17745",
+          "CSA": "145 Farmstead Lane, State College, PA 16803",
+          "BEA HS Alumni Stadium": "751 S Eagle Valley Rd, Wingate, PA 16823"
+        };
+
+        const ageGroup = document.getElementById("ageGroup") as HTMLSelectElement;
+        const teamSelect = document.getElementById("teamSelect") as HTMLSelectElement;
+        const scheduleBody = document.getElementById("scheduleBody");
+        const printBtn = document.getElementById("print-schedule-btn");
+        const emptyState = document.getElementById("emptyScheduleState");
+        const tableContainer = document.getElementById("scheduleTableContainer");
+
+        // ⏰ GET GAME TIME
+        function getGameTime(game: any, group: string) {
+          const match = game.field.match(/AT (\d+)(?::(\d+))?\s?(AM|PM)/i);
+          if (match) {
+            let hour = parseInt(match[1]);
+            const min = match[2] || "00";
+            const period = match[3].toUpperCase();
+            if (period === "PM" && hour !== 12) hour += 12;
+            if (period === "AM" && hour === 12) hour = 0;
+            return `${hour.toString().padStart(2, "0")}:${min}`;
+          }
+          if (group === "U6" && (game.date === "Sept 19" || game.date === "Oct 31")) {
+            return "11:00";
+          }
+          if (group === "U10" && game.field.toUpperCase().includes("AT 6PM")) {
+            return "18:00";
+          }
+          if (group === "U13" && game.field.toUpperCase().includes("AT 11AM")) {
+            return "11:00";
+          }
+          switch (group) {
+            case "U6": return "18:00";
+            case "U8": return "09:30";
+            case "U10": return "11:00";
+            case "U13": return "12:30";
+            default: return "10:00";
+          }
+        }
+
+        // 📅 CALENDAR LINK
+        
+// 📅 CALENDAR LINK
+function createCalendarLink(
+  game: any,
+  team: string,
+  opponent: string,
+  isHome: boolean,
+  group: string
+) {
+  const year = "2026";
+
+  const months: Record<string, string> = {
+    Jan: "01",
+    Feb: "02",
+    Mar: "03",
+    Apr: "04",
+    May: "05",
+    Jun: "06",
+    Jul: "07",
+    Aug: "08",
+    Sep: "09",
+    Sept: "09",
+    Oct: "10",
+    Nov: "11",
+    Dec: "12"
+  };
+
+  // Example: "Sept 12" → month = "09", day = "12"
+  const [monthName, day] = game.date.trim().split(/\s+/);
+  const month = months[monthName];
+
+  if (!month) {
+    console.error("Invalid game date:", game.date);
+    return "#";
+  }
+// 🏆 TOURNAMENT — ALL-DAY EVENT UNTIL GAME TIMES ARE ANNOUNCED
+if (game.tournament) {
+  const tournamentDate =
+    `${year}${month}${day.padStart(2, "0")}`;
+
+  // Calculate the following day for Google Calendar all-day events
+  const dateObj = new Date(
+    Date.UTC(
+      Number(year),
+      Number(month) - 1,
+      Number(day)
+    )
+  );
+
+  dateObj.setUTCDate(dateObj.getUTCDate() + 1);
+
+  const nextDay =
+    `${dateObj.getUTCFullYear()}` +
+    `${String(dateObj.getUTCMonth() + 1).padStart(2, "0")}` +
+    `${String(dateObj.getUTCDate()).padStart(2, "0")}`;
+
+  const cleanField = game.field.split(" AT ")[0];
+  const address = fieldAddresses[cleanField] || game.field;
+
+  const title = `${team} - Penns Valley Tournament (Time TBA)`;
+
+  const details =
+    `Penns Valley Tournament\n\n` +
+    `Game times are still to be announced.\n` +
+    `Please reserve the day.\n\n` +
+    `Location: ${address}`;
+
+  return (
+    `https://calendar.google.com/calendar/r/eventedit` +
+    `?action=TEMPLATE` +
+    `&text=${encodeURIComponent(title)}` +
+    `&dates=${tournamentDate}%2F${nextDay}` +
+    `&location=${encodeURIComponent(address)}` +
+    `&details=${encodeURIComponent(details)}`
+  );
+}
+  // Get game time in 24-hour format
+  // Examples: 09:30, 11:00, 12:30, 18:00
+  const startTime = getGameTime(game, group);
+  const [startHour, startMinute] = startTime.split(":").map(Number);
+
+  // Calculate one-hour end time
+  let endHour = startHour + 1;
+
+  if (endHour >= 24) {
+    endHour = 0;
+  }
+
+  const pad = (num: number) => num.toString().padStart(2, "0");
+
+  /*
+   * Google Calendar date format:
+   * YYYYMMDDTHHMMSS
+   *
+   * We are intentionally NOT using JavaScript Date here.
+   * These are the exact local Eastern times we want Google to use.
+   */
+  const start =
+    `${year}${month}${day.padStart(2, "0")}` +
+    `T${pad(startHour)}${pad(startMinute)}00`;
+
+  const end =
+    `${year}${month}${day.padStart(2, "0")}` +
+    `T${pad(endHour)}${pad(startMinute)}00`;
+
+  // Remove "AT 11AM" / "AT 6PM" from field name
+  const cleanField = game.field.split(" AT ")[0];
+
+  // Get address
+  const address = fieldAddresses[cleanField] || game.field;
+
+  // Coaches
+  const teamCoach = coaches[group][team] || "";
+
+  const opponentCoach = opponent.startsWith("BEYS")
+    ? coaches[group][opponent] || ""
+    : "";
+
+  // Event title
+  const title =
+    `${team} vs ${opponent} (${isHome ? "HOME" : "AWAY"})`;
+
+  // Event details
+  const details =
+    `${team} - ${teamCoach}\n` +
+    `${opponent}${opponentCoach ? " - " + opponentCoach : ""}\n\n` +
+    `Field: ${cleanField}\n` +
+    `Address: ${address}`;
+
+  /*
+   * Google Calendar
+   *
+   * IMPORTANT:
+   * %2F is the encoded "/" between start and end.
+   * stz/etz explicitly define Eastern Time.
+   */
+  return (
+    `https://calendar.google.com/calendar/r/eventedit` +
+    `?action=TEMPLATE` +
+    `&text=${encodeURIComponent(title)}` +
+    `&dates=${start}%2F${end}` +
+    `&stz=America%2FNew_York` +
+    `&etz=America%2FNew_York` +
+    `&location=${encodeURIComponent(address)}` +
+    `&details=${encodeURIComponent(details)}`
+  );
+}
+
+
+
+        // 📍 MAP LINK
+        function createMapsLink(field: string) {
+          const cleanField = field.split(" AT ")[0];
+          const address = fieldAddresses[cleanField] || cleanField;
+          return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+        }
+
+        if (ageGroup && teamSelect && scheduleBody) {
+          ageGroup.addEventListener("change", () => {
+            const group = ageGroup.value;
+            teamSelect.innerHTML = `<option value="">Select Team</option>`;
+            scheduleBody.innerHTML = "";
+            
+            if (emptyState && tableContainer) {
+              emptyState.style.display = "block";
+              tableContainer.style.display = "none";
+            }
+
+            if (!group) return;
+
+            const teams = new Set<string>();
+            const groupSchedules = schedules[group as keyof typeof schedules];
+            
+            if (groupSchedules) {
+              groupSchedules.forEach((g: any) => {
+                if (g.home.startsWith("BEYS")) teams.add(g.home);
+                if (g.away.startsWith("BEYS")) teams.add(g.away);
+              });
+
+              [...teams].sort().forEach(team => {
+                const option = document.createElement("option");
+                option.value = team;
+                option.textContent = `${team} - ${coaches[group][team] || ""}`;
+                teamSelect.appendChild(option);
+              });
+            }
+          });
+
+          teamSelect.addEventListener("change", () => {
+            const group = ageGroup.value;
+            const team = teamSelect.value;
+            scheduleBody.innerHTML = "";
+
+            if (!group || !team || !schedules[group as keyof typeof schedules]) {
+              if (emptyState && tableContainer) {
+                emptyState.style.display = "block";
+                tableContainer.style.display = "none";
+              }
+              return;
+            }
+
+            if (emptyState && tableContainer) {
+              emptyState.style.display = "none";
+              tableContainer.style.display = "block";
+            }
+
+            const groupSchedules = schedules[group as keyof typeof schedules];
+
+            groupSchedules.forEach((game: any) => {
+              if (game.home === team || game.away === team) {
+                const cleanField = game.field.toUpperCase();
+                const isHome = cleanField.includes("BEYS");
+                const opponent = game.home === team ? game.away : game.home;
+                
+                const teamCoach = coaches[group][team] || "";
+                const opponentCoach = opponent.startsWith("BEYS") ? coaches[group][opponent] || "" : "";
+
+                const calendarLink = createCalendarLink(game, team, opponent, isHome, group);
+                const mapsLink = createMapsLink(game.field);
+
+                const row = document.createElement("tr");
+                row.className = isHome ? "home-row" : "away-row";
+
+                row.innerHTML = `
+                  <td><span class="age-badge ${group.toLowerCase()}">${group}</span></td>
+                  <td>${game.date}</td>
+                  <td>
+                    <strong>${team}</strong><br>
+                    <small>${teamCoach}</small>
+                  </td>
+                  <td>
+                    ${opponent}
+                    ${opponentCoach ? `<br><small>${opponentCoach}</small>` : ""}
+                  </td>
+                  <td class="${isHome ? "home-text" : "away-text"}">
+                    ${isHome ? "HOME" : "AWAY"}
+                  </td>
+                  <td>
+                    <a href="${mapsLink}" target="_blank" class="field-link">
+                      ${game.field}
+                    </a>
+                  </td>
+                  <td>
+                    <a href="${calendarLink}" target="_blank" class="calendar-btn-small">
+                      <img src="/calendaricon.png" alt="Add to Calendar">
+                    </a>
+                  </td>
+                `;
+                scheduleBody.appendChild(row);
+              }
+            });
+          });
+        }
+
+        if (printBtn && teamSelect) {
+            printBtn.addEventListener("click", () => {
+                if (!teamSelect.value) {
+                    alert("Please select a team first.");
+                    return;
+                }
+                window.print();
+            });
+        }
+    </script>
+
+    <style is:global>
+        @media print {
+            /* 1. Hide layout and non-essential elements */
+            header, 
+            footer, 
+            .alert-bar, 
+            .page-hero, 
+            .schedule-info, 
+            .schedule-controls h2, 
+            .schedule-controls select, 
+            .print-btn, 
+            .empty-schedule-state {
+                display: none !important;
+            }
+
+            /* 2. Format the table for print */
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .schedule-section {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            #scheduleTableContainer {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .schedule-table {
+                width: 100% !important;
+                border-collapse: collapse !important;
+            }
+
+            /* 3. Hide the 'Add to Calendar' column */
+            .schedule-table th:last-child,
+            .schedule-table td:last-child {
+                display: none !important;
+            }
+        }
+    </style>
+
+</Layout>
