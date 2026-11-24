@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+const registrationUrl = 'https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports';
+const interestUrl = 'mailto:baldeagleyouthsoccer@gmail.com?subject=Spring%202027%20Travel%20Soccer%20Interest';
+const guideUrl = '/downloads/beys-travel-soccer-guide.pdf';
+const teams = [
+  { name: 'U10 Boys', grades: '3rd & 4th Grade' },
+  { name: 'U10 Girls', grades: '3rd & 4th Grade' },
+  { name: 'U12 Boys', grades: '5th & 6th Grade' },
+  { name: 'U12 Girls', grades: '5th & 6th Grade' },
+];
+const opponents = ['DuBois', 'Clearfield', 'Bellefonte', 'State College', 'West Branch', 'Altoona', 'Huntingdon', 'Penns Valley'];
+const faqs = [
+  { q: 'Who is eligible for travel soccer?', a: 'Players must have completed at least one full season of recreational soccer in the age group for which they would register. For example, a U10 travel player must have completed at least one season of U10 recreational soccer.' },
+  { q: 'Will there be evaluations or tryouts?', a: 'Evaluations or tryouts may be required. The board will also consider feedback from recreational coaches. Players who are not selected will still have the opportunity to play recreational soccer.' },
+  { q: 'Is playing time equal?', a: 'All players will receive playing time, but unlike recreational soccer, playing time is not necessarily equal. Coaches consider skill, effort, attitude and other criteria. PA West roster limits also apply.' },
+  { q: 'What does registration cover?', a: 'The $100 seasonal registration fee includes a jersey and shorts that players keep, travel insurance and certified referee costs for hosted games.' },
+  { q: 'Will teams be co-ed?', a: 'If there are not enough players for separate boys and girls teams, the board may consider forming a co-ed team. Co-ed teams compete in the boys league.' },
+  { q: 'When does the season start?', a: 'Spring typically runs from mid-March through the first week of June. Fall typically runs from mid-August through the first week of November. Travel practices generally begin a few weeks before recreational soccer.' },
+  { q: 'How do I register?', a: 'Use our Stack Sports registration portal. Both recreational and travel programs will appear when registration opens. You can access the portal at any time.' },
+];
+---
+<Layout title="Travel Soccer | Bald Eagle Youth Soccer">
+  <section class="program-hero travel-hero">
+    <div class="modern-wrap">
+      <p class="eyebrow">BEYS Programs • PA West Soccer</p>
+      <h1>Develop. Challenge. <em>Compete.</em></h1>
+      <p class="travel-subtitle">Travel Soccer</p>
+      <p>Take your skills to the next level with a faster, more competitive soccer experience.</p>
+      <div class="modern-actions">
+        <a class="modern-btn" href={registrationUrl} target="_blank" rel="noopener noreferrer">Register Now →</a>
+        <a class="modern-btn outline" href={interestUrl}>Express Interest</a>
+      </div>
+      <p class="travel-date" data-travel-opening>Spring 2027 registration opens January 1.</p>
+    </div>
+  </section>
+  <section class="modern-section modern-wrap two-grid travel-intro">
+    <div>
+      <p class="eyebrow">The next step in your soccer journey</p>
+      <h2>Ready for a new challenge?</h2>
+      <p>Travel soccer brings together motivated players of similar skill levels who want to develop their abilities and compete at a higher level. Games are faster paced and follow PA West gameplay rules.</p>
+      <p>Players must have completed at least one full recreational season in their corresponding age group. Evaluations or tryouts may be required.</p>
+      <a href="#travel-faq">Learn more about eligibility and expectations →</a>
+    </div>
+    <div class="fact-panel">
+      <p><strong>Practice Days</strong><br />Monday &amp; Wednesday • Typically 6–7:30 PM</p>
+      <p><strong>Game Days</strong><br />Sunday • Noon or later</p>
+      <p><strong>Registration</strong><br />$100 per season • Jersey &amp; shorts included</p>
+      <a href="/fields">Unionville Soccer Fields →</a>
+    </div>
+  </section>
+  <section class="modern-section soft-section" id="travel-teams">
+    <div class="modern-wrap">
+      <div class="modern-heading"><p class="eyebrow">Find your team</p><h2>Proposed Travel Teams</h2><p>We hope to offer the following programs for players in grades 3–6.</p></div>
+      <div class="travel-teams">
+        {teams.map(team => <article class="modern-card"><div class="modern-card-head"><p class="eyebrow">PA West Travel</p><h3>{team.name}</h3></div><div class="modern-card-body"><strong>{team.grades}</strong></div></article>)}
+      </div>
+      <p class="fine-print">Team formation depends on player readiness, roster numbers and coaching availability. Co-ed teams may be considered by the board and compete in the boys league.</p>
+    </div>
+  </section>
+  <section class="modern-section modern-wrap two-grid travel-intro">
+    <div><p class="eyebrow">PA West • Mountain District League</p><h2>Beyond our home field.</h2><p>Travel teams typically play four home and four away games per season. Sunday start times vary, but games are not scheduled before noon.</p><p>Typical opponents include:</p><ul class="travel-opponents">{opponents.map(name => <li>{name}</li>)}</ul><a href="/schedule">View Game Schedules →</a></div>
+    <div class="fact-panel"><h3>Season at a glance</h3><p><strong>Spring</strong><br />Mid-March through the first week of June</p><p><strong>Fall</strong><br />Mid-August through the first week of November</p><p>Practices are typically Monday and Wednesday at Unionville Soccer Fields, 6–7:30 PM. Times may vary with coaching availability or other conflicts.</p><p>Travel practices typically begin a few weeks before recreational soccer.</p></div>
+  </section>
+  <section class="modern-section soft-section" id="travel-faq">
+    <div class="modern-wrap"><div class="modern-heading"><p class="eyebrow">For parents &amp; guardians</p><h2>Frequently Asked Questions</h2></div>
+      <div class="travel-faqs">{faqs.map(item => <details class="modern-faq"><summary>{item.q}</summary><p>{item.a}</p></details>)}</div>
+      <div class="modern-actions travel-centered"><a class="modern-btn navy" href={guideUrl} target="_blank" rel="noopener noreferrer">View Parent Guide (PDF) →</a><a class="modern-btn line" href={guideUrl} download>Download PDF ↓</a></div>
+    </div>
+  </section>
+  <section class="modern-section gold-section"><div class="modern-wrap modern-heading"><p class="eyebrow">Join the BEYS family</p><h2>Ready for the next level?</h2><p>Interested in travel soccer or have questions about the program? We'd love to hear from you.</p><div class="modern-actions travel-centered"><a class="modern-btn navy" href={registrationUrl} target="_blank" rel="noopener noreferrer">Register Now →</a><a class="modern-btn line" href={interestUrl}>Email Travel Interest</a></div><p>Not quite ready for travel? <a href="/recreational">Explore Recreational Soccer →</a></p></div></section>
+</Layout>
+<style>
+  .travel-hero { background: linear-gradient(90deg, rgba(0,42,67,.97), rgba(0,42,67,.65)), url('/images/soccerfield.png') center/cover no-repeat; padding: 75px 0; }
+  .travel-hero h1 { font-size: clamp(2.7rem, 6.5vw, 5rem); }
+  .travel-hero h1 em { color: #d5d49b; font-style: normal; }
+  .travel-subtitle { font-family: Oswald, sans-serif; font-size: 1.7rem; margin: 0; }
+  .travel-date { font-size: .85rem; margin-top: 20px; color: #d5d49b; }
+  .travel-intro { align-items: center; }
+  .travel-teams { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
+  .travel-teams .modern-card-head, .travel-teams .modern-card-body { padding: 18px; }
+  .travel-teams h3 { font-size: 1.6rem; }
+  .travel-opponents { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px 24px; padding-left: 20px; }
+  .travel-faqs { max-width: 850px; margin: auto; background: white; padding: 8px 24px; border: 1px solid #dce3e7; border-radius: 6px; }
+  .travel-faqs details:last-child { border-bottom: 0; }
+  .travel-centered { justify-content: center; }
+  @media(max-width:1000px) { .travel-teams { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media(max-width:600px) { .travel-teams { grid-template-columns: 1fr; } .travel-hero { padding: 48px 0; } .travel-faqs { padding: 8px 16px; } }
+</style>
+<script>
+  function updateTravelDate() {
+    const date = document.querySelector('[data-travel-opening]');
+    if (date && Date.now() >= Date.parse('2027-01-01T00:00:00-05:00')) date.textContent = 'Spring 2027 registration is open!';
+  }
+  updateTravelDate();
+  document.addEventListener('astro:page-load', updateTravelDate);
+</script>
