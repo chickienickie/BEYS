@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const registrationUrl = 'https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports';
+const groups = [
+  { age: 'U6', time: '6:00–7:00 PM', game: 'Thursday evenings', note: 'In-house games' },
+  { age: 'U8', time: '6:00–7:30 PM', game: 'Saturday • 9:30 AM', note: 'Recreational games' },
+  { age: 'U10', time: '6:00–7:30 PM', game: 'Saturday • 11:00 AM', note: 'Recreational games' },
+  { age: 'U13', time: '6:00–7:30 PM', game: 'Saturday • 12:30 PM', note: 'Recreational games' },
+];
+---
+<Layout title="Recreational Soccer | Bald Eagle Youth Soccer">
+  <section class="program-hero rec-hero">
+    <div class="modern-wrap">
+      <p class="eyebrow">BEYS Programs • Recreational</p>
+      <h1>Learn. Play. <em>Grow.</em></h1>
+      <p class="rec-subtitle">Recreational Soccer</p>
+      <p>Building skills, confidence and friendships — one kick at a time.</p>
+      <div class="modern-actions">
+        <a class="modern-btn" href={registrationUrl} target="_blank" rel="noopener noreferrer">Register Now →</a>
+        <a class="modern-btn outline" href="#age-groups">Explore Age Groups</a>
+      </div>
+      <p class="rec-date" data-rec-opening>Spring 2027 registration opens January 1.</p>
+    </div>
+  </section>
+  <section class="modern-section modern-wrap two-grid rec-intro">
+    <div>
+      <p class="eyebrow">A place for every player</p>
+      <h2>Find your love for the game.</h2>
+      <p>Whether your child is stepping onto the field for the first time or returning for another season, our recreational program offers a fun, supportive environment to learn and grow.</p>
+      <p>We focus on developing soccer fundamentals, teamwork, sportsmanship and confidence while helping players enjoy the game.</p>
+    </div>
+    <div class="fact-panel">
+      <p><strong>Practice Days</strong><br />Tuesday &amp; Thursday</p>
+      <p><strong>Game Days</strong><br />Saturday (U6 plays Thursday evenings)</p>
+      <p><strong>Age Groups</strong><br />U6, U8, U10 &amp; U13</p>
+      <a href="/fields">Fields &amp; Directions →</a>
+    </div>
+  </section>
+  <section id="age-groups" class="modern-section soft-section">
+    <div class="modern-wrap">
+      <div class="modern-heading">
+        <p class="eyebrow">Find your team</p>
+        <h2>Age Groups &amp; Schedules</h2>
+        <p>Explore our recreational age groups and typical weekly schedules.</p>
+      </div>
+      <div class="rec-groups">
+        {groups.map(group => (
+          <article class="modern-card">
+            <div class="modern-card-head"><h3>{group.age}</h3><span class="eyebrow">Recreational</span></div>
+            <div class="modern-card-body">
+              <div class="modern-schedule">
+                <small>Practices</small><strong>Tuesday &amp; Thursday</strong><span>{group.time}</span>
+                <small>Games</small><strong>{group.game}</strong><span>{group.note}</span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="fine-print">Times shown are based on our previous season and are subject to change. Spring 2027 team schedules will be posted when available.</p>
+      <div class="modern-actions"><a class="modern-btn navy" href="/schedule">View Game Schedules →</a></div>
+    </div>
+  </section>
+  <section class="modern-section modern-wrap">
+    <div class="modern-heading"><p class="eyebrow">Parent resources</p><h2>See you on the sidelines.</h2></div>
+    <div class="rec-resources">
+      <a href="/fields"><strong>Fields &amp; Directions</strong><span>Find your way to the field →</span></a>
+      <a href="/schedule"><strong>Game Schedules</strong><span>Plan your soccer weekends →</span></a>
+      <a href="/foodtrucks"><strong>Food Truck Schedule</strong><span>See what's coming to the fields →</span></a>
+    </div>
+  </section>
+  <section class="modern-section gold-section">
+    <div class="modern-wrap modern-heading">
+      <p class="eyebrow">Join the BEYS family</p>
+      <h2>Ready to play?</h2>
+      <p>Register through our Stack Sports portal. Available programs will appear when registration opens.</p>
+      <a class="modern-btn navy" href={registrationUrl} target="_blank" rel="noopener noreferrer">Register Now →</a>
+      <p>Looking for a more competitive experience? <a href="/travel">Explore Travel Soccer →</a></p>
+    </div>
+  </section>
+</Layout>
+<style>
+  .rec-hero { background: linear-gradient(90deg, rgba(0,42,67,.97), rgba(0,42,67,.65)), url('/images/soccerfield.png') center/cover no-repeat; padding: 75px 0; }
+  .rec-hero h1 { font-size: clamp(3rem, 7vw, 5rem); }
+  .rec-hero h1 em { color: #d5d49b; font-style: normal; }
+  .rec-subtitle { font-family: Oswald, sans-serif; font-size: 1.7rem; margin: 0; }
+  .rec-date { font-size: .85rem; margin-top: 20px; color: #d5d49b; }
+  .rec-intro { align-items: center; }
+  .rec-groups { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+  .rec-groups .modern-card-body { padding: 16px; }
+  .rec-groups .modern-schedule { margin: 0; }
+  .rec-groups .modern-schedule span { font-size: .85rem; }
+  .rec-resources { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+  .rec-resources a { display: grid; gap: 8px; border: 1px solid #dce3e7; border-radius: 6px; padding: 22px; color: #002a43; text-decoration: none; }
+  .rec-resources a:hover { border-color: #002a43; background: #f2f5f6; }
+  .rec-resources span { font-size: .85rem; }
+  @media (max-width: 1000px) { .rec-groups { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media (max-width: 600px) { .rec-groups, .rec-resources { grid-template-columns: 1fr; } .rec-hero { padding: 48px 0; } }
+</style>
+<script>
+  function updateRecDate() {
+    const date = document.querySelector('[data-rec-opening]');
+    if (date && Date.now() >= Date.parse('2027-01-01T00:00:00-05:00')) {
+      date.textContent = 'Spring 2027 registration is open!';
+    }
+  }
+  updateRecDate();
+  document.addEventListener('astro:page-load', updateRecDate);
+</script>
