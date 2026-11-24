@@ -264,3 +264,18 @@ a.modern-btn.line:hover {
         font-size: 0.7rem;
     }
 }
+/* Sponsor button contrast fix */
+
+a.sponsor-btn,
+a.sponsor-btn:link,
+a.sponsor-btn:visited {
+    background-color: #002a43;
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+a.sponsor-btn:hover,
+a.sponsor-btn:focus-visible {
+    background-color: #d5d49b;
+    color: #002a43 !important;
+}
