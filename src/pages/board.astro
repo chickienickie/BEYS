@@ -1,54 +1,429 @@
+
 ---
 import Layout from '../layouts/Layout.astro';
+
+const boardMembers = [
+  {
+    name: 'Sara Hackett',
+    role: 'President',
+    initials: 'SH'
+  },
+  {
+    name: 'Tracy Crestani',
+    role: 'Vice President',
+    initials: 'TC'
+  },
+  {
+    name: 'Lysse Lowe',
+    role: 'Treasurer / Referee Coordinator',
+    initials: 'LL'
+  },
+  {
+    name: 'Will Romine',
+    role: 'Coaching Coordinator / Player Development',
+    initials: 'WR'
+  },
+  {
+    name: 'Travis Carlson',
+    role: 'Travel Team Coordinator',
+    initials: 'TC'
+  },
+  {
+    name: 'Nickie Potter',
+    role: 'Secretary / Website Admin',
+    initials: 'NP'
+  }
+];
+
+const values = [
+  {
+    icon: 'fa-futbol',
+    title: 'Player Development',
+    description:
+      'Helping every player build skills, confidence and a love for the game.'
+  },
+  {
+    icon: 'fa-handshake',
+    title: 'Sportsmanship',
+    description:
+      'Encouraging teamwork, respect and positive attitudes on and off the field.'
+  },
+  {
+    icon: 'fa-users',
+    title: 'Community',
+    description:
+      'Bringing local families together through a shared love of soccer.'
+  }
+];
+
+const volunteerEmail =
+  'mailto:baldeagleyouthsoccer@gmail.com?subject=BEYS%20Volunteer%20Interest';
 ---
-<Layout title="BEYS Board | Bald Eagle Youth Soccer">
-    <!-- HERO -->
-    <section class="page-hero">
-        <h1>BEYS Board</h1>
-    </section>
 
-    <!-- BOARD MEMBERS -->
-    <section class="board-section">
-        <div class="container">
-            <h2>BEYS Board Members</h2>
-            <div class="board-grid">
-                <div class="board-card">
-                    <h3>President</h3>
-                    <p>Sara Hackett</p>
-                </div>
-                <div class="board-card">
-                    <h3>Vice President</h3>
-                    <p>Tracy Crestani</p>
-                </div>
-                <div class="board-card">
-                    <h3>Treasurer / Referee Coordinator</h3>
-                    <p>Lysse Lowe</p>
-                </div>
-                
-                <div class="board-card">
-                    <h3>Coaching Coordinator / Player Development</h3>
-                    <p>Will Romine</p>
-                </div>
-               
-                <div class="board-card">
-                    <h3>Travel Team Coordinator</h3>
-                    <p>Travis Carlson</p>
-                </div>
-                <div class="board-card">
-                    <h3>Secretary / Website Admin</h3>
-                    <p>Nickie Potter</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<Layout title="About Us | Bald Eagle Youth Soccer">
 
-    <!-- CONTACT SECTION -->
-    <section class="contact-section">
-        <div class="container">
-            <h2>Contact the League</h2>
-            <p>Email: <a href="mailto:baldeagleyouthsoccer@gmail.com">baldeagleyouthsoccer@gmail.com</a></p>
-            <p>Follow us on Facebook: <a href="https://www.facebook.com/BaldEagleYouthSoccer" target="_blank">Bald Eagle
-                    Youth Soccer</a></p>
-        </div>
-    </section>
+  <!-- Page Hero -->
+  <section class="program-hero about-hero">
+    <div class="modern-wrap">
+
+      <p class="eyebrow">
+        About Bald Eagle Youth Soccer
+      </p>
+
+      <h1>
+        More Than Soccer.<br />
+        <span>We're Community.</span>
+      </h1>
+
+      <p>
+        Building Skills. Building Confidence.
+        Building Community.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Who We Are -->
+  <section class="modern-section modern-wrap">
+
+    <div class="modern-heading about-intro">
+
+      <img
+        src="/beyslogo.png"
+        alt="Bald Eagle Youth Soccer"
+        class="about-logo"
+      />
+
+      <p class="eyebrow">Who We Are</p>
+
+      <h2>Growing the Game. Together.</h2>
+
+      <p>
+        Bald Eagle Youth Soccer (BEYS) is a
+        volunteer-driven nonprofit organization
+        dedicated to providing local youth with
+        opportunities to learn, play and grow
+        through soccer.
+      </p>
+
+      <p>
+        Through our recreational and travel
+        programs, we strive to create a positive
+        environment where players can develop
+        their skills, build friendships and
+        discover a lifelong love of the game.
+      </p>
+
+      <div class="modern-actions about-actions">
+
+        <a class="modern-btn navy" href="/recreational">
+          Recreational Soccer →
+        </a>
+
+        <a class="modern-btn line" href="/travel">
+          Travel Soccer →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Our Values -->
+  <section class="modern-section soft-section">
+    <div class="modern-wrap">
+
+      <div class="modern-heading">
+        <p class="eyebrow">What We Believe In</p>
+        <h2>On and Off the Field.</h2>
+      </div>
+
+      <div class="values-grid">
+
+        {values.map(value => (
+          <article class="modern-card value-card">
+
+            <i
+              class={`fa-solid ${value.icon}`}
+              aria-hidden="true"
+            ></i>
+
+            <h3>{value.title}</h3>
+
+            <p>{value.description}</p>
+
+          </article>
+        ))}
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Board Members -->
+  <section class="modern-section modern-wrap">
+
+    <div class="modern-heading">
+
+      <p class="eyebrow">
+        The People Behind the Program
+      </p>
+
+      <h2>Meet Our Board.</h2>
+
+      <p>
+        Dedicated volunteers working together
+        to make every season possible.
+      </p>
+
+    </div>
+
+    <div class="leadership-grid">
+
+      {boardMembers.map(member => (
+        <article class="modern-card leadership-card">
+
+          <div class="member-avatar" aria-hidden="true">
+            {member.initials}
+          </div>
+
+          <h3>{member.name}</h3>
+
+          <p>{member.role}</p>
+
+        </article>
+      ))}
+
+    </div>
+
+  </section>
+
+  <!-- Volunteer CTA -->
+  <section class="modern-section gold-section">
+
+    <div class="modern-wrap modern-heading">
+
+      <p class="eyebrow">It Takes a Village</p>
+
+      <h2>Make a Difference.</h2>
+
+      <p>
+        From coaching and refereeing to helping
+        at the fields, there are so many ways
+        to be part of the BEYS family.
+      </p>
+
+      <p>
+        Interested in volunteering?
+        We'd love to hear from you!
+      </p>
+
+      <div class="modern-actions about-actions">
+
+        <a class="modern-btn navy" href={volunteerEmail}>
+          Get Involved →
+        </a>
+
+        <a class="modern-btn line" href="/coach-resources">
+          Coach Resources →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+  <section class="modern-section about-contact">
+
+    <div class="modern-wrap modern-heading">
+
+      <p class="eyebrow">Contact the League</p>
+
+      <h2>Let's Connect.</h2>
+
+      <p>
+        Have questions, ideas or want to get
+        involved? We'd love to hear from you!
+      </p>
+
+      <div class="contact-links">
+
+        <a href="mailto:baldeagleyouthsoccer@gmail.com">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          baldeagleyouthsoccer@gmail.com
+        </a>
+
+        <a
+          href="https://www.facebook.com/BaldEagleYouthSoccer"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+          Follow BEYS on Facebook
+        </a>
+
+      </div>
+
+      <p class="nonprofit-note">
+        Bald Eagle Youth Soccer is a 501(c)(3)
+        nonprofit organization.
+      </p>
+
+    </div>
+
+  </section>
+
 </Layout>
+
+<style>
+  .about-hero h1 span {
+    color: var(--gold);
+  }
+
+  .about-intro {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .about-logo {
+    display: block;
+    width: 110px;
+    height: auto;
+    margin: 0 auto 24px;
+  }
+
+  .about-intro p {
+    line-height: 1.8;
+  }
+
+  .about-actions {
+    justify-content: center;
+  }
+
+  .values-grid,
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .value-card {
+    padding: 30px 24px;
+    text-align: center;
+  }
+
+  .value-card i {
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+
+  .value-card h3 {
+    font-size: 1.35rem;
+    text-transform: uppercase;
+    margin: 12px 0;
+  }
+
+  .value-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .leadership-card {
+    border-top: 4px solid var(--gold);
+    padding: 32px 20px;
+    text-align: center;
+  }
+
+  .member-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold);
+    font-family: Oswald, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .leadership-card h3 {
+    font-size: 1.5rem;
+    margin: 8px 0;
+  }
+
+  .leadership-card p {
+    font-size: 0.9rem;
+    color: #52636e;
+    margin: 0;
+  }
+
+  .about-contact {
+    background: var(--navy);
+    color: white;
+  }
+
+  .about-contact .modern-heading {
+    margin-bottom: 0;
+  }
+
+  .about-contact .eyebrow {
+    color: var(--gold);
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .about-contact .contact-links a,
+  .about-contact .contact-links a:visited {
+    color: white;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .about-contact .contact-links a:hover {
+    color: var(--gold);
+  }
+
+  .contact-links i {
+    color: var(--gold);
+    margin-right: 8px;
+  }
+
+  .nonprofit-note {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 900px) {
+    .values-grid,
+    .leadership-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 540px) {
+    .values-grid,
+    .leadership-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .about-actions .modern-btn {
+      width: 100%;
+    }
+  }
+</style>
