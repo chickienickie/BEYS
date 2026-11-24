@@ -178,3 +178,89 @@ a.modern-btn.line:hover {
     }
 }
   
+/* =========================================
+   BEYS BINGO SAVE THE DATE
+========================================= */
+
+.bingo-section {
+    background: #002a43;
+    color: #ffffff;
+    text-align: center;
+}
+
+.bingo-section .modern-heading {
+    margin-bottom: 0;
+}
+
+.bingo-section .eyebrow {
+    color: #d5d49b;
+}
+
+.bingo-icon {
+    color: #d5d49b;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.bingo-section h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.bingo-section h2 span {
+    display: block;
+    color: #d5d49b;
+    text-transform: uppercase;
+}
+
+.bingo-section .bingo-date {
+    color: #ffffff;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.bingo-section .bingo-location {
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.bingo-location i {
+    color: #d5d49b;
+    margin-right: 6px;
+}
+
+.bingo-section .bingo-description {
+    color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto 24px;
+    line-height: 1.7;
+}
+
+.bingo-coming-soon {
+    display: inline-block;
+    color: #d5d49b;
+    border: 1px solid #d5d49b;
+    border-radius: 4px;
+    padding: 12px 22px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .bingo-icon {
+        font-size: 2rem;
+    }
+
+    .bingo-section .bingo-location {
+        font-size: 0.95rem;
+    }
+
+    .bingo-coming-soon {
+        font-size: 0.7rem;
+    }
+}
