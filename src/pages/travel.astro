@@ -27,9 +27,9 @@ const faqs = [
         a: "Players must have completed at least one full season of recreational soccer in the age group for which they would register. For example, a U10 travel player must have completed at least one season of U10 recreational soccer.",
     },
     {
-        q: "Will there be evaluations or tryouts?",
-        a: "Evaluations or tryouts may be required. The board will also consider feedback from recreational coaches. Players who are not selected will still have the opportunity to play recreational soccer.",
-    },
+    q: "Will there be evaluations or tryouts?",
+    a: "Yes! Spring 2027 travel evaluations and tryouts will take place following the registration period. Evaluations are tentatively scheduled for February 21 or February 28, depending on weather and field conditions. Additional details will be communicated to registered families after registration closes. Players who are not selected will still have the opportunity to play recreational soccer.",
+},
     {
         q: "Is playing time equal?",
         a: "All players will receive playing time, but unlike recreational soccer, playing time is not necessarily equal. Coaches consider skill, effort, attitude and other criteria. PA West roster limits also apply.",
@@ -47,9 +47,9 @@ const faqs = [
         a: "Spring typically runs from mid-March through the first week of June. Fall typically runs from mid-August through the first week of November. Travel practices generally begin a few weeks before recreational soccer.",
     },
     {
-        q: "How do I register?",
-        a: "Use our Stack Sports registration portal. Both recreational and travel programs will appear when registration opens. You can access the portal at any time.",
-    },
+    q: "How do I register?",
+    a: "Spring 2027 registration runs from January 1 through February 5. Families should register through our Stack Sports registration portal. Interested travel players must register during this window to participate in travel evaluations. Submitting a travel interest form does not replace official registration.",
+},
 ];
 ---
 
@@ -426,12 +426,38 @@ const faqs = [
         }
     }
 </style>
+
 <script>
     function updateTravelDate() {
-        const date = document.querySelector("[data-travel-opening]");
-        if (date && Date.now() >= Date.parse("2027-01-01T00:00:00-05:00"))
-            date.textContent = "Spring 2027 registration is open!";
+        const date = document.querySelector(
+            "[data-travel-opening]"
+        );
+
+        if (!date) return;
+
+        const openingDate = Date.parse(
+            "2027-01-01T00:00:00-05:00"
+        );
+
+        const closingDate = Date.parse(
+            "2027-02-06T00:00:00-05:00"
+        );
+
+        const now = Date.now();
+
+        if (now >= closingDate) {
+            date.textContent =
+                "Spring 2027 registration is closed.";
+        } else if (now >= openingDate) {
+            date.textContent =
+                "Registration is open through February 5, 2027!";
+        }
     }
+
     updateTravelDate();
-    document.addEventListener("astro:page-load", updateTravelDate);
+
+    document.addEventListener(
+        "astro:page-load",
+        updateTravelDate
+    );
 </script>
