@@ -2,8 +2,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const vendorEmail =
-  'mailto:baldeagleyouthsoccer@gmail.com?subject=Spring%202027%20Food%20Truck%20Interest';
+
 ---
 
 <Layout title="Food Truck Schedule | Bald Eagle Youth Soccer">
@@ -78,9 +77,103 @@ const vendorEmail =
         upcoming season.
       </p>
 
-      <a class="modern-btn navy" href={vendorEmail}>
-        Get in Touch →
-      </a>
+     
+<form
+name="food-truck-interest"
+method="POST"
+data-netlify="true"
+netlify-honeypot="bot-field"
+class="interest-form"
+>
+<input
+  type="hidden"
+  name="form-name"
+  value="food-truck-interest"
+/>
+
+<p hidden>
+  <label>
+    Don't fill this out:
+    <input name="bot-field" />
+  </label>
+</p>
+
+<div class="interest-form-grid">
+
+  <div class="interest-field">
+    <label for="business-name">Business Name *</label>
+    <input
+      type="text"
+      id="business-name"
+      name="business-name"
+      autocomplete="organization"
+      required
+    />
+  </div>
+
+  <div class="interest-field">
+    <label for="contact-name">Contact Name *</label>
+    <input
+      type="text"
+      id="contact-name"
+      name="contact-name"
+      autocomplete="name"
+      required
+    />
+  </div>
+
+  <div class="interest-field">
+    <label for="vendor-email">Email Address *</label>
+    <input
+      type="email"
+      id="vendor-email"
+      name="email"
+      autocomplete="email"
+      required
+    />
+  </div>
+
+  <div class="interest-field">
+    <label for="vendor-phone">Phone Number</label>
+    <input
+      type="tel"
+      id="vendor-phone"
+      name="phone"
+      autocomplete="tel"
+    />
+  </div>
+
+  <div class="interest-field full-width">
+    <label for="vendor-message">
+      Questions or Additional Information
+    </label>
+    <textarea
+      id="vendor-message"
+      name="message"
+      rows="4"
+      placeholder="Tell us a little about your food truck!"
+    ></textarea>
+  </div>
+
+</div>
+
+<button type="submit" class="modern-btn navy">
+  Submit Interest →
+</button>
+
+<p class="interest-note">
+  We look forward to connecting with you!
+</p>
+
+</form>
+
+<p class="interest-contact">
+Prefer to email us directly?
+<a href="mailto:baldeagleyouthsoccer@gmail.com">
+  baldeagleyouthsoccer@gmail.com
+</a>
+</p>
+
 
     </div>
 
