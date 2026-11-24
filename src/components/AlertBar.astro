@@ -1,12 +1,17 @@
 
 ---
 const registrationOpens = "2027-01-01T00:00:00-05:00";
+const registrationCloses = "2027-02-06T00:00:00-05:00";
 
 const registrationUrl =
   "https://login.stacksports.com/login?client_id=612b0399b1854a002e427f78&redirect_uri=https://core-api.bluesombrero.com/login/redirect/portal/6317&app_name=Bald+Eagle+Youth+Soccer&portalid=6317&instancekey=sports";
 ---
 
-<div class="alert-bar" data-opens={registrationOpens}>
+<div
+  class="alert-bar"
+  data-opens={registrationOpens}
+  data-closes={registrationCloses}
+>
   <div class="announcement-inner">
 
     <a
@@ -15,7 +20,7 @@ const registrationUrl =
       rel="noopener noreferrer"
       data-alert-registration
     >
-      Spring 2027 Registration Opens January 1 • Rec & Travel →
+      Spring 2027 Registration • Jan 1–Feb 5 • Rec &amp; Travel →
     </a>
 
     <span class="announcement-divider" aria-hidden="true">|</span>
@@ -92,28 +97,49 @@ const registrationUrl =
 
 <script>
   function updateAnnouncement() {
-    const bar = document.querySelector<HTMLElement>(".alert-bar[data-opens]");
+    const bar = document.querySelector<HTMLElement>(
+      ".alert-bar[data-opens]"
+    );
 
-    if (!bar?.dataset.opens) return;
+    if (!bar?.dataset.opens || !bar.dataset.closes) return;
 
     const openingDate = Date.parse(bar.dataset.opens);
+    const closingDate = Date.parse(bar.dataset.closes);
+    const now = Date.now();
 
-    if (Date.now() >= openingDate) {
-      const registration = bar.querySelector("[data-alert-registration]");
-      const sponsorship = bar.querySelector("[data-alert-sponsor]");
+    const registration = bar.querySelector<HTMLAnchorElement>(
+      "[data-alert-registration]"
+    );
 
-      if (registration) {
+    const sponsorship = bar.querySelector(
+      "[data-alert-sponsor]"
+    );
+
+    if (registration) {
+      if (now >= closingDate) {
         registration.textContent =
-          "Spring 2027 Registration Is Open • Rec & Travel →";
-      }
+          "Spring 2027 Registration Is Closed";
 
-      if (sponsorship) {
-        sponsorship.textContent =
-          "2027 Business Sponsorships Are Open →";
+        registration.removeAttribute("href");
+        registration.removeAttribute("target");
+        registration.removeAttribute("rel");
+
+      } else if (now >= openingDate) {
+        registration.textContent =
+          "Rec & Travel Registration Open Through Feb 5 →";
       }
+    }
+
+    if (sponsorship && now >= openingDate) {
+      sponsorship.textContent =
+        "2027 Business Sponsorships Are Open →";
     }
   }
 
   updateAnnouncement();
-  document.addEventListener("astro:page-load", updateAnnouncement);
+
+  document.addEventListener(
+    "astro:page-load",
+    updateAnnouncement
+  );
 </script>
