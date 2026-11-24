@@ -163,4 +163,18 @@ a.modern-btn.line:hover {
       grid-template-columns: 1fr;
     }
   }
+
+  html {
+    scroll-behavior: smooth;
+}
+
+#travel-interest {
+    scroll-margin-top: 140px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
   
