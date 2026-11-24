@@ -279,3 +279,14 @@ a.sponsor-btn:focus-visible {
     background-color: #d5d49b;
     color: #002a43 !important;
 }
+/* Homepage registration and sponsorship dates */
+
+.date-strip p {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 6px 0 12px;
+}
+
+.date-strip h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
