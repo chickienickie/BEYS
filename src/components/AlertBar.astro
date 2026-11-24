@@ -1,13 +1,110 @@
+
 ---
-// AlertBar Component
+const registrationOpens = "2027-01-01T00:00:00-05:00";
 ---
 
-<div class="alert-bar" role="alert" aria-live="polite">
-    <div class="ticker">
-      <div class="ticker-text">
-     
-        ⚽ One Last Kick! Our U8, U10 & U13 teams wrap up the fall season this Saturday, October 31! 🎃 Thanks for another fantastic season, BEYS families! 💙💛 Keep your cleats handy—Spring & Travel League registration kicks off January 1! More details coming soon!
-        
-      </div>
-    </div>
+<div class="alert-bar" data-opens={registrationOpens}>
+  <div class="announcement-inner">
+    <span data-alert-registration>
+      Spring 2027 Registration Opens January 1 • Rec & Travel
+    </span>
+
+    <span class="announcement-divider" aria-hidden="true">|</span>
+
+    <a href="/sponsors" data-alert-sponsor>
+      2027 Business Sponsorships Open January 1
+    </a>
   </div>
+</div>
+
+<style>
+  .alert-bar {
+    background: #d5d49b;
+    color: #002a43;
+    padding: 10px 20px;
+    white-space: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .announcement-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .announcement-divider {
+    opacity: 0.4;
+  }
+
+  .alert-bar a,
+  .alert-bar a:visited {
+    color: #002a43;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .alert-bar a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .alert-bar {
+      padding: 10px 15px;
+      font-size: 0.65rem;
+    }
+
+    .announcement-inner {
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .announcement-divider {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  function updateAnnouncement() {
+    const bar = document.querySelector<HTMLElement>(
+      '.alert-bar[data-opens]'
+    );
+
+    if (!bar?.dataset.opens) return;
+
+    const openingDate = Date.parse(bar.dataset.opens);
+
+    if (Date.now() >= openingDate) {
+      const registration = bar.querySelector(
+        '[data-alert-registration]'
+      );
+
+      const sponsorship = bar.querySelector(
+        '[data-alert-sponsor]'
+      );
+
+      if (registration) {
+        registration.textContent =
+          'Spring 2027 Registration Is Open • Rec & Travel';
+      }
+
+      if (sponsorship) {
+        sponsorship.textContent =
+          '2027 Business Sponsorships Are Open';
+      }
+    }
+  }
+
+  updateAnnouncement();
+  document.addEventListener('astro:page-load', updateAnnouncement);
+</script>
