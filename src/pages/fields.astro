@@ -3,13 +3,17 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Field Directions | Bald Eagle Youth Soccer">
     <!-- HERO -->
-    <section class="page-hero">
-        <h1>Field Locations</h1>
-    </section>
+    <section class="program-hero">
+  <div class="modern-wrap">
+    <p class="eyebrow">Bald Eagle Youth Soccer • Resources</p>
+    <h1>Fields &amp; Directions.</h1>
+    <p>Find your field, plan your visit and review our home field parking guidelines.</p>
+  </div>
+</section>
 
     <!-- FIELD MAP -->
-    <section class="field-map-section">
-        <div class="container">
+    <section class="modern-section field-map-section">
+        <div class="modern-wrap">
             <h2>BEYS Field Map</h2>
             <p>Use this map to find your field on game day.</p>
             <div class="map-container">
@@ -18,8 +22,8 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <section class="field-map-section">
-        <div class="container">
+    <section class="modern-section soft-section field-map-section">
+        <div class="modern-wrap">
             <h2>Parking at our BEYS Home Fields</h2>
             <p>Parking Map for BEYS Home Soccer Fields <strong>(parking spots are highlighted in red)</strong>:</p>
             <p>Please refer to the ﬁeld map below for parking.  There is additional parking at the Unionville Boro playground, but there is to be <strong>NO PARKING</strong> where no parking signs are located, on the gravel path, or along any of the fencing. </p>
@@ -31,51 +35,57 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- FIELD DIRECTIONS -->
-    <section class="fields-section">
-        <div class="container">
+    <section class="modern-section fields-section">
+        <div class="modern-wrap">
             <h2>Field Directions</h2>
             <div class="field-grid">
-                <div class="field-card">
+                <div class="modern-card field-card">
                     <h3>Bellefonte: Walker Township</h3>
                     <p>1000 Sand Trap Dr<br>Bellefonte, PA 16823</p>
-                    <a href="https://maps.google.com/?q=1000+Sand+Trap+Dr+Bellefonte+PA" target="_blank">Open in Google
-                        Maps</a>
+                    <a href="https://maps.google.com/?q=1000+Sand+Trap+Dr+Bellefonte+PA" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
                 </div>
-                <div class="field-card">
+                <div class="modern-card field-card">
                     <h3>Bellefonte: Governor's Park</h3>
                     <p>Governors Park Rd<br>Bellefonte, PA 16823</p>
-                    <a href="https://maps.google.com/?q=Governors+Park+Rd+Bellefonte+PA" target="_blank">Open in Google
-                        Maps</a>
+                    <a href="https://maps.google.com/?q=Governors+Park+Rd+Bellefonte+PA" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
                 </div>
-                <div class="field-card">
+                <div class="modern-card field-card">
                     <h3>Bellefonte: First Baptist Church</h3>
                     <p>539 Jacksonville Rd<br>Bellefonte, PA 16823</p>
-                    <a href="https://maps.google.com/?q=539+Jacksonville+Rd+Bellefonte+PA" target="_blank">Open in Google
-                        Maps</a>
+                    <a href="https://maps.google.com/?q=539+Jacksonville+Rd+Bellefonte+PA" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
                 </div>
-                <div class="field-card">
+                <div class="modern-card field-card">
                     <h3>Bald Eagle Fields</h3>
                     <p>309 Apple Street<br>Julian, PA 16844</p>
-                    <a href="https://maps.google.com/?q=309+Apple+St+Julian+PA" target="_blank">Open in Google Maps</a>
+                    <a href="https://maps.google.com/?q=309+Apple+St+Julian+PA" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
                 </div>
-                <div class="field-card">
+                <div class="modern-card field-card">
                     <h3>PV Fields: Potter Elementary</h3>
                     <p>211 N Hoffer Ave<br>Centre Hall, PA 16828</p>
-                    <a href="https://maps.google.com/?q=211+N+Hoffer+Ave+Centre+Hall+PA" target="_blank">Open in Google
-                        Maps</a>
+                    <a href="https://maps.google.com/?q=211+N+Hoffer+Ave+Centre+Hall+PA" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
                 </div>
-                <div class="field-card">
+                <div class="modern-card field-card">
                     <h3>West Branch Fields</h3>
                     <p>173 Havenview Dr<br>Lock Haven, PA 17745</p>
-                    <a href="https://maps.google.com/?q=173+Havenview+Dr+Lock+Haven+PA" target="_blank">Open in Google
-                        Maps</a>
+                    <a href="https://maps.google.com/?q=173+Havenview+Dr+Lock+Haven+PA" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
                 </div>
-                <div class="field-card">
+                <div class="modern-card field-card">
                     <h3>CSA: Homestead Park</h3>
                     <p>145 Farmstead Lane<br>State College, PA 16803</p>
-                    <a href="https://maps.app.goo.gl/HQxw1AdVsgz9uinNA" target="_blank">Open in Google Maps</a>
+                    <a href="https://maps.app.goo.gl/HQxw1AdVsgz9uinNA" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
                 </div>
             </div>
         </div>
     </section>
 </Layout>
+<style>
+
+.field-map-section { text-align:center; }
+.field-map-section p { max-width:850px; margin:12px auto; }
+.map-container { margin:24px auto 0; max-width:900px; }
+.map-container img { display:block; width:100%; height:auto; border-radius:6px; }
+.field-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:20px; }
+.field-card { padding:24px; text-align:left; border-top:4px solid var(--gold); }
+.field-card h3 { margin:0 0 12px; }
+.field-card a { display:inline-block; margin-top:10px; font-weight:700; }
+</style>
