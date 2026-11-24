@@ -14,12 +14,12 @@ import Layout from '../layouts/Layout.astro';
 <article class="modern-card"><div class="modern-card-head"><p class="eyebrow">Community support</p><h3>Blue Community Sponsor</h3><strong>Up to $299</strong></div><div class="modern-card-body"><ul><li>Business name or logo on the BEYS website</li><li>Contributions of $100 or more receive field signage</li></ul></div></article>
 <article class="modern-card gold-tier"><div class="modern-card-head"><p class="eyebrow">Team sponsorship</p><h3>Gold Team Sponsor</h3><strong>$300+</strong></div><div class="modern-card-body"><ul><li>Business name or logo on team jerseys</li><li>Select jersey color for your sponsored team</li><li>Website recognition</li><li>Field signage during fall and spring seasons</li><li>Exposure across local communities</li></ul><p class="fine-print">Team sponsorships are limited and first-come, first-served, subject to availability.</p></div></article>
 </div><p class="fine-print packet-note">The updated 2027 sponsorship packet will be posted when available. <a href="/downloads/2026%20BEYS%20Sponsorship%20Opportunities.pdf" target="_blank" rel="noopener noreferrer">View the 2026 packet for reference (PDF).</a></p></div></section>
-<section id="sponsor-form" class="modern-section modern-wrap"><div class="modern-heading"><p class="eyebrow">Join our community</p><h2>Become a BEYS partner.</h2><p>Submit your interest and we will follow up with sponsorship details, payment options and logo information.</p></div><div class="fact-panel" data-sponsor-wait><h3>Coming January 1, 2027</h3><p>Our sponsorship interest form will open January 1. Have questions in the meantime?</p><a class="modern-btn navy" href="mailto:baldeagleyouthsoccer@gmail.com?subject=2027%20BEYS%20Sponsorship%20Inquiry">Email BEYS →</a></div>
+<section id="sponsor-form" class="modern-section modern-wrap"><div class="modern-heading"><p class="eyebrow">Join our community</p><h2>Become a BEYS partner.</h2><p>Submit your interest anytime and we will follow up with sponsorship details, payment options and logo information. Official 2027 sponsorships open January 1.</p></div>
         <form
             name="sponsor-interest"
             method="POST"
             data-netlify="true"
-            class="contact-form" data-sponsor-form hidden
+            class="contact-form"
         >
 
             <input type="hidden" name="form-name" value="sponsor-interest" />
@@ -205,10 +205,11 @@ import Layout from '../layouts/Layout.astro';
                 type="submit"
                 class="button"
             >
-                Become a BEYS Partner
+                Submit Sponsorship Interest
             </button>
 
 
+        <p class="fine-print">Submitting this form does not commit you to a sponsorship or reserve a team. We will follow up to confirm availability and next steps.</p>
         </form>
 </section>
 <section class="modern-section soft-section"><div class="modern-wrap"><div class="modern-heading"><h2>Frequently asked questions.</h2></div>
@@ -221,11 +222,10 @@ import Layout from '../layouts/Layout.astro';
     
         <!-- SECTION HEADING -->
         <div class="sponsor-heading">
-            <span class="sponsor-eyebrow">Supporting Our Community</span>
-            <h2>Our 2026 Sponsors</h2>
+            <span class="sponsor-eyebrow">Grateful for Our Community</span>
+            <h2>Thank You to Our 2026 Sponsors!</h2>
             <p>
-                We are proud to recognize the local businesses, organizations,
-                and community supporters who help make Bald Eagle Youth Soccer possible.
+                Another wonderful year of BEYS soccer was made possible by the generosity of our local businesses, organizations and community supporters. Your support helps keep soccer affordable and creates opportunities for our young athletes. We are so grateful to have you on our team!
             </p>
         </div>
     
@@ -237,7 +237,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="sponsor-tier">
     
             <div class="tier-heading">
-                <span class="tier-label gold-label">Gold Sponsors</span>
+                <span class="tier-label gold-label">2026 Gold Sponsors</span>
                 <p>
                     Thank you to our Gold Sponsors for their generous support
                     of Bald Eagle Youth Soccer.
@@ -376,7 +376,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="sponsor-tier blue-community-tier">
     
             <div class="tier-heading">
-                <span class="tier-label blue-label">Blue Community Sponsors</span>
+                <span class="tier-label blue-label">2026 Blue Community Sponsors</span>
                 <p>
                     We are grateful to the local organizations and businesses
                     that support youth soccer in our community.
@@ -420,11 +420,11 @@ import Layout from '../layouts/Layout.astro';
     
         <div class="sponsor-footer">
             <p>
-                Interested in supporting youth soccer in our community?
+                Want to make a difference in our soccer community in 2027?
             </p>
     
             <a href="#sponsor-form" class="sponsor-btn">
-                Become a BEYS Sponsor
+                Become a 2027 BEYS Partner
             </a>
         </div>
     
@@ -446,7 +446,5 @@ import Layout from '../layouts/Layout.astro';
 <script>
 if(Date.now() >= Date.parse('2027-01-01T00:00:00-05:00')){
  document.querySelectorAll('[data-sponsor-date]').forEach(el=>el.textContent='2027 sponsorships are open!');
- document.querySelector('[data-sponsor-wait]')?.setAttribute('hidden','');
- document.querySelector('[data-sponsor-form]')?.removeAttribute('hidden');
 }
 </script>
