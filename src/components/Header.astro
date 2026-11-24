@@ -26,6 +26,7 @@ const isActive = (path: string) => currentPath === path;
     <!-- Main Navigation -->
     <nav id="nav" aria-label="Main navigation">
 
+      <!-- Home -->
       <a
         href="/"
         aria-current={isActive('/') ? 'page' : undefined}
@@ -35,7 +36,15 @@ const isActive = (path: string) => currentPath === path;
 
       <!-- Programs Dropdown -->
       <details class="nav-dropdown">
-        <summary>Programs</summary>
+        <summary
+          class:list={{
+            'active-section':
+              isActive('/recreational') ||
+              isActive('/travel')
+          }}
+        >
+          Programs
+        </summary>
 
         <div class="dropdown-menu">
           <a
@@ -54,30 +63,24 @@ const isActive = (path: string) => currentPath === path;
         </div>
       </details>
 
-      <a
-        href="/schedule"
-        aria-current={isActive('/schedule') ? 'page' : undefined}
-      >
-        Schedule
-      </a>
-
-      <a
-        href="/fields"
-        aria-current={isActive('/fields') ? 'page' : undefined}
-      >
-        Fields
-      </a>
-
-      <!-- Resources Dropdown -->
+      <!-- Schedules Dropdown -->
       <details class="nav-dropdown">
-        <summary>Resources</summary>
+        <summary
+          class:list={{
+            'active-section':
+              isActive('/schedule') ||
+              isActive('/foodtrucks')
+          }}
+        >
+          Schedules
+        </summary>
 
         <div class="dropdown-menu">
           <a
-            href="/coach-resources"
-            aria-current={isActive('/coach-resources') ? 'page' : undefined}
+            href="/schedule"
+            aria-current={isActive('/schedule') ? 'page' : undefined}
           >
-            Coach Resources
+            Game Schedules
           </a>
 
           <a
@@ -85,6 +88,36 @@ const isActive = (path: string) => currentPath === path;
             aria-current={isActive('/foodtrucks') ? 'page' : undefined}
           >
             Food Truck Schedule
+          </a>
+        </div>
+      </details>
+
+      <!-- Resources Dropdown -->
+      <details class="nav-dropdown">
+        <summary
+          class:list={{
+            'active-section':
+              isActive('/fields') ||
+              isActive('/coach-resources') ||
+              isActive('/fundraisers')
+          }}
+        >
+          Resources
+        </summary>
+
+        <div class="dropdown-menu">
+          <a
+            href="/fields"
+            aria-current={isActive('/fields') ? 'page' : undefined}
+          >
+            Fields &amp; Directions
+          </a>
+
+          <a
+            href="/coach-resources"
+            aria-current={isActive('/coach-resources') ? 'page' : undefined}
+          >
+            Coach Resources
           </a>
 
           <a
@@ -96,6 +129,7 @@ const isActive = (path: string) => currentPath === path;
         </div>
       </details>
 
+      <!-- Sponsors -->
       <a
         href="/sponsors"
         aria-current={isActive('/sponsors') ? 'page' : undefined}
@@ -103,11 +137,12 @@ const isActive = (path: string) => currentPath === path;
         Sponsors
       </a>
 
+      <!-- About Us -->
       <a
         href="/board"
         aria-current={isActive('/board') ? 'page' : undefined}
       >
-        Board
+        About Us
       </a>
 
       <!-- Registration Button -->
@@ -141,6 +176,10 @@ const isActive = (path: string) => currentPath === path;
 </header>
 
 <style>
+  /* =========================
+     HEADER & LOGO
+  ========================= */
+
   .site-header {
     background: #002a43;
     color: #ffffff;
@@ -173,12 +212,16 @@ const isActive = (path: string) => currentPath === path;
     width: auto;
   }
 
+  /* =========================
+     MAIN NAVIGATION
+  ========================= */
+
   nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: nowrap;
-    gap: 22px;
+    gap: 26px;
   }
 
   nav a,
@@ -196,11 +239,21 @@ const isActive = (path: string) => currentPath === path;
   nav a:hover,
   nav a[aria-current="page"],
   .nav-dropdown summary:hover,
+  .nav-dropdown summary.active-section,
   .nav-dropdown[open] summary {
     color: #d5d49b;
   }
 
-  /* Dropdown Navigation */
+  nav a:focus-visible,
+  .nav-dropdown summary:focus-visible,
+  .menu:focus-visible {
+    outline: 2px solid #d5d49b;
+    outline-offset: 5px;
+  }
+
+  /* =========================
+     DROPDOWN NAVIGATION
+  ========================= */
 
   .nav-dropdown {
     position: relative;
@@ -253,11 +306,15 @@ const isActive = (path: string) => currentPath === path;
     font-size: 0.82rem;
   }
 
-  .dropdown-menu a:hover {
+  .dropdown-menu a:hover,
+  .dropdown-menu a[aria-current="page"] {
     background: rgba(255, 255, 255, 0.06);
+    color: #d5d49b;
   }
 
-  /* Registration Button */
+  /* =========================
+     REGISTRATION BUTTON
+  ========================= */
 
   nav a.register-nav,
   nav a.register-nav:visited {
@@ -277,7 +334,9 @@ const isActive = (path: string) => currentPath === path;
     color: #002a43;
   }
 
-  /* Mobile Menu Button */
+  /* =========================
+     MOBILE MENU BUTTON
+  ========================= */
 
   .menu {
     display: none;
@@ -308,11 +367,13 @@ const isActive = (path: string) => currentPath === path;
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  /* Smaller Desktop Screens */
+  /* =========================
+     SMALLER DESKTOP SCREENS
+  ========================= */
 
   @media (max-width: 1200px) {
     nav {
-      gap: 15px;
+      gap: 18px;
     }
 
     nav a,
@@ -326,7 +387,9 @@ const isActive = (path: string) => currentPath === path;
     }
   }
 
-  /* Mobile Navigation */
+  /* =========================
+     MOBILE NAVIGATION
+  ========================= */
 
   @media (max-width: 1024px) {
     .nav-container {
@@ -408,6 +471,16 @@ const isActive = (path: string) => currentPath === path;
       box-sizing: border-box;
     }
   }
+
+  /* Reduced Motion Accessibility */
+
+  @media (prefers-reduced-motion: reduce) {
+    nav a,
+    .nav-dropdown summary::after,
+    .menu span {
+      transition: none;
+    }
+  }
 </style>
 
 <script>
@@ -428,7 +501,10 @@ const isActive = (path: string) => currentPath === path;
   function closeMenu() {
     nav?.classList.remove('active');
     menuBtn?.setAttribute('aria-expanded', 'false');
-    menuBtn?.setAttribute('aria-label', 'Open navigation menu');
+    menuBtn?.setAttribute(
+      'aria-label',
+      'Open navigation menu'
+    );
     closeDropdowns();
   }
 
@@ -436,10 +512,16 @@ const isActive = (path: string) => currentPath === path;
   menuBtn?.addEventListener('click', () => {
     const isOpen = nav?.classList.toggle('active') ?? false;
 
-    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    menuBtn.setAttribute(
+      'aria-expanded',
+      String(isOpen)
+    );
+
     menuBtn.setAttribute(
       'aria-label',
-      isOpen ? 'Close navigation menu' : 'Open navigation menu'
+      isOpen
+        ? 'Close navigation menu'
+        : 'Open navigation menu'
     );
 
     if (!isOpen) closeDropdowns();
@@ -450,7 +532,9 @@ const isActive = (path: string) => currentPath === path;
     dropdown.addEventListener('toggle', () => {
       if (dropdown.open) {
         dropdowns.forEach((other) => {
-          if (other !== dropdown) other.open = false;
+          if (other !== dropdown) {
+            other.open = false;
+          }
         });
       }
     });
@@ -497,7 +581,9 @@ const isActive = (path: string) => currentPath === path;
   const desktop = window.matchMedia('(min-width: 1025px)');
 
   desktop.addEventListener('change', (event) => {
-    if (event.matches) closeMenu();
+    if (event.matches) {
+      closeMenu();
+    }
   });
 
   // Automatically enable registration on January 1
