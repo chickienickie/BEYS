@@ -476,21 +476,84 @@ const travelInterestUrl = "/travel/#travel-interest";
         }
     }
 </style>
+
 <script>
     function updateHomeDates() {
-        if (Date.now() < Date.parse("2027-01-01T00:00:00-05:00")) return;
-        document.querySelectorAll("[data-opening-date]").forEach((el) => {
-            el.textContent = "Registration Is Open";
-        });
-        document.querySelectorAll("[data-sponsor-date]").forEach((el) => {
-            el.textContent = "2027 Sponsorships Are Open";
-        });
-        const sponsorHeading = document.querySelector(
-            ".date-strip .two-grid > div:nth-child(2) h2",
+        const openingDate = Date.parse(
+            "2027-01-01T00:00:00-05:00"
         );
-        if (sponsorHeading)
-            sponsorHeading.textContent = "Sponsorships Are Open";
+
+        const closingDate = Date.parse(
+            "2027-02-06T00:00:00-05:00"
+        );
+
+        const now = Date.now();
+
+        const registrationHeading =
+            document.querySelector("[data-opening-date]");
+
+        const registrationDetails =
+            document.querySelector("[data-registration-details]");
+
+        const registrationLink =
+            document.querySelector<HTMLAnchorElement>(
+                "[data-registration-link]"
+            );
+
+        if (now >= closingDate) {
+            if (registrationHeading) {
+                registrationHeading.textContent =
+                    "Registration Is Closed";
+            }
+
+            if (registrationDetails) {
+                registrationDetails.textContent =
+                    "Spring 2027 Soccer";
+            }
+
+            if (registrationLink) {
+                registrationLink.textContent =
+                    "Explore our soccer programs →";
+
+                registrationLink.href = "#programs";
+                registrationLink.removeAttribute("target");
+                registrationLink.removeAttribute("rel");
+            }
+
+        } else if (now >= openingDate) {
+            if (registrationHeading) {
+                registrationHeading.textContent =
+                    "Registration Is Open!";
+            }
+
+            if (registrationDetails) {
+                registrationDetails.textContent =
+                    "Register by February 5, 2027";
+            }
+        }
+
+        if (now >= openingDate) {
+            document
+                .querySelectorAll("[data-sponsor-date]")
+                .forEach((el) => {
+                    el.textContent =
+                        "2027 Sponsorships Are Open";
+                });
+
+            const sponsorHeading =
+                document.querySelector("[data-sponsor-heading]");
+
+            if (sponsorHeading) {
+                sponsorHeading.textContent =
+                    "Sponsorships Are Open";
+            }
+        }
     }
+
     updateHomeDates();
-    document.addEventListener("astro:page-load", updateHomeDates);
+
+    document.addEventListener(
+        "astro:page-load",
+        updateHomeDates
+    );
 </script>
