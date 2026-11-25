@@ -923,13 +923,14 @@ a.sponsor-btn:focus-visible {
 
 .hero-club-logo {
     position: absolute;
-    top: 56%;
-    right: 14%;
+    top: 50%;
+    right: 12%;
     transform: translateY(-50%);
-    width: clamp(240px, 28vw, 400px);
+    width: clamp(280px, 35vw, 500px);
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+    opacity: 0.18;
+    filter: grayscale(1) brightness(0) invert(1);
     pointer-events: none;
     z-index: 1;
 }
