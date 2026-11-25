@@ -949,3 +949,6 @@ a.sponsor-btn:focus-visible {
         display: none;
     }
 }
+.hero-with-logo {
+    background-position: center 75%;
+}
