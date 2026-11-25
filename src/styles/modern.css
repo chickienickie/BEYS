@@ -955,3 +955,10 @@ a.sponsor-btn:focus-visible {
         background-position: center, center 80% !important;
     }
 }
+
+@media (min-width: 901px) {
+    .new-hero {
+        background-size: cover, 115% auto;
+        background-position: center, center 80%;
+    }
+}
