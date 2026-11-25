@@ -929,7 +929,7 @@ a.sponsor-btn:focus-visible {
     width: clamp(300px, 40vw, 580px);
     height: auto;
     object-fit: contain;
-    opacity: 0.48;
+    opacity: 0.49;
     filter: none;
     pointer-events: none;
     z-index: 1;
