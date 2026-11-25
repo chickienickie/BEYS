@@ -310,9 +310,13 @@ const faqs = [
                     class="modern-btn navy"
                     href={registrationUrl}
                     target="_blank"
-                    rel="noopener noreferrer">Register →</a
+                    rel="noopener noreferrer">Register for Spring Soccer →</a
                 ></div>
-<div class="interest-form-heading">
+
+            <form id="travel-interest" name="travel-soccer-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="interest-form">
+                <input type="hidden" name="form-name" value="travel-soccer-interest" />
+                <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+                <div class="interest-form-heading">
   <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
 
   <h3>Travel Soccer Interest Form</h3>
@@ -326,9 +330,6 @@ const faqs = [
     This is not an official registration or commitment.
   </p>
 </div>
-            <form id="travel-interest" name="travel-soccer-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="interest-form">
-                <input type="hidden" name="form-name" value="travel-soccer-interest" />
-                <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
                 <div class="interest-form-grid">
                     <div class="interest-field">
                         <label for="parent-name">Parent/Guardian Name *</label>
@@ -371,7 +372,7 @@ const faqs = [
     </section>
 </Layout>
 <style>
-    #travel-interest { scroll-margin-top: 140px; }
+    #travel-interest { scroll-margin-top: 140px; margin-top: 32px; }
     .travel-hero {
         background:
             linear-gradient(
