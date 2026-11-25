@@ -929,8 +929,8 @@ a.sponsor-btn:focus-visible {
     width: clamp(280px, 35vw, 500px);
     height: auto;
     object-fit: contain;
-    opacity: 0.18;
-    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 0.30;
+    filter: none;
     pointer-events: none;
     z-index: 1;
 }
