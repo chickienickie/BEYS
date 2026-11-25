@@ -24,7 +24,13 @@ const isActive = (path: string) => currentPath === path;
             <a href="/" aria-current={isActive("/") ? "page" : undefined}>
                 Home
             </a>
-
+<!-- About Us -->
+<a
+href="/board"
+aria-current={isActive("/board") ? "page" : undefined}
+>
+About Us
+</a>
             <!-- Programs Dropdown -->
             <details class="nav-dropdown">
                 <summary
@@ -136,13 +142,7 @@ const isActive = (path: string) => currentPath === path;
                 Sponsors
             </a>
 
-            <!-- About Us -->
-            <a
-                href="/board"
-                aria-current={isActive("/board") ? "page" : undefined}
-            >
-                About Us
-            </a>
+            
 
        
 
