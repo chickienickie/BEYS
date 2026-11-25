@@ -949,6 +949,9 @@ a.sponsor-btn:focus-visible {
         display: none;
     }
 }
-.hero-with-logo {
-    background-position: center 75%;
+@media (min-width: 901px) {
+    .hero-with-logo {
+        background-size: cover, 115% auto !important;
+        background-position: center, center 80% !important;
+    }
 }
